@@ -172,7 +172,7 @@ export default async function GroupDetailPage({
             </div>
           </section>
 
-          <AdBanner size="leaderboard" />
+          {/* <AdBanner size="leaderboard" /> */}
 
           {/* 2. Team cards */}
           <section>
@@ -244,7 +244,7 @@ export default async function GroupDetailPage({
             </section>
           )}
 
-          <AdBanner size="leaderboard" />
+          {/* <AdBanner size="leaderboard" /> */}
 
           {/* 4. Mini-analysis */}
           <section>
@@ -281,7 +281,7 @@ export default async function GroupDetailPage({
 
         {/* ── Sidebar ─────────────────────────────────────────────────── */}
         <aside className="space-y-6">
-          <AdBanner size="rectangle" />
+          {/* <AdBanner size="rectangle" /> */}
 
           {/* Other groups */}
           <div className="rounded-xl border border-brand-accent bg-brand-blue p-4">
@@ -350,7 +350,7 @@ export default async function GroupDetailPage({
             </div>
           </div>
 
-          <AdBanner size="rectangle" />
+          {/* <AdBanner size="rectangle" /> */}
         </aside>
       </div>
     </div>

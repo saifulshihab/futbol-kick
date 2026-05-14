@@ -267,7 +267,7 @@ export default async function TeamDetailPage({
               </div>
             </section>
 
-            <AdBanner size="leaderboard" />
+            {/* <AdBanner size="leaderboard" /> */}
 
             {/* 2. Tactics & Style */}
             <section>
@@ -303,7 +303,7 @@ export default async function TeamDetailPage({
               </div>
             </section>
 
-            <AdBanner size="leaderboard" />
+            {/* <AdBanner size="leaderboard" /> */}
 
             {/* 3. WC History */}
             <section>
@@ -371,7 +371,7 @@ export default async function TeamDetailPage({
               </div>
             )}
 
-            <AdBanner size="rectangle" />
+            {/* <AdBanner size="rectangle" /> */}
 
             {/* Group standings */}
             {group && standings.length > 0 && (
@@ -432,7 +432,7 @@ export default async function TeamDetailPage({
               </div>
             )}
 
-            <AdBanner size="rectangle" />
+            {/* <AdBanner size="rectangle" /> */}
           </aside>
         </div>
       </div>

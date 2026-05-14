@@ -35,7 +35,7 @@ export default function GroupsPage() {
         </p>
       </div>
 
-      <AdBanner size="leaderboard" className="mb-8" />
+      {/* <AdBanner size="leaderboard" className="mb-8" /> */}
 
       {/* Qualification key */}
       <div className="flex flex-wrap items-center gap-4 mb-6 text-xs text-brand-muted">
@@ -153,7 +153,7 @@ export default function GroupsPage() {
         })}
       </div>
 
-      <AdBanner size="leaderboard" className="mt-10" />
+      {/* <AdBanner size="leaderboard" className="mt-10" /> */}
     </div>
   );
 }

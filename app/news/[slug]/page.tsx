@@ -142,7 +142,7 @@ export default async function ArticlePage({
           <ArticleContent content={firstHalf} />
 
           {/* Mid-article ad */}
-          <AdBanner size="leaderboard" className="my-8" />
+          {/* <AdBanner size="leaderboard" className="my-8" /> */}
 
           {/* Second half of content */}
           <ArticleContent content={secondHalf} />
@@ -161,7 +161,7 @@ export default async function ArticlePage({
           </div>
 
           {/* Ad after article */}
-          <AdBanner size="leaderboard" className="mt-8" />
+          {/* <AdBanner size="leaderboard" className="mt-8" /> */}
 
           {/* Prev / Next navigation */}
           <div className="grid grid-cols-2 gap-4 mt-8">
@@ -199,7 +199,7 @@ export default async function ArticlePage({
 
         {/* ── Sidebar ─────────────────────────────────────────────────── */}
         <aside className="space-y-6">
-          <AdBanner size="rectangle" />
+          {/* <AdBanner size="rectangle" /> */}
 
           {/* Related articles */}
           {related.length > 0 && (
@@ -268,7 +268,7 @@ export default async function ArticlePage({
             </div>
           </div>
 
-          <AdBanner size="rectangle" />
+          {/* <AdBanner size="rectangle" /> */}
         </aside>
       </div>
     </div>

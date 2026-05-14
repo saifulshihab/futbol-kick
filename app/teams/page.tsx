@@ -31,7 +31,7 @@ export default function TeamsPage() {
         </p>
       </div>
 
-      <AdBanner size="leaderboard" className="mb-8" />
+      {/* <AdBanner size="leaderboard" className="mb-8" /> */}
 
       {/* Top favourites strip */}
       <div className="mb-8">

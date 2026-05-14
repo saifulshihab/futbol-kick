@@ -315,7 +315,7 @@ export default async function MatchPreviewPage({
             </div>
           </section>
 
-          <AdBanner size="leaderboard" />
+          {/* <AdBanner size="leaderboard" /> */}
 
           {/* 2. Key Battles */}
           <section>
@@ -341,7 +341,7 @@ export default async function MatchPreviewPage({
             </div>
           </section>
 
-          <AdBanner size="leaderboard" />
+          {/* <AdBanner size="leaderboard" /> */}
 
           {/* 3. Predicted Context */}
           {prediction && (
@@ -373,7 +373,7 @@ export default async function MatchPreviewPage({
 
         {/* ── Sidebar ─────────────────────────────────────────────── */}
         <aside className="space-y-6">
-          <AdBanner size="rectangle" />
+          {/* <AdBanner size="rectangle" /> */}
 
           {/* Match info */}
           <div className="rounded-xl border border-brand-accent bg-brand-blue p-4 space-y-3">
@@ -423,7 +423,7 @@ export default async function MatchPreviewPage({
             </Link>
           )}
 
-          <AdBanner size="rectangle" />
+          {/* <AdBanner size="rectangle" /> */}
         </aside>
       </div>
     </div>

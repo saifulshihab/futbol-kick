@@ -122,7 +122,7 @@ export default function NewsPage() {
         </p>
       </div>
 
-      <AdBanner size="leaderboard" className="mb-8" />
+      {/* <AdBanner size="leaderboard" className="mb-8" /> */}
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8">
         {/* ── Main column ─────────────────────────────────────────────── */}
@@ -148,7 +148,7 @@ export default function NewsPage() {
             </section>
           )}
 
-          <AdBanner size="inline" />
+          {/* <AdBanner size="inline" /> */}
 
           {/* All articles */}
           <section>
@@ -168,12 +168,12 @@ export default function NewsPage() {
             </div>
           </section>
 
-          <AdBanner size="leaderboard" />
+          {/* <AdBanner size="leaderboard" /> */}
         </div>
 
         {/* ── Sidebar ─────────────────────────────────────────────────── */}
         <aside className="space-y-6">
-          <AdBanner size="rectangle" />
+          {/* <AdBanner size="rectangle" /> */}
 
           {/* Trending */}
           <div className="rounded-xl border border-brand-accent bg-brand-blue p-4">
@@ -266,7 +266,7 @@ export default function NewsPage() {
             </div>
           </div>
 
-          <AdBanner size="rectangle" />
+          {/* <AdBanner size="rectangle" /> */}
         </aside>
       </div>
     </div>

@@ -166,7 +166,7 @@ export default function FanZonePage() {
         </p>
       </div>
 
-      <AdBanner size="leaderboard" />
+      {/* <AdBanner size="leaderboard" /> */}
 
       {/* ── 1. Fan Polls ─────────────────────────────────────────────── */}
       <section>
@@ -178,7 +178,7 @@ export default function FanZonePage() {
         <FanPolls />
       </section>
 
-      <AdBanner size="leaderboard" />
+      {/* <AdBanner size="leaderboard" /> */}
 
       {/* ── 2. Fan Stories ───────────────────────────────────────────── */}
       <section>
@@ -304,7 +304,7 @@ export default function FanZonePage() {
         </div>
       </section>
 
-      <AdBanner size="leaderboard" />
+      {/* <AdBanner size="leaderboard" /> */}
 
       {/* ── 4. Local Watch Guide ─────────────────────────────────────── */}
       <section>
@@ -392,7 +392,7 @@ export default function FanZonePage() {
         </div>
       </section>
 
-      <AdBanner size="leaderboard" />
+      {/* <AdBanner size="leaderboard" /> */}
     </div>
   );
 }

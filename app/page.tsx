@@ -177,7 +177,7 @@ export default function HomePage() {
 
       {/* ── AdSense leaderboard ────────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
-        <AdBanner size="leaderboard" />
+        {/* <AdBanner size="leaderboard" /> */}
       </div>
 
       {/* ── Main 3-column grid ─────────────────────────────────────────────── */}
@@ -221,7 +221,7 @@ export default function HomePage() {
               />
             </div>
 
-            <AdBanner size="rectangle" />
+            {/* <AdBanner size="rectangle" /> */}
           </div>
 
           {/* ── Col 2: Latest Posts ────────────────────────────────────────── */}
@@ -232,12 +232,12 @@ export default function HomePage() {
                 <PostCard key={post.id} post={post} />
               ))}
             </div>
-            <AdBanner size="inline" />
+            {/* <AdBanner size="inline" /> */}
           </div>
 
           {/* ── Col 3: Sidebar ─────────────────────────────────────────────── */}
           <div className="space-y-6">
-            <AdBanner size="rectangle" />
+            {/* <AdBanner size="rectangle" /> */}
 
             {/* Top Stories */}
             <div className="rounded-xl border border-brand-accent bg-brand-blue p-4">
@@ -334,7 +334,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <AdBanner size="rectangle" />
+            {/* <AdBanner size="rectangle" /> */}
           </div>
         </div>
       </section>
