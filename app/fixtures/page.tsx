@@ -3,6 +3,7 @@ import Link from "next/link";
 import { fixtures, teams, groups, getTeamById } from "@/lib/data";
 import FixturesClient from "./FixturesClient";
 import AdBanner from "@/components/AdBanner";
+import FlagImg from "@/components/FlagImg";
 
 export const metadata: Metadata = {
   title: "Fixtures & Results",
@@ -12,11 +13,11 @@ export const metadata: Metadata = {
 
 // Top scorers dummy data
 const topScorers = [
-  { name: "Kylian Mbappé",      team: "france",    goals: 3, flag: "🇫🇷" },
-  { name: "Lionel Messi",       team: "argentina", goals: 3, flag: "🇦🇷" },
-  { name: "Vinícius Júnior",    team: "brazil",    goals: 2, flag: "🇧🇷" },
-  { name: "Harry Kane",         team: "england",   goals: 2, flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
-  { name: "Julián Álvarez",     team: "argentina", goals: 2, flag: "🇦🇷" },
+  { name: "Kylian Mbappé",      team: "france",    goals: 3, flag: "fr" },
+  { name: "Lionel Messi",       team: "argentina", goals: 3, flag: "ar" },
+  { name: "Vinícius Júnior",    team: "brazil",    goals: 2, flag: "br" },
+  { name: "Harry Kane",         team: "england",   goals: 2, flag: "gb-eng" },
+  { name: "Julián Álvarez",     team: "argentina", goals: 2, flag: "ar" },
 ];
 
 // "Most watched" = completed fixtures with highest combined goals
@@ -63,10 +64,7 @@ export default function FixturesPage() {
             </h3>
             <div className="grid grid-cols-3 gap-2">
               {groups.map((g) => {
-                const teamFlags = g.teamIds
-                  .slice(0, 2)
-                  .map((id) => getTeamById(id)?.flag ?? "")
-                  .join(" ");
+                const teamCodes = g.teamIds.slice(0, 2).map((id) => getTeamById(id)?.flag ?? "");
                 return (
                   <Link
                     key={g.id}
@@ -79,7 +77,9 @@ export default function FixturesPage() {
                     >
                       {g.id}
                     </span>
-                    <span className="text-[11px] text-brand-muted">{teamFlags}</span>
+                    <div className="flex gap-1">
+                      {teamCodes.map((code) => code && <FlagImg key={code} code={code} size="xs" />)}
+                    </div>
                   </Link>
                 );
               })}
@@ -100,7 +100,7 @@ export default function FixturesPage() {
                   <span className="w-5 text-xs font-bold text-brand-muted text-center">
                     {i + 1}
                   </span>
-                  <span className="text-lg">{s.flag}</span>
+                  <FlagImg code={s.flag} size="xs" />
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-medium text-brand-white truncate">{s.name}</p>
                   </div>
@@ -135,9 +135,11 @@ export default function FixturesPage() {
                     href={`/matches/${f.id}`}
                     className="flex items-center justify-between gap-2 p-2 rounded-lg hover:bg-brand-accent transition-colors group"
                   >
-                    <span className="text-sm text-brand-white group-hover:text-brand-yellow transition-colors truncate">
-                      {home.flag} {home.code} {f.homeScore}–{f.awayScore} {away.code} {away.flag}
-                    </span>
+                    <div className="flex items-center gap-1 text-sm text-brand-white group-hover:text-brand-yellow transition-colors min-w-0">
+                      <FlagImg code={home.flag} size="xs" />
+                      <span className="truncate">{home.code} {f.homeScore}–{f.awayScore} {away.code}</span>
+                      <FlagImg code={away.flag} size="xs" />
+                    </div>
                     <span className="text-xs text-brand-muted shrink-0">
                       {total} goals
                     </span>

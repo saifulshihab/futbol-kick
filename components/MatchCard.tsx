@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MapPin, Clock } from "lucide-react";
 import { Fixture, getTeamById } from "@/lib/data";
+import FlagImg from "@/components/FlagImg";
 
 interface MatchCardProps {
   fixture: Fixture;
@@ -43,7 +44,7 @@ export default function MatchCard({ fixture, compact = false }: MatchCardProps) 
       <div className="flex items-center justify-between gap-2">
         {/* Home */}
         <div className="flex-1 flex flex-col items-center gap-1">
-          <span className="text-2xl">{home.flag}</span>
+          <FlagImg code={home.flag} size="sm" />
           <span className={`text-center font-semibold text-brand-white group-hover:text-brand-yellow transition-colors ${compact ? "text-xs" : "text-sm"}`}>
             {home.shortName}
           </span>
@@ -73,7 +74,7 @@ export default function MatchCard({ fixture, compact = false }: MatchCardProps) 
 
         {/* Away */}
         <div className="flex-1 flex flex-col items-center gap-1">
-          <span className="text-2xl">{away.flag}</span>
+          <FlagImg code={away.flag} size="sm" />
           <span className={`text-center font-semibold text-brand-white group-hover:text-brand-yellow transition-colors ${compact ? "text-xs" : "text-sm"}`}>
             {away.shortName}
           </span>

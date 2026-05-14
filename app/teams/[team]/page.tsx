@@ -1,4 +1,5 @@
 import AdBanner from "@/components/AdBanner";
+import FlagImg from "@/components/FlagImg";
 import JsonLd from "@/components/JsonLd";
 import MatchCard from "@/components/MatchCard";
 import {
@@ -135,7 +136,7 @@ export default async function TeamDetailPage({
         >
           <div className="bg-brand-yellow/5 pointer-events-none absolute -top-16 -right-16 h-64 w-64 rounded-full" />
           <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
-            <span className="shrink-0 text-7xl sm:text-8xl">{team.flag}</span>
+            <FlagImg code={team.flag} size="2xl" className="shrink-0" />
             <div className="flex-1">
               <p className="text-brand-yellow mb-1 text-xs tracking-widest uppercase">
                 FIFA World Cup 2026 · Group {team.group}
@@ -409,7 +410,7 @@ export default async function TeamDetailPage({
                       >
                         <span className={`h-4 w-1 rounded-sm ${qualColor}`} />
                         <span className="flex min-w-0 items-center gap-1.5">
-                          <span className="text-sm">{t.flag}</span>
+                          <FlagImg code={t.flag} size="xs" />
                           <span
                             className={`truncate text-xs font-medium ${isThis ? "text-brand-yellow" : "text-brand-white"}`}
                           >

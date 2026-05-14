@@ -11,6 +11,7 @@ import {
 } from "@/lib/data";
 import MatchCard from "@/components/MatchCard";
 import AdBanner from "@/components/AdBanner";
+import FlagImg from "@/components/FlagImg";
 
 export function generateStaticParams() {
   return groups.map((g) => ({ group: g.id }));
@@ -99,7 +100,7 @@ export default async function GroupDetailPage({
             const t = getTeamById(id);
             return t ? (
               <Link key={id} href={`/teams/${id}`} className="flex items-center gap-1.5 text-sm text-brand-muted hover:text-brand-yellow transition-colors">
-                <span className="text-lg">{t.flag}</span>
+                <FlagImg code={t.flag} size="xs" />
                 <span>{t.name}</span>
               </Link>
             ) : null;
@@ -142,7 +143,7 @@ export default async function GroupDetailPage({
                   >
                     <span />
                     <span className="flex items-center gap-2 min-w-0">
-                      <span className="text-xl shrink-0">{team.flag}</span>
+                      <FlagImg code={team.flag} size="sm" className="shrink-0" />
                       <span className="font-semibold text-brand-white text-sm truncate">{team.name}</span>
                     </span>
                     <span className="text-xs text-brand-muted text-center">{s.played}</span>
@@ -192,7 +193,7 @@ export default async function GroupDetailPage({
                     href={`/teams/${id}`}
                     className="flex items-center gap-4 p-4 rounded-xl border border-brand-accent bg-brand-blue hover:border-brand-yellow transition-colors group"
                   >
-                    <span className="text-4xl shrink-0">{team.flag}</span>
+                    <FlagImg code={team.flag} size="md" className="shrink-0" />
                     <div className="flex-1 min-w-0">
                       <p
                         className="font-bold text-brand-white group-hover:text-brand-yellow transition-colors text-base"
@@ -267,7 +268,7 @@ export default async function GroupDetailPage({
                     key={s.teamId}
                     className="flex gap-3 p-4 rounded-xl border border-brand-accent bg-brand-blue"
                   >
-                    <span className="text-2xl shrink-0">{team.flag}</span>
+                    <FlagImg code={team.flag} size="sm" className="shrink-0" />
                     <div>
                       <p className="text-sm font-bold text-brand-white mb-1">{team.name}</p>
                       <p className="text-xs text-brand-muted leading-relaxed">{analysis}</p>
@@ -308,7 +309,7 @@ export default async function GroupDetailPage({
                       </span>
                       {leaderTeam && (
                         <span className="flex items-center gap-1 text-xs text-brand-muted">
-                          <span>{leaderTeam.flag}</span>
+                          <FlagImg code={leaderTeam.flag} size="xs" />
                           <span>{leaderTeam.code}</span>
                           <span className="text-brand-yellow font-bold ml-1">{leader.points}pts</span>
                         </span>
@@ -337,7 +338,7 @@ export default async function GroupDetailPage({
                     href={`/teams/${id}`}
                     className="flex items-center gap-3 p-2 rounded-lg hover:bg-brand-accent transition-colors group"
                   >
-                    <span className="text-xl">{t.flag}</span>
+                    <FlagImg code={t.flag} size="sm" />
                     <div>
                       <p className="text-sm font-medium text-brand-white group-hover:text-brand-yellow transition-colors">
                         {t.name}

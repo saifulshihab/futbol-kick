@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { CheckCircle, Trophy, Target, Users, Zap, ArrowRight, RotateCcw } from "lucide-react";
 import { teams, groups, getUpcomingFixtures, getTeamById, type Team } from "@/lib/data";
+import FlagImg from "@/components/FlagImg";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -25,18 +26,18 @@ const EMPTY: Predictions = {
 
 // Key players across all teams for top scorer
 const TOP_SCORER_CANDIDATES = [
-  { name: "Kylian Mbappé",     team: "france",    flag: "🇫🇷" },
-  { name: "Lionel Messi",      team: "argentina", flag: "🇦🇷" },
-  { name: "Vinícius Júnior",   team: "brazil",    flag: "🇧🇷" },
-  { name: "Harry Kane",        team: "england",   flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
-  { name: "Cristiano Ronaldo", team: "portugal",  flag: "🇵🇹" },
-  { name: "Erling Haaland",    team: "norway",    flag: "🇳🇴" },
-  { name: "Lautaro Martínez",  team: "argentina", flag: "🇦🇷" },
-  { name: "Julián Álvarez",    team: "argentina", flag: "🇦🇷" },
-  { name: "Rodrygo",           team: "brazil",    flag: "🇧🇷" },
-  { name: "Bukayo Saka",       team: "england",   flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
-  { name: "Jude Bellingham",   team: "england",   flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
-  { name: "Florian Wirtz",     team: "germany",   flag: "🇩🇪" },
+  { name: "Kylian Mbappé",     team: "france",    flag: "fr" },
+  { name: "Lionel Messi",      team: "argentina", flag: "ar" },
+  { name: "Vinícius Júnior",   team: "brazil",    flag: "br" },
+  { name: "Harry Kane",        team: "england",   flag: "gb-eng" },
+  { name: "Cristiano Ronaldo", team: "portugal",  flag: "pt" },
+  { name: "Erling Haaland",    team: "norway",    flag: "no" },
+  { name: "Lautaro Martínez",  team: "argentina", flag: "ar" },
+  { name: "Julián Álvarez",    team: "argentina", flag: "ar" },
+  { name: "Rodrygo",           team: "brazil",    flag: "br" },
+  { name: "Bukayo Saka",       team: "england",   flag: "gb-eng" },
+  { name: "Jude Bellingham",   team: "england",   flag: "gb-eng" },
+  { name: "Florian Wirtz",     team: "germany",   flag: "de" },
 ];
 
 const SCORE_OPTIONS = ["0","1","2","3","4","5"];
@@ -93,7 +94,7 @@ function TeamPicker({
                 : "border-brand-accent hover:border-brand-yellow/60 hover:bg-brand-accent/40"
             }`}
           >
-            <span className="text-xl shrink-0">{t.flag}</span>
+            <FlagImg code={t.flag} size="sm" className="shrink-0" />
             <div className="min-w-0">
               <p className={`text-xs font-semibold truncate ${selected === t.id ? "text-brand-yellow" : "text-brand-white"}`}>
                 {t.shortName}
@@ -133,7 +134,7 @@ function SubmittedScreen({ picks, onReset }: { picks: Predictions; onReset: () =
             <div className="p-4 rounded-xl border border-brand-accent bg-brand-blue">
               <p className="text-[10px] text-brand-muted uppercase tracking-widest mb-2">Your winner pick</p>
               <p className="text-lg flex items-center gap-2 font-bold text-brand-white">
-                <span>{winner.flag}</span>{winner.name}
+                <FlagImg code={winner.flag} size="xs" />{winner.name}
               </p>
             </div>
           )}
@@ -152,7 +153,7 @@ function SubmittedScreen({ picks, onReset }: { picks: Predictions; onReset: () =
                   return t ? (
                     <span key={g} className="flex items-center gap-1.5 text-sm">
                       <span className="text-brand-yellow font-bold">Grp {g}:</span>
-                      <span>{t.flag}</span>
+                      <FlagImg code={t.flag} size="xs" />
                       <span className="text-brand-white">{t.code}</span>
                     </span>
                   ) : null;
@@ -260,7 +261,7 @@ export default function PredictionsClient() {
         {picks.winner && (
           <p className="mt-3 text-sm text-green-400 flex items-center gap-1.5">
             <CheckCircle size={14} />
-            {getTeamById(picks.winner)?.flag} {getTeamById(picks.winner)?.name} selected
+            {(() => { const t = getTeamById(picks.winner); return t ? <><FlagImg code={t.flag} size="xs" /> {t.name}</> : null; })()} selected
           </p>
         )}
       </section>
@@ -280,7 +281,7 @@ export default function PredictionsClient() {
                   : "border-brand-accent hover:border-brand-yellow/60 hover:bg-brand-accent/40"
               }`}
             >
-              <span className="text-xl shrink-0">{c.flag}</span>
+              <FlagImg code={c.flag} size="sm" className="shrink-0" />
               <div className="min-w-0">
                 <p className={`text-xs font-semibold truncate leading-tight ${picks.topScorer === c.name ? "text-brand-yellow" : "text-brand-white"}`}>
                   {c.name}
@@ -316,7 +317,7 @@ export default function PredictionsClient() {
                         : "border-brand-accent hover:border-brand-yellow/50 hover:bg-brand-accent/30"
                     }`}
                   >
-                    <span className="text-lg">{t.flag}</span>
+                    <FlagImg code={t.flag} size="xs" />
                     <span className={`text-xs font-medium flex-1 text-left ${currentPick === t.id ? "text-brand-yellow" : "text-brand-white"}`}>
                       {t.shortName}
                     </span>
@@ -347,7 +348,7 @@ export default function PredictionsClient() {
                 {/* Home */}
                 <div className="flex-1 flex items-center gap-2 justify-end">
                   <span className="text-sm font-semibold text-brand-white hidden sm:block">{home.shortName}</span>
-                  <span className="text-2xl">{home.flag}</span>
+                  <FlagImg code={home.flag} size="sm" />
                 </div>
 
                 {/* Score inputs */}
@@ -375,7 +376,7 @@ export default function PredictionsClient() {
 
                 {/* Away */}
                 <div className="flex-1 flex items-center gap-2">
-                  <span className="text-2xl">{away.flag}</span>
+                  <FlagImg code={away.flag} size="sm" />
                   <span className="text-sm font-semibold text-brand-white hidden sm:block">{away.shortName}</span>
                 </div>
 

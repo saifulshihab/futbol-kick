@@ -11,6 +11,7 @@ import CountdownTimer from "@/components/CountdownTimer";
 import MatchCard from "@/components/MatchCard";
 import PostCard from "@/components/PostCard";
 import AdBanner from "@/components/AdBanner";
+import FlagImg from "@/components/FlagImg";
 
 // ─── Quick-link card ──────────────────────────────────────────────────────────
 function QuickLink({
@@ -261,7 +262,7 @@ export default function HomePage() {
                       className="flex items-center gap-3 p-2 rounded-lg hover:bg-brand-accent transition-colors group"
                     >
                       <span className="text-xs font-bold text-brand-muted w-4">{i + 1}</span>
-                      <span className="text-xl">{team.flag}</span>
+                      <FlagImg code={team.flag} size="sm" />
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-medium text-brand-white group-hover:text-brand-yellow transition-colors truncate">
                           {team.name}

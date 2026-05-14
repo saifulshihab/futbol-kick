@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { teams } from "@/lib/data";
 import TeamsClient from "./TeamsClient";
 import AdBanner from "@/components/AdBanner";
+import FlagImg from "@/components/FlagImg";
 
 export const metadata: Metadata = {
   title: "Teams",
@@ -48,7 +49,7 @@ export default function TeamsPage() {
               href={`/teams/${t.id}`}
               className="flex flex-col items-center gap-2 p-3 rounded-xl border border-brand-accent bg-brand-blue hover:border-brand-yellow transition-colors shrink-0 min-w-[90px] group"
             >
-              <span className="text-3xl">{t.flag}</span>
+              <FlagImg code={t.flag} size="md" />
               <span className="text-[10px] font-bold text-brand-muted uppercase">{t.code}</span>
               <span className="text-[9px] text-brand-yellow font-bold">#{t.fifaRank}</span>
             </a>

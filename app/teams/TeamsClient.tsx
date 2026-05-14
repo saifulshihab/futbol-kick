@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Search, ArrowUpDown } from "lucide-react";
 import { Team } from "@/lib/data";
+import FlagImg from "@/components/FlagImg";
 
 type SortKey = "rank" | "name" | "group";
 
@@ -109,7 +110,7 @@ export default function TeamsClient({ teams }: Props) {
               >
                 {/* Card header */}
                 <div className="flex items-center gap-4 p-4 border-b border-brand-accent">
-                  <span className="text-5xl shrink-0">{team.flag}</span>
+                  <FlagImg code={team.flag} size="lg" className="shrink-0" />
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-2">
                       <h3

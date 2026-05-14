@@ -5,6 +5,7 @@ import {
   Heart, ArrowRight, Globe,
 } from "lucide-react";
 import AdBanner from "@/components/AdBanner";
+import FlagImg from "@/components/FlagImg";
 import FanPolls from "./FanPolls";
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ const fanStories = [
     id: 1,
     name: "Rafiq H.",
     location: "Dhaka, Bangladesh",
-    flag: "🇧🇩",
+    flag: "bd",
     team: "🇧🇷 Brazil",
     story:
       "I stayed up until 4am to watch Brazil vs Argentina in 2022. My whole neighbourhood was on the roof screaming. That's the magic of the World Cup — it doesn't matter if your country is playing. The game belongs to everyone.",
@@ -30,7 +31,7 @@ const fanStories = [
     id: 2,
     name: "Tanvir A.",
     location: "Chittagong, Bangladesh",
-    flag: "🇧🇩",
+    flag: "bd",
     team: "🇦🇷 Argentina",
     story:
       "When Messi lifted the trophy in Qatar I cried. I've been following him since 2006 and to finally see him win it — after all those near misses — was the most emotional moment of my life as a football fan.",
@@ -40,7 +41,7 @@ const fanStories = [
     id: 3,
     name: "Karim O.",
     location: "Casablanca, Morocco",
-    flag: "🇲🇦",
+    flag: "ma",
     team: "🇲🇦 Morocco",
     story:
       "2022 was a miracle. A semi-final! My grandfather was 80 and watching with us. He kept saying, 'I never thought I would live to see this.' In 2026 we go even further. We believe.",
@@ -50,7 +51,7 @@ const fanStories = [
     id: 4,
     name: "Priya S.",
     location: "Toronto, Canada",
-    flag: "🇨🇦",
+    flag: "ca",
     team: "🇨🇦 Canada",
     story:
       "Having the World Cup in Canada means everything to us. I'm taking my daughter to the Toronto matches — she's 7 and she'll grow up telling her own kids she was there for Canada's best ever World Cup. I just know it.",
@@ -60,7 +61,7 @@ const fanStories = [
     id: 5,
     name: "José M.",
     location: "Mexico City, Mexico",
-    flag: "🇲🇽",
+    flag: "mx",
     team: "🇲🇽 Mexico",
     story:
       "Every four years we go through the same heartbreak at the quinto partido. But this time it's different. It's at home. El Azteca will be electric. This is our year — I genuinely believe it for the first time in a long time.",
@@ -69,16 +70,16 @@ const fanStories = [
 ];
 
 const leaderboard = [
-  { rank: 1,  name: "FutbolGuru99",   country: "🇧🇩", points: 148, correct: 12 },
-  { rank: 2,  name: "GoalMachine",    country: "🇧🇷", points: 141, correct: 11 },
-  { rank: 3,  name: "TacticoLoco",    country: "🇲🇽", points: 137, correct: 11 },
-  { rank: 4,  name: "MessiForever",   country: "🇦🇷", points: 130, correct: 10 },
-  { rank: 5,  name: "ThreeLions2026", country: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", points: 122, correct: 10 },
-  { rank: 6,  name: "SambaSoul",      country: "🇧🇷", points: 118, correct: 9  },
-  { rank: 7,  name: "OranjeFan",      country: "🇳🇱", points: 115, correct: 9  },
-  { rank: 8,  name: "DhakaKicker",    country: "🇧🇩", points: 109, correct: 8  },
-  { rank: 9,  name: "AtlasLion",      country: "🇲🇦", points: 104, correct: 8  },
-  { rank: 10, name: "SamuraiBlue",    country: "🇯🇵", points: 97,  correct: 7  },
+  { rank: 1,  name: "FutbolGuru99",   country: "bd", points: 148, correct: 12 },
+  { rank: 2,  name: "GoalMachine",    country: "br", points: 141, correct: 11 },
+  { rank: 3,  name: "TacticoLoco",    country: "mx", points: 137, correct: 11 },
+  { rank: 4,  name: "MessiForever",   country: "ar", points: 130, correct: 10 },
+  { rank: 5,  name: "ThreeLions2026", country: "gb-eng", points: 122, correct: 10 },
+  { rank: 6,  name: "SambaSoul",      country: "br", points: 118, correct: 9  },
+  { rank: 7,  name: "OranjeFan",      country: "nl", points: 115, correct: 9  },
+  { rank: 8,  name: "DhakaKicker",    country: "bd", points: 109, correct: 8  },
+  { rank: 9,  name: "AtlasLion",      country: "ma", points: 104, correct: 8  },
+  { rank: 10, name: "SamuraiBlue",    country: "jp", points: 97,  correct: 7  },
 ];
 
 const watchGuide = {
@@ -195,8 +196,8 @@ export default function FanZonePage() {
             >
               {/* Header */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-brand-mid border border-brand-accent flex items-center justify-center text-xl shrink-0">
-                  {s.flag}
+                <div className="w-10 h-10 rounded-full bg-brand-mid border border-brand-accent flex items-center justify-center shrink-0 overflow-hidden">
+                  <FlagImg code={s.flag} size="sm" />
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-brand-white">{s.name}</p>

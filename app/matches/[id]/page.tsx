@@ -10,6 +10,7 @@ import {
   type Player,
 } from "@/lib/data";
 import AdBanner from "@/components/AdBanner";
+import FlagImg from "@/components/FlagImg";
 import JsonLd from "@/components/JsonLd";
 import MatchPoll from "./MatchPoll";
 
@@ -202,7 +203,7 @@ export default async function MatchPreviewPage({
         {/* Teams */}
         <div className="flex items-center justify-center gap-4 sm:gap-10 mb-6">
           <Link href={`/teams/${home.id}`} className="flex flex-col items-center gap-2 group">
-            <span className="text-5xl sm:text-7xl">{home.flag}</span>
+            <FlagImg code={home.flag} size="xl" />
             <span className="text-sm sm:text-lg font-bold text-brand-white group-hover:text-brand-yellow transition-colors"
               style={{ fontFamily: "var(--font-oswald)" }}>{home.name}</span>
           </Link>
@@ -232,7 +233,7 @@ export default async function MatchPreviewPage({
           </div>
 
           <Link href={`/teams/${away.id}`} className="flex flex-col items-center gap-2 group">
-            <span className="text-5xl sm:text-7xl">{away.flag}</span>
+            <FlagImg code={away.flag} size="xl" />
             <span className="text-sm sm:text-lg font-bold text-brand-white group-hover:text-brand-yellow transition-colors"
               style={{ fontFamily: "var(--font-oswald)" }}>{away.name}</span>
           </Link>
@@ -266,7 +267,7 @@ export default async function MatchPreviewPage({
                 ].map(({ team, form }) => (
                   <div key={team.id} className="rounded-xl border border-brand-accent bg-brand-blue p-4">
                     <p className="text-xs text-brand-muted mb-3 flex items-center gap-2">
-                      <span className="text-lg">{team.flag}</span>
+                      <FlagImg code={team.flag} size="xs" />
                       <span className="font-medium text-brand-white">{team.shortName}</span>
                       <span>— Recent form</span>
                     </p>
@@ -400,7 +401,7 @@ export default async function MatchPreviewPage({
             {[home, away].map((t) => (
               <Link key={t.id} href={`/teams/${t.id}`}
                 className="flex items-center gap-3 p-2 rounded-lg hover:bg-brand-accent transition-colors group">
-                <span className="text-2xl">{t.flag}</span>
+                <FlagImg code={t.flag} size="sm" />
                 <div>
                   <p className="text-sm font-medium text-brand-white group-hover:text-brand-yellow transition-colors">{t.name}</p>
                   <p className="text-[11px] text-brand-muted">FIFA #{t.fifaRank} · {t.formation}</p>
@@ -435,7 +436,7 @@ export default async function MatchPreviewPage({
 function PlayerChip({ player, team, side }: { player: Player; team: Team; side: "left" | "right" }) {
   return (
     <div className={`flex-1 flex items-center gap-2 ${side === "right" ? "flex-row-reverse text-right" : ""}`}>
-      <span className="text-2xl shrink-0">{team.flag}</span>
+      <FlagImg code={team.flag} size="sm" className="shrink-0" />
       <div className="min-w-0">
         <p className="text-sm font-semibold text-brand-white truncate">{player.name}</p>
         <p className="text-[11px] text-brand-muted truncate">{player.club}</p>

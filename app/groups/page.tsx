@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import { groups, getTeamById, getStandingsSorted } from "@/lib/data";
 import AdBanner from "@/components/AdBanner";
+import FlagImg from "@/components/FlagImg";
 
 export const metadata: Metadata = {
   title: "Groups",
@@ -110,7 +111,7 @@ export default function GroupsPage() {
                     >
                       <span className={`w-1 h-4 rounded-sm ${qual.color}`} />
                       <span className="flex items-center gap-1.5 min-w-0">
-                        <span className="text-sm">{team.flag}</span>
+                        <FlagImg code={team.flag} size="xs" />
                         <span className="text-xs font-medium text-brand-white truncate">
                           {team.code}
                         </span>
@@ -141,7 +142,7 @@ export default function GroupsPage() {
                         href={`/teams/${id}`}
                         className="flex items-center gap-1 text-xs text-brand-muted hover:text-brand-yellow transition-colors"
                       >
-                        <span>{t.flag}</span>
+                        <FlagImg code={t.flag} size="xs" />
                         <span>{t.shortName}</span>
                       </Link>
                     ) : null;
