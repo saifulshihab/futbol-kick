@@ -1,4 +1,3 @@
-import AdBanner from "@/components/AdBanner";
 import FlagImg from "@/components/FlagImg";
 import JsonLd from "@/components/JsonLd";
 import MatchCard from "@/components/MatchCard";

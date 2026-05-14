@@ -1,14 +1,13 @@
+import FlagImg from "@/components/FlagImg";
+import { getStandingsSorted, getTeamById, groups } from "@/lib/data";
+import { ArrowRight, TrendingUp } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, TrendingUp } from "lucide-react";
-import { groups, getTeamById, getStandingsSorted } from "@/lib/data";
-import AdBanner from "@/components/AdBanner";
-import FlagImg from "@/components/FlagImg";
 
 export const metadata: Metadata = {
   title: "Groups",
   description:
-    "All FIFA World Cup 2026 groups A–F — standings, teams, and fixtures for every group in the tournament.",
+    "All FIFA World Cup 2026 groups A–F — standings, teams, and fixtures for every group in the tournament."
 };
 
 function qualificationLabel(idx: number) {
@@ -19,19 +18,19 @@ function qualificationLabel(idx: number) {
 
 export default function GroupsPage() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       {/* Page header */}
       <div className="mb-8">
-        <p className="text-xs text-brand-yellow uppercase tracking-widest mb-1">
+        <p className="text-brand-yellow mb-1 text-xs tracking-widest uppercase">
           FIFA World Cup 2026
         </p>
         <h1
-          className="text-3xl sm:text-4xl font-bold text-brand-white"
+          className="text-brand-white text-3xl font-bold sm:text-4xl"
           style={{ fontFamily: "var(--font-oswald)" }}
         >
           Group Stage
         </h1>
-        <p className="text-brand-muted text-sm mt-2">
+        <p className="text-brand-muted mt-2 text-sm">
           6 groups · 24 teams · Top 2 from each group advance
         </p>
       </div>
@@ -39,20 +38,23 @@ export default function GroupsPage() {
       {/* <AdBanner size="leaderboard" className="mb-8" /> */}
 
       {/* Qualification key */}
-      <div className="flex flex-wrap items-center gap-4 mb-6 text-xs text-brand-muted">
+      <div className="text-brand-muted mb-6 flex flex-wrap items-center gap-4 text-xs">
         <span className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded-sm bg-green-600 inline-block" /> 1st — Advances
+          <span className="inline-block h-3 w-3 rounded-sm bg-green-600" /> 1st
+          — Advances
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded-sm bg-blue-600 inline-block" /> 2nd — Advances
+          <span className="inline-block h-3 w-3 rounded-sm bg-blue-600" /> 2nd —
+          Advances
         </span>
         <span className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded-sm bg-brand-accent inline-block" /> Eliminated
+          <span className="bg-brand-accent inline-block h-3 w-3 rounded-sm" />{" "}
+          Eliminated
         </span>
       </div>
 
       {/* Group cards grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
         {groups.map((group) => {
           const sorted = getStandingsSorted(group);
           const playedGames = sorted.some((s) => s.played > 0);
@@ -60,19 +62,19 @@ export default function GroupsPage() {
           return (
             <div
               key={group.id}
-              className="rounded-xl border border-brand-accent bg-brand-blue hover:border-brand-yellow transition-colors group overflow-hidden"
+              className="border-brand-accent bg-brand-blue hover:border-brand-yellow group overflow-hidden rounded-xl border transition-colors"
             >
               {/* Card header */}
-              <div className="flex items-center justify-between px-4 py-3 bg-brand-mid border-b border-brand-accent">
+              <div className="bg-brand-mid border-brand-accent flex items-center justify-between border-b px-4 py-3">
                 <div className="flex items-center gap-2">
                   <span
-                    className="text-xl font-bold text-brand-yellow"
+                    className="text-brand-yellow text-xl font-bold"
                     style={{ fontFamily: "var(--font-oswald)" }}
                   >
                     Group {group.id}
                   </span>
                   {playedGames && (
-                    <span className="flex items-center gap-1 text-[10px] text-brand-muted">
+                    <span className="text-brand-muted flex items-center gap-1 text-[10px]">
                       <TrendingUp size={10} className="text-green-500" />
                       Live standings
                     </span>
@@ -80,7 +82,7 @@ export default function GroupsPage() {
                 </div>
                 <Link
                   href={`/groups/${group.id}`}
-                  className="flex items-center gap-1 text-xs text-brand-yellow hover:underline"
+                  className="text-brand-yellow flex items-center gap-1 text-xs hover:underline"
                 >
                   Full table <ArrowRight size={11} />
                 </Link>
@@ -89,7 +91,7 @@ export default function GroupsPage() {
               {/* Standings mini-table */}
               <div className="px-4 pt-3 pb-1">
                 {/* Table header */}
-                <div className="grid grid-cols-[16px_1fr_24px_24px_24px_24px_28px] gap-x-2 text-[10px] font-bold text-brand-muted uppercase tracking-wider px-1 mb-1">
+                <div className="text-brand-muted mb-1 grid grid-cols-[16px_1fr_24px_24px_24px_24px_28px] gap-x-2 px-1 text-[10px] font-bold tracking-wider uppercase">
                   <span />
                   <span>Team</span>
                   <span className="text-center">P</span>
@@ -107,21 +109,29 @@ export default function GroupsPage() {
                     <Link
                       key={s.teamId}
                       href={`/teams/${team.id}`}
-                      className="grid grid-cols-[16px_1fr_24px_24px_24px_24px_28px] gap-x-2 items-center px-1 py-1.5 rounded hover:bg-brand-accent transition-colors"
+                      className="hover:bg-brand-accent grid grid-cols-[16px_1fr_24px_24px_24px_24px_28px] items-center gap-x-2 rounded px-1 py-1.5 transition-colors"
                     >
-                      <span className={`w-1 h-4 rounded-sm ${qual.color}`} />
-                      <span className="flex items-center gap-1.5 min-w-0">
+                      <span className={`h-4 w-1 rounded-sm ${qual.color}`} />
+                      <span className="flex min-w-0 items-center gap-1.5">
                         <FlagImg code={team.flag} size="xs" />
-                        <span className="text-xs font-medium text-brand-white truncate">
+                        <span className="text-brand-white truncate text-xs font-medium">
                           {team.code}
                         </span>
                       </span>
-                      <span className="text-xs text-brand-muted text-center">{s.played}</span>
-                      <span className="text-xs text-brand-muted text-center">{s.won}</span>
-                      <span className="text-xs text-brand-muted text-center">{s.drawn}</span>
-                      <span className="text-xs text-brand-muted text-center">{s.lost}</span>
+                      <span className="text-brand-muted text-center text-xs">
+                        {s.played}
+                      </span>
+                      <span className="text-brand-muted text-center text-xs">
+                        {s.won}
+                      </span>
+                      <span className="text-brand-muted text-center text-xs">
+                        {s.drawn}
+                      </span>
+                      <span className="text-brand-muted text-center text-xs">
+                        {s.lost}
+                      </span>
                       <span
-                        className="text-xs font-bold text-brand-white text-center"
+                        className="text-brand-white text-center text-xs font-bold"
                         style={{ fontFamily: "var(--font-oswald)" }}
                       >
                         {s.points}
@@ -132,15 +142,15 @@ export default function GroupsPage() {
               </div>
 
               {/* Card footer */}
-              <div className="px-4 py-3 border-t border-brand-accent mt-1">
-                <div className="flex items-center gap-2 flex-wrap">
+              <div className="border-brand-accent mt-1 border-t px-4 py-3">
+                <div className="flex flex-wrap items-center gap-2">
                   {group.teamIds.map((id) => {
                     const t = getTeamById(id);
                     return t ? (
                       <Link
                         key={id}
                         href={`/teams/${id}`}
-                        className="flex items-center gap-1 text-xs text-brand-muted hover:text-brand-yellow transition-colors"
+                        className="text-brand-muted hover:text-brand-yellow flex items-center gap-1 text-xs transition-colors"
                       >
                         <FlagImg code={t.flag} size="xs" />
                         <span>{t.shortName}</span>

@@ -1,33 +1,32 @@
-import type { Metadata } from "next";
-import { teams } from "@/lib/data";
-import TeamsClient from "./TeamsClient";
-import AdBanner from "@/components/AdBanner";
 import FlagImg from "@/components/FlagImg";
+import { teams } from "@/lib/data";
+import type { Metadata } from "next";
+import TeamsClient from "./TeamsClient";
 
 export const metadata: Metadata = {
   title: "Teams",
   description:
-    "All 24 FIFA World Cup 2026 teams — squad lists, coaches, formations, FIFA rankings, and World Cup history for every nation.",
+    "All 24 FIFA World Cup 2026 teams — squad lists, coaches, formations, FIFA rankings, and World Cup history for every nation."
 };
 
 export default function TeamsPage() {
-  const byRank   = [...teams].sort((a, b) => a.fifaRank - b.fifaRank);
-  const top5     = byRank.slice(0, 5);
+  const byRank = [...teams].sort((a, b) => a.fifaRank - b.fifaRank);
+  const top5 = byRank.slice(0, 5);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       {/* Page header */}
       <div className="mb-8">
-        <p className="text-xs text-brand-yellow uppercase tracking-widest mb-1">
+        <p className="text-brand-yellow mb-1 text-xs tracking-widest uppercase">
           FIFA World Cup 2026
         </p>
         <h1
-          className="text-3xl sm:text-4xl font-bold text-brand-white"
+          className="text-brand-white text-3xl font-bold sm:text-4xl"
           style={{ fontFamily: "var(--font-oswald)" }}
         >
           Team Profiles
         </h1>
-        <p className="text-brand-muted text-sm mt-2">
+        <p className="text-brand-muted mt-2 text-sm">
           {teams.length} teams · 6 groups · Browse by rank, group, or name
         </p>
       </div>
@@ -37,21 +36,25 @@ export default function TeamsPage() {
       {/* Top favourites strip */}
       <div className="mb-8">
         <p
-          className="text-xs font-bold text-brand-yellow uppercase tracking-widest mb-3"
+          className="text-brand-yellow mb-3 text-xs font-bold tracking-widest uppercase"
           style={{ fontFamily: "var(--font-oswald)" }}
         >
           Top Favourites
         </p>
-        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+        <div className="scrollbar-hide flex gap-3 overflow-x-auto pb-2">
           {top5.map((t, i) => (
             <a
               key={t.id}
               href={`/teams/${t.id}`}
-              className="flex flex-col items-center gap-2 p-3 rounded-xl border border-brand-accent bg-brand-blue hover:border-brand-yellow transition-colors shrink-0 min-w-[90px] group"
+              className="border-brand-accent bg-brand-blue hover:border-brand-yellow group flex min-w-[90px] shrink-0 flex-col items-center gap-2 rounded-xl border p-3 transition-colors"
             >
               <FlagImg code={t.flag} size="md" />
-              <span className="text-[10px] font-bold text-brand-muted uppercase">{t.code}</span>
-              <span className="text-[9px] text-brand-yellow font-bold">#{t.fifaRank}</span>
+              <span className="text-brand-muted text-[10px] font-bold uppercase">
+                {t.code}
+              </span>
+              <span className="text-brand-yellow text-[9px] font-bold">
+                #{t.fifaRank}
+              </span>
             </a>
           ))}
         </div>
