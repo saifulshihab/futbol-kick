@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-// Opening match: USA vs Poland, SoFi Stadium, June 11 2026 16:00 PDT (UTC-7)
-const OPENING = new Date("2026-06-11T23:00:00Z");
+// Opening match: Mexico vs South Africa, June 11 2026 15:00 UTC
+const OPENING = new Date("2026-06-11T15:00:00Z");
 
 interface TimeLeft {
   days: number;

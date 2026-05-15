@@ -139,7 +139,7 @@ export default function HomePage() {
             </p>
             <CountdownTimer />
             <p className="text-brand-muted text-xs">
-              Opening match · June 11, 2026 · Los Angeles
+              Opening match · June 11, 2026 · Mexico City
             </p>
           </div>
 
