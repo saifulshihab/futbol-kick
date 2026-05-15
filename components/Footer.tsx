@@ -1,4 +1,5 @@
-import { Globe, MessageCircle, Play, Share2, Trophy } from "lucide-react";
+import { Globe, MessageCircle, Play, Share2 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const tournamentLinks = [
@@ -43,9 +44,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="mb-4 flex items-center gap-2">
-              <div className="bg-brand-lime flex h-8 w-8 items-center justify-center rounded-full">
-                <Trophy size={15} className="text-brand-navy" />
-              </div>
+              <Image
+                src="/images/logo.png"
+                alt="FutbolKick logo"
+                width={32}
+                height={32}
+                className="rounded-full"
+              />
               <span
                 className="text-brand-white text-lg font-bold"
                 style={{ fontFamily: "var(--font-oswald)" }}

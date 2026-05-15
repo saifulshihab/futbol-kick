@@ -1,6 +1,7 @@
 "use client";
 
-import { Menu, Trophy, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -30,9 +31,13 @@ export default function Header() {
               className="flex shrink-0 items-center gap-2"
               aria-label="FutbolKick home"
             >
-              <div className="bg-brand-lime flex h-9 w-9 items-center justify-center rounded-full">
-                <Trophy size={18} className="text-brand-navy" />
-              </div>
+              <Image
+                src="/images/logo.png"
+                alt="FutbolKick logo"
+                width={36}
+                height={36}
+                className="rounded-full"
+              />
               <span
                 className="text-brand-white text-xl font-bold tracking-wide"
                 style={{ fontFamily: "var(--font-oswald)" }}
