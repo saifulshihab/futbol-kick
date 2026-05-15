@@ -1,11 +1,23 @@
 import FlagImg from "@/components/FlagImg";
 import { Fixture, getTeamById } from "@/lib/data";
-import { Clock, MapPin } from "lucide-react";
+import { Clock, MapPin, Shield } from "lucide-react";
 import Link from "next/link";
 
 interface MatchCardProps {
   fixture: Fixture;
   compact?: boolean;
+}
+
+function TbdFlag({ size }: { size: "sm" | "md" }) {
+  const px = size === "sm" ? 32 : 40;
+  return (
+    <div
+      className="border-brand-accent bg-brand-navy flex items-center justify-center rounded-full border"
+      style={{ width: px, height: px }}
+    >
+      <Shield size={px * 0.5} className="text-brand-muted" />
+    </div>
+  );
 }
 
 export default function MatchCard({
@@ -14,7 +26,6 @@ export default function MatchCard({
 }: MatchCardProps) {
   const home = getTeamById(fixture.homeTeamId);
   const away = getTeamById(fixture.awayTeamId);
-  if (!home || !away) return null;
 
   const isLive = fixture.status === "live";
   const isCompleted = fixture.status === "completed";
@@ -49,11 +60,11 @@ export default function MatchCard({
       <div className="flex items-center justify-between gap-2">
         {/* Home */}
         <div className="flex flex-1 flex-col items-center gap-1">
-          <FlagImg code={home.flag} size="sm" />
+          {home ? <FlagImg code={home.flag} size="sm" /> : <TbdFlag size="sm" />}
           <span
             className={`text-brand-white group-hover:text-brand-lime text-center font-semibold transition-colors ${compact ? "text-xs" : "text-sm"}`}
           >
-            {home.shortName}
+            {home?.shortName ?? "TBD"}
           </span>
         </div>
 
@@ -83,11 +94,11 @@ export default function MatchCard({
 
         {/* Away */}
         <div className="flex flex-1 flex-col items-center gap-1">
-          <FlagImg code={away.flag} size="sm" />
+          {away ? <FlagImg code={away.flag} size="sm" /> : <TbdFlag size="sm" />}
           <span
             className={`text-brand-white group-hover:text-brand-lime text-center font-semibold transition-colors ${compact ? "text-xs" : "text-sm"}`}
           >
-            {away.shortName}
+            {away?.shortName ?? "TBD"}
           </span>
         </div>
       </div>

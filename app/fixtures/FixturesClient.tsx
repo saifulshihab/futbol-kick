@@ -1,28 +1,108 @@
 "use client";
 
 import MatchCard from "@/components/MatchCard";
-import { Fixture, Team, getTeamById } from "@/lib/data";
-import { Calendar, CheckCircle, Filter, Radio, Search, X } from "lucide-react";
-import { useMemo, useState } from "react";
+import { Fixture, getTeamById } from "@/lib/data";
+import {
+  Calendar,
+  CheckCircle,
+  ChevronDown,
+  Filter,
+  Radio,
+  Search,
+  X
+} from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type Tab = "upcoming" | "completed";
 
-const GROUPS = ["A", "B", "C", "D", "E", "F"];
+const GROUPS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
 const STAGES = [
   { value: "group", label: "Group Stage" },
   { value: "round-of-32", label: "Round of 32" },
   { value: "round-of-16", label: "Round of 16" },
   { value: "quarter-final", label: "Quarter-Final" },
   { value: "semi-final", label: "Semi-Final" },
+  { value: "third-place", label: "Third-Place Play-off" },
   { value: "final", label: "Final" }
 ];
 
-interface Props {
-  fixtures: Fixture[];
-  teams: Team[];
+function CustomSelect({
+  value,
+  onChange,
+  options,
+  placeholder
+}: {
+  value: string;
+  onChange: (v: string) => void;
+  options: { value: string; label: string }[];
+  placeholder: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handler(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node))
+        setOpen(false);
+    }
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  const selected = options.find((o) => o.value === value);
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className={`bg-brand-navy border-brand-accent text-brand-white flex w-full items-center justify-between rounded-lg border px-3 py-2 text-sm transition-colors ${open ? "border-brand-lime" : "hover:border-brand-lime"}`}
+      >
+        <span>{selected?.label ?? placeholder}</span>
+        <ChevronDown
+          size={14}
+          className={`text-brand-muted transition-transform ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+      {open && (
+        <div
+          className="border-brand-accent bg-brand-navy absolute top-full left-0 z-50 mt-1 w-full overflow-auto rounded-lg border"
+          style={{ maxHeight: 500 }}
+        >
+          <button
+            type="button"
+            onClick={() => {
+              onChange("");
+              setOpen(false);
+            }}
+            className={`text-brand-muted hover:bg-brand-accent hover:text-brand-white w-full px-3 py-2 text-left text-sm transition-colors ${value === "" ? "text-brand-lime" : ""}`}
+          >
+            {placeholder}
+          </button>
+          {options.map((o) => (
+            <button
+              key={o.value}
+              type="button"
+              onClick={() => {
+                onChange(o.value);
+                setOpen(false);
+              }}
+              className={`hover:bg-brand-accent w-full px-3 py-2 text-left text-sm transition-colors ${value === o.value ? "text-brand-lime bg-brand-accent" : "text-brand-white hover:text-brand-lime"}`}
+            >
+              {o.label}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 }
 
-export default function FixturesClient({ fixtures, teams }: Props) {
+interface Props {
+  fixtures: Fixture[];
+}
+
+export default function FixturesClient({ fixtures }: Props) {
   const [tab, setTab] = useState<Tab>("upcoming");
   const [group, setGroup] = useState("");
   const [stage, setStage] = useState("");
@@ -118,32 +198,20 @@ export default function FixturesClient({ fixtures, teams }: Props) {
           </div>
 
           {/* Group */}
-          <select
+          <CustomSelect
             value={group}
-            onChange={(e) => setGroup(e.target.value)}
-            className="bg-brand-navy border-brand-accent text-brand-white focus:border-brand-lime rounded-lg border px-3 py-2 text-sm transition-colors focus:outline-none"
-          >
-            <option value="">All Groups</option>
-            {GROUPS.map((g) => (
-              <option key={g} value={g}>
-                Group {g}
-              </option>
-            ))}
-          </select>
+            onChange={setGroup}
+            placeholder="All Groups"
+            options={GROUPS.map((g) => ({ value: g, label: `Group ${g}` }))}
+          />
 
           {/* Stage */}
-          <select
+          <CustomSelect
             value={stage}
-            onChange={(e) => setStage(e.target.value)}
-            className="bg-brand-navy border-brand-accent text-brand-white focus:border-brand-lime rounded-lg border px-3 py-2 text-sm transition-colors focus:outline-none"
-          >
-            <option value="">All Stages</option>
-            {STAGES.map((s) => (
-              <option key={s.value} value={s.value}>
-                {s.label}
-              </option>
-            ))}
-          </select>
+            onChange={setStage}
+            placeholder="All Stages"
+            options={STAGES}
+          />
         </div>
 
         {/* Active filter chips */}

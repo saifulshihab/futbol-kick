@@ -1,5 +1,5 @@
 import FlagImg from "@/components/FlagImg";
-import { fixtures, getTeamById, groups, teams } from "@/lib/data";
+import { fixtures, getTeamById, groups } from "@/lib/data";
 import type { Metadata } from "next";
 import Link from "next/link";
 import FixturesClient from "./FixturesClient";
@@ -50,7 +50,7 @@ export default function FixturesPage() {
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_280px]">
         {/* ── Main: interactive fixtures list ── */}
-        <FixturesClient fixtures={fixtures} teams={teams} />
+        <FixturesClient fixtures={fixtures} />
 
         {/* ── Sidebar ───────────────────────── */}
         <aside className="space-y-6">
