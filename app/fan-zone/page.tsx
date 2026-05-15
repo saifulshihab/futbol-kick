@@ -136,8 +136,8 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-6 flex items-start gap-3">
-      <div className="bg-brand-yellow/10 border-brand-yellow/30 mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border">
-        <Icon size={18} className="text-brand-yellow" />
+      <div className="bg-brand-lime/10 border-brand-lime/30 mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border">
+        <Icon size={18} className="text-brand-lime" />
       </div>
       <div>
         <h2
@@ -166,9 +166,9 @@ export default function FanZonePage() {
             "linear-gradient(135deg, #0d2137 0%, #1a3a5c 50%, #0d2137 100%)"
         }}
       >
-        <div className="bg-brand-yellow/5 pointer-events-none absolute -top-20 -right-20 h-72 w-72 rounded-full" />
+        <div className="bg-brand-lime/5 pointer-events-none absolute -top-20 -right-20 h-72 w-72 rounded-full" />
         <div className="bg-brand-red/5 pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full" />
-        <span className="text-brand-yellow border-brand-yellow/40 mb-4 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-bold tracking-widest uppercase">
+        <span className="text-brand-lime border-brand-lime/40 mb-4 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-bold tracking-widest uppercase">
           <Users size={12} /> Community Hub
         </span>
         <h1
@@ -230,7 +230,7 @@ export default function FanZonePage() {
               </div>
 
               {/* Story */}
-              <blockquote className="text-brand-muted border-brand-yellow/40 flex-1 border-l-2 pl-3 text-sm leading-relaxed italic">
+              <blockquote className="text-brand-muted border-brand-lime/40 flex-1 border-l-2 pl-3 text-sm leading-relaxed italic">
                 &ldquo;{s.story}&rdquo;
               </blockquote>
 
@@ -254,7 +254,7 @@ export default function FanZonePage() {
           />
           <Link
             href="/predictions"
-            className="text-brand-yellow mt-1 hidden shrink-0 items-center gap-1 text-sm font-semibold hover:underline sm:flex"
+            className="text-brand-lime mt-1 hidden shrink-0 items-center gap-1 text-sm font-semibold hover:underline sm:flex"
           >
             Join & predict <ArrowRight size={14} />
           </Link>
@@ -273,9 +273,7 @@ export default function FanZonePage() {
             <div
               key={entry.rank}
               className={`border-brand-accent grid grid-cols-[40px_1fr_80px_80px] items-center gap-2 border-b px-4 py-3 last:border-0 ${
-                entry.rank <= 3
-                  ? "bg-brand-yellow/5"
-                  : "hover:bg-brand-accent/40"
+                entry.rank <= 3 ? "bg-brand-lime/5" : "hover:bg-brand-accent/40"
               } transition-colors`}
             >
               {/* Rank */}
@@ -284,7 +282,7 @@ export default function FanZonePage() {
                   <span
                     className={`text-brand-navy flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold ${
                       entry.rank === 1
-                        ? "bg-yellow-400"
+                        ? "bg-brand-lime"
                         : entry.rank === 2
                           ? "bg-gray-300"
                           : "bg-amber-600"
@@ -303,7 +301,7 @@ export default function FanZonePage() {
               <div className="flex min-w-0 items-center gap-2">
                 <span className="shrink-0 text-base">{entry.country}</span>
                 <span
-                  className={`truncate text-sm font-semibold ${entry.rank <= 3 ? "text-brand-yellow" : "text-brand-white"}`}
+                  className={`truncate text-sm font-semibold ${entry.rank <= 3 ? "text-brand-lime" : "text-brand-white"}`}
                 >
                   {entry.name}
                 </span>
@@ -317,7 +315,7 @@ export default function FanZonePage() {
               {/* Points */}
               <div className="text-center">
                 <span
-                  className={`text-sm font-bold ${entry.rank <= 3 ? "text-brand-yellow" : "text-brand-white"}`}
+                  className={`text-sm font-bold ${entry.rank <= 3 ? "text-brand-lime" : "text-brand-white"}`}
                   style={{ fontFamily: "var(--font-oswald)" }}
                 >
                   {entry.points}
@@ -330,7 +328,7 @@ export default function FanZonePage() {
         <div className="mt-4 flex justify-center">
           <Link
             href="/predictions"
-            className="bg-brand-yellow text-brand-navy inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition-colors hover:bg-yellow-400"
+            className="bg-brand-lime text-brand-navy hover:bg-brand-lime/80 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition-colors"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
             Join the Prediction League <ArrowRight size={15} />
@@ -356,7 +354,7 @@ export default function FanZonePage() {
             >
               <div className="mb-3 flex items-center gap-3">
                 <div className="bg-brand-accent flex h-8 w-8 shrink-0 items-center justify-center rounded-lg">
-                  <sec.icon size={16} className="text-brand-yellow" />
+                  <sec.icon size={16} className="text-brand-lime" />
                 </div>
                 <h3
                   className="text-brand-white text-base font-bold"
@@ -373,12 +371,12 @@ export default function FanZonePage() {
         </div>
 
         {/* Dhaka hotspots */}
-        <div className="border-brand-yellow/30 bg-brand-blue mt-6 rounded-xl border p-5">
+        <div className="border-brand-lime/30 bg-brand-blue mt-6 rounded-xl border p-5">
           <h3
             className="text-brand-white mb-4 flex items-center gap-2 text-base font-bold"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
-            <MapPin size={16} className="text-brand-yellow" />
+            <MapPin size={16} className="text-brand-lime" />
             Popular Watch-Party Areas in Dhaka
           </h3>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
@@ -400,7 +398,7 @@ export default function FanZonePage() {
                 key={spot.area}
                 className="bg-brand-mid border-brand-accent rounded-lg border p-3"
               >
-                <p className="text-brand-yellow mb-1 text-sm font-semibold">
+                <p className="text-brand-lime mb-1 text-sm font-semibold">
                   {spot.area}
                 </p>
                 <p className="text-brand-muted text-xs leading-relaxed">
@@ -433,14 +431,14 @@ export default function FanZonePage() {
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
             href="/fixtures"
-            className="bg-brand-yellow text-brand-navy inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition-colors hover:bg-yellow-400"
+            className="bg-brand-lime text-brand-navy hover:bg-brand-lime/80 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition-colors"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
             View Fixtures <ArrowRight size={15} />
           </Link>
           <Link
             href="/predictions"
-            className="border-brand-white/30 text-brand-white hover:border-brand-yellow hover:text-brand-yellow inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-medium transition-colors"
+            className="border-brand-white/30 text-brand-white hover:border-brand-lime hover:text-brand-lime inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-sm font-medium transition-colors"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
             Predict Results

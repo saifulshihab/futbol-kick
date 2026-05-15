@@ -32,7 +32,7 @@ export async function generateMetadata({
 const categoryColors: Record<NewsPost["category"], string> = {
   News: "bg-blue-600",
   Analysis: "bg-purple-600",
-  Player: "bg-brand-yellow text-brand-navy",
+  Player: "bg-brand-lime text-brand-navy",
   Tactics: "bg-green-700",
   Fan: "bg-brand-red"
 };
@@ -105,7 +105,7 @@ export default async function ArticlePage({
         <nav className="text-brand-muted mb-6 flex items-center gap-1 text-xs">
           <Link
             href="/news"
-            className="hover:text-brand-yellow transition-colors"
+            className="hover:text-brand-lime transition-colors"
           >
             News
           </Link>
@@ -150,7 +150,7 @@ export default async function ArticlePage({
             </h1>
 
             {/* Excerpt */}
-            <p className="text-brand-muted border-brand-yellow mb-8 border-l-4 pl-4 text-base leading-relaxed italic">
+            <p className="text-brand-muted border-brand-lime mb-8 border-l-4 pl-4 text-base leading-relaxed italic">
               {post.excerpt}
             </p>
 
@@ -169,7 +169,7 @@ export default async function ArticlePage({
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="border-brand-accent text-brand-muted hover:border-brand-yellow hover:text-brand-yellow rounded-full border px-2.5 py-1 text-xs transition-colors"
+                  className="border-brand-accent text-brand-muted hover:border-brand-lime hover:text-brand-lime rounded-full border px-2.5 py-1 text-xs transition-colors"
                 >
                   {tag}
                 </span>
@@ -184,17 +184,17 @@ export default async function ArticlePage({
               {prevPost ? (
                 <Link
                   href={`/news/${prevPost.slug}`}
-                  className="border-brand-accent hover:border-brand-yellow group flex items-start gap-3 rounded-xl border p-4 transition-colors"
+                  className="border-brand-accent hover:border-brand-lime group flex items-start gap-3 rounded-xl border p-4 transition-colors"
                 >
                   <ArrowLeft
                     size={16}
-                    className="text-brand-muted group-hover:text-brand-yellow mt-0.5 shrink-0 transition-colors"
+                    className="text-brand-muted group-hover:text-brand-lime mt-0.5 shrink-0 transition-colors"
                   />
                   <div className="min-w-0">
                     <p className="text-brand-muted mb-1 text-[10px] tracking-wide uppercase">
                       Previous
                     </p>
-                    <p className="text-brand-white group-hover:text-brand-yellow line-clamp-2 text-xs leading-snug font-medium transition-colors">
+                    <p className="text-brand-white group-hover:text-brand-lime line-clamp-2 text-xs leading-snug font-medium transition-colors">
                       {prevPost.title}
                     </p>
                   </div>
@@ -206,19 +206,19 @@ export default async function ArticlePage({
               {nextPost ? (
                 <Link
                   href={`/news/${nextPost.slug}`}
-                  className="border-brand-accent hover:border-brand-yellow group col-start-2 flex items-start gap-3 rounded-xl border p-4 text-right transition-colors"
+                  className="border-brand-accent hover:border-brand-lime group col-start-2 flex items-start gap-3 rounded-xl border p-4 text-right transition-colors"
                 >
                   <div className="min-w-0 flex-1">
                     <p className="text-brand-muted mb-1 text-[10px] tracking-wide uppercase">
                       Next
                     </p>
-                    <p className="text-brand-white group-hover:text-brand-yellow line-clamp-2 text-xs leading-snug font-medium transition-colors">
+                    <p className="text-brand-white group-hover:text-brand-lime line-clamp-2 text-xs leading-snug font-medium transition-colors">
                       {nextPost.title}
                     </p>
                   </div>
                   <ArrowRight
                     size={16}
-                    className="text-brand-muted group-hover:text-brand-yellow mt-0.5 shrink-0 transition-colors"
+                    className="text-brand-muted group-hover:text-brand-lime mt-0.5 shrink-0 transition-colors"
                   />
                 </Link>
               ) : (
@@ -235,7 +235,7 @@ export default async function ArticlePage({
             {related.length > 0 && (
               <div className="border-brand-accent bg-brand-blue rounded-xl border p-4">
                 <h3
-                  className="text-brand-yellow mb-4 text-sm font-bold tracking-widest uppercase"
+                  className="text-brand-lime mb-4 text-sm font-bold tracking-widest uppercase"
                   style={{ fontFamily: "var(--font-oswald)" }}
                 >
                   Related Articles
@@ -256,7 +256,7 @@ export default async function ArticlePage({
                         >
                           {rp.category}
                         </span>
-                        <p className="text-brand-white group-hover:text-brand-yellow line-clamp-2 text-xs leading-snug font-medium transition-colors">
+                        <p className="text-brand-white group-hover:text-brand-lime line-clamp-2 text-xs leading-snug font-medium transition-colors">
                           {rp.title}
                         </p>
                         <p className="text-brand-muted mt-1 text-[11px]">
@@ -272,7 +272,7 @@ export default async function ArticlePage({
             {/* All posts link */}
             <div className="border-brand-accent bg-brand-blue rounded-xl border p-4">
               <h3
-                className="text-brand-yellow mb-3 text-sm font-bold tracking-widest uppercase"
+                className="text-brand-lime mb-3 text-sm font-bold tracking-widest uppercase"
                 style={{ fontFamily: "var(--font-oswald)" }}
               >
                 Browse All News
@@ -287,7 +287,7 @@ export default async function ArticlePage({
                       href={`/news/${p.slug}`}
                       className="border-brand-accent group flex items-start gap-2 border-b py-2 last:border-0"
                     >
-                      <span className="text-brand-yellow mt-0.5 shrink-0 text-xs">
+                      <span className="text-brand-lime mt-0.5 shrink-0 text-xs">
                         ▸
                       </span>
                       <p className="text-brand-muted group-hover:text-brand-white line-clamp-2 text-xs leading-snug transition-colors">
@@ -297,7 +297,7 @@ export default async function ArticlePage({
                   ))}
                 <Link
                   href="/news"
-                  className="text-brand-yellow flex items-center gap-1 pt-1 text-xs font-semibold hover:underline"
+                  className="text-brand-lime flex items-center gap-1 pt-1 text-xs font-semibold hover:underline"
                 >
                   View all articles <ArrowRight size={11} />
                 </Link>

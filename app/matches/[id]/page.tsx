@@ -60,7 +60,7 @@ function syntheticForm(team: Team): string[] {
 
 function formColor(r: string) {
   if (r === "W") return "bg-green-600 text-white";
-  if (r === "D") return "bg-brand-yellow text-brand-navy";
+  if (r === "D") return "bg-brand-lime text-brand-navy";
   return "bg-brand-red text-white";
 }
 
@@ -210,7 +210,7 @@ export default async function MatchPreviewPage({
         <nav className="text-brand-muted mb-6 flex items-center gap-1 text-xs">
           <Link
             href="/fixtures"
-            className="hover:text-brand-yellow transition-colors"
+            className="hover:text-brand-lime transition-colors"
           >
             Fixtures
           </Link>
@@ -232,12 +232,12 @@ export default async function MatchPreviewPage({
             className="pointer-events-none absolute inset-0 opacity-5"
             style={{
               backgroundImage:
-                "radial-gradient(circle, #f5c518 1px, transparent 1px)",
+                "radial-gradient(circle, #e8ff00 1px, transparent 1px)",
               backgroundSize: "32px 32px"
             }}
           />
 
-          <p className="text-brand-yellow mb-4 text-xs tracking-widest uppercase">
+          <p className="text-brand-lime mb-4 text-xs tracking-widest uppercase">
             {stageLabel}
           </p>
 
@@ -249,7 +249,7 @@ export default async function MatchPreviewPage({
             >
               <FlagImg code={home.flag} size="xl" />
               <span
-                className="text-brand-white group-hover:text-brand-yellow text-sm font-bold transition-colors sm:text-lg"
+                className="text-brand-white group-hover:text-brand-lime text-sm font-bold transition-colors sm:text-lg"
                 style={{ fontFamily: "var(--font-oswald)" }}
               >
                 {home.name}
@@ -278,7 +278,7 @@ export default async function MatchPreviewPage({
               ) : (
                 <>
                   <span
-                    className="text-brand-yellow text-2xl font-bold sm:text-4xl"
+                    className="text-brand-lime text-2xl font-bold sm:text-4xl"
                     style={{ fontFamily: "var(--font-oswald)" }}
                   >
                     VS
@@ -296,7 +296,7 @@ export default async function MatchPreviewPage({
             >
               <FlagImg code={away.flag} size="xl" />
               <span
-                className="text-brand-white group-hover:text-brand-yellow text-sm font-bold transition-colors sm:text-lg"
+                className="text-brand-white group-hover:text-brand-lime text-sm font-bold transition-colors sm:text-lg"
                 style={{ fontFamily: "var(--font-oswald)" }}
               >
                 {away.name}
@@ -323,7 +323,7 @@ export default async function MatchPreviewPage({
             {/* 1. Quick Stats */}
             <section>
               <div className="mb-5 flex items-center gap-2">
-                <TrendingUp size={18} className="text-brand-yellow" />
+                <TrendingUp size={18} className="text-brand-lime" />
                 <h2
                   className="text-brand-white text-xl font-bold uppercase"
                   style={{ fontFamily: "var(--font-oswald)" }}
@@ -367,7 +367,7 @@ export default async function MatchPreviewPage({
                 {/* H2H */}
                 <div className="border-brand-accent bg-brand-blue rounded-xl border p-4 sm:col-span-3">
                   <p
-                    className="text-brand-yellow mb-4 text-xs font-bold tracking-widest uppercase"
+                    className="text-brand-lime mb-4 text-xs font-bold tracking-widest uppercase"
                     style={{ fontFamily: "var(--font-oswald)" }}
                   >
                     Head to Head
@@ -386,7 +386,7 @@ export default async function MatchPreviewPage({
                     </div>
                     <div className="flex-1 text-center">
                       <span
-                        className="text-brand-yellow text-3xl font-bold"
+                        className="text-brand-lime text-3xl font-bold"
                         style={{ fontFamily: "var(--font-oswald)" }}
                       >
                         {h2h.draws}
@@ -414,7 +414,7 @@ export default async function MatchPreviewPage({
                       }}
                     />
                     <div
-                      className="bg-brand-yellow transition-all"
+                      className="bg-brand-lime transition-all"
                       style={{
                         width: `${(h2h.draws / (h2h.homeWins + h2h.draws + h2h.awayWins)) * 100}%`
                       }}
@@ -435,7 +435,7 @@ export default async function MatchPreviewPage({
             {/* 2. Key Battles */}
             <section>
               <div className="mb-5 flex items-center gap-2">
-                <Swords size={18} className="text-brand-yellow" />
+                <Swords size={18} className="text-brand-lime" />
                 <h2
                   className="text-brand-white text-xl font-bold uppercase"
                   style={{ fontFamily: "var(--font-oswald)" }}
@@ -449,7 +449,7 @@ export default async function MatchPreviewPage({
                     key={i}
                     className="border-brand-accent bg-brand-blue rounded-xl border p-4"
                   >
-                    <p className="text-brand-yellow mb-3 text-[11px] font-bold tracking-widest uppercase">
+                    <p className="text-brand-lime mb-3 text-[11px] font-bold tracking-widest uppercase">
                       {battle.label}
                     </p>
                     <div className="flex items-center gap-3">
@@ -481,7 +481,7 @@ export default async function MatchPreviewPage({
             {prediction && (
               <section>
                 <div className="mb-5 flex items-center gap-2">
-                  <AlignLeft size={18} className="text-brand-yellow" />
+                  <AlignLeft size={18} className="text-brand-lime" />
                   <h2
                     className="text-brand-white text-xl font-bold uppercase"
                     style={{ fontFamily: "var(--font-oswald)" }}
@@ -495,7 +495,7 @@ export default async function MatchPreviewPage({
                       Predicted score
                     </span>
                     <span
-                      className="text-brand-yellow bg-brand-accent rounded-lg px-3 py-1 text-lg font-bold"
+                      className="text-brand-lime bg-brand-accent rounded-lg px-3 py-1 text-lg font-bold"
                       style={{ fontFamily: "var(--font-oswald)" }}
                     >
                       {prediction.score}
@@ -523,7 +523,7 @@ export default async function MatchPreviewPage({
             {/* Match info */}
             <div className="border-brand-accent bg-brand-blue space-y-3 rounded-xl border p-4">
               <h3
-                className="text-brand-yellow text-sm font-bold tracking-widest uppercase"
+                className="text-brand-lime text-sm font-bold tracking-widest uppercase"
                 style={{ fontFamily: "var(--font-oswald)" }}
               >
                 Match Info
@@ -547,7 +547,7 @@ export default async function MatchPreviewPage({
             {/* Team links */}
             <div className="border-brand-accent bg-brand-blue space-y-2 rounded-xl border p-4">
               <h3
-                className="text-brand-yellow mb-3 text-sm font-bold tracking-widest uppercase"
+                className="text-brand-lime mb-3 text-sm font-bold tracking-widest uppercase"
                 style={{ fontFamily: "var(--font-oswald)" }}
               >
                 Team Profiles
@@ -560,7 +560,7 @@ export default async function MatchPreviewPage({
                 >
                   <FlagImg code={t.flag} size="sm" />
                   <div>
-                    <p className="text-brand-white group-hover:text-brand-yellow text-sm font-medium transition-colors">
+                    <p className="text-brand-white group-hover:text-brand-lime text-sm font-medium transition-colors">
                       {t.name}
                     </p>
                     <p className="text-brand-muted text-[11px]">
@@ -575,10 +575,10 @@ export default async function MatchPreviewPage({
             {fixture.group && (
               <Link
                 href={`/groups/${fixture.group}`}
-                className="border-brand-accent bg-brand-blue hover:border-brand-yellow group flex items-center justify-between rounded-xl border p-4 transition-colors"
+                className="border-brand-accent bg-brand-blue hover:border-brand-lime group flex items-center justify-between rounded-xl border p-4 transition-colors"
               >
                 <div>
-                  <p className="text-brand-white group-hover:text-brand-yellow text-sm font-bold transition-colors">
+                  <p className="text-brand-white group-hover:text-brand-lime text-sm font-bold transition-colors">
                     View Group {fixture.group}
                   </p>
                   <p className="text-brand-muted mt-0.5 text-xs">
@@ -587,7 +587,7 @@ export default async function MatchPreviewPage({
                 </div>
                 <ChevronRight
                   size={16}
-                  className="text-brand-muted group-hover:text-brand-yellow transition-colors"
+                  className="text-brand-muted group-hover:text-brand-lime transition-colors"
                 />
               </Link>
             )}

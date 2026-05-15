@@ -30,7 +30,7 @@ export default function FixturesPage() {
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       {/* Page header */}
       <div className="mb-8">
-        <p className="text-brand-yellow mb-1 text-xs tracking-widest uppercase">
+        <p className="text-brand-lime mb-1 text-xs tracking-widest uppercase">
           FIFA World Cup 2026
         </p>
         <h1
@@ -57,7 +57,7 @@ export default function FixturesPage() {
           {/* Group quick-links */}
           <div className="border-brand-accent bg-brand-blue rounded-xl border p-4">
             <h3
-              className="text-brand-yellow mb-4 text-sm font-bold tracking-widest uppercase"
+              className="text-brand-lime mb-4 text-sm font-bold tracking-widest uppercase"
               style={{ fontFamily: "var(--font-oswald)" }}
             >
               Browse by Group
@@ -71,10 +71,10 @@ export default function FixturesPage() {
                   <Link
                     key={g.id}
                     href={`/groups/${g.id}`}
-                    className="border-brand-accent hover:border-brand-yellow hover:bg-brand-accent group flex flex-col items-center gap-1 rounded-lg border p-3 transition-colors"
+                    className="border-brand-accent hover:border-brand-lime hover:bg-brand-accent group flex flex-col items-center gap-1 rounded-lg border p-3 transition-colors"
                   >
                     <span
-                      className="text-brand-white group-hover:text-brand-yellow text-lg font-bold transition-colors"
+                      className="text-brand-white group-hover:text-brand-lime text-lg font-bold transition-colors"
                       style={{ fontFamily: "var(--font-oswald)" }}
                     >
                       {g.id}
@@ -94,7 +94,7 @@ export default function FixturesPage() {
           {/* Top scorers */}
           <div className="border-brand-accent bg-brand-blue rounded-xl border p-4">
             <h3
-              className="text-brand-yellow mb-4 text-sm font-bold tracking-widest uppercase"
+              className="text-brand-lime mb-4 text-sm font-bold tracking-widest uppercase"
               style={{ fontFamily: "var(--font-oswald)" }}
             >
               Top Scorers
@@ -111,7 +111,7 @@ export default function FixturesPage() {
                       {s.name}
                     </p>
                   </div>
-                  <span className="bg-brand-accent text-brand-yellow flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold">
+                  <span className="bg-brand-accent text-brand-lime flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold">
                     {s.goals}
                   </span>
                 </div>
@@ -125,7 +125,7 @@ export default function FixturesPage() {
           {/* Most watched */}
           <div className="border-brand-accent bg-brand-blue rounded-xl border p-4">
             <h3
-              className="text-brand-yellow mb-4 text-sm font-bold tracking-widest uppercase"
+              className="text-brand-lime mb-4 text-sm font-bold tracking-widest uppercase"
               style={{ fontFamily: "var(--font-oswald)" }}
             >
               Goal Fests
@@ -142,7 +142,7 @@ export default function FixturesPage() {
                     href={`/matches/${f.id}`}
                     className="hover:bg-brand-accent group flex items-center justify-between gap-2 rounded-lg p-2 transition-colors"
                   >
-                    <div className="text-brand-white group-hover:text-brand-yellow flex min-w-0 items-center gap-1 text-sm transition-colors">
+                    <div className="text-brand-white group-hover:text-brand-lime flex min-w-0 items-center gap-1 text-sm transition-colors">
                       <FlagImg code={home.flag} size="xs" />
                       <span className="truncate">
                         {home.code} {f.homeScore}–{f.awayScore} {away.code}

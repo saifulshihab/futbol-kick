@@ -51,9 +51,9 @@ export default function PredictionsPage() {
             "linear-gradient(135deg, #0d2137 0%, #1a3a5c 50%, #0d2137 100%)"
         }}
       >
-        <div className="bg-brand-yellow/5 pointer-events-none absolute -top-16 -right-16 h-56 w-56 rounded-full" />
+        <div className="bg-brand-lime/5 pointer-events-none absolute -top-16 -right-16 h-56 w-56 rounded-full" />
         <div className="bg-brand-red/5 pointer-events-none absolute -bottom-12 -left-12 h-44 w-44 rounded-full" />
-        <span className="text-brand-yellow border-brand-yellow/40 mb-4 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-bold tracking-widest uppercase">
+        <span className="text-brand-lime border-brand-lime/40 mb-4 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-bold tracking-widest uppercase">
           <Trophy size={12} /> Prediction League
         </span>
         <h1
@@ -73,7 +73,7 @@ export default function PredictionsPage() {
       {/* How it works */}
       <div className="mb-10">
         <p
-          className="text-brand-yellow mb-4 text-center text-xs font-bold tracking-widest uppercase"
+          className="text-brand-lime mb-4 text-center text-xs font-bold tracking-widest uppercase"
           style={{ fontFamily: "var(--font-oswald)" }}
         >
           How It Works
@@ -84,8 +84,8 @@ export default function PredictionsPage() {
               key={label}
               className="border-brand-accent bg-brand-blue flex flex-col items-center gap-2 rounded-xl border p-4 text-center"
             >
-              <div className="bg-brand-yellow/10 border-brand-yellow/30 flex h-10 w-10 items-center justify-center rounded-xl border">
-                <Icon size={18} className="text-brand-yellow" />
+              <div className="bg-brand-lime/10 border-brand-lime/30 flex h-10 w-10 items-center justify-center rounded-xl border">
+                <Icon size={18} className="text-brand-lime" />
               </div>
               <p
                 className="text-brand-white text-sm font-bold"
@@ -102,7 +102,7 @@ export default function PredictionsPage() {
       {/* Scoring system */}
       <div className="border-brand-accent bg-brand-blue mb-10 rounded-xl border p-4">
         <p
-          className="text-brand-yellow mb-3 text-xs font-bold tracking-widest uppercase"
+          className="text-brand-lime mb-3 text-xs font-bold tracking-widest uppercase"
           style={{ fontFamily: "var(--font-oswald)" }}
         >
           Scoring System
@@ -111,7 +111,7 @@ export default function PredictionsPage() {
           {SCORING.map(({ points, label }) => (
             <div key={label} className="flex items-center gap-2 text-sm">
               <span
-                className="bg-brand-yellow text-brand-navy flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold"
+                className="bg-brand-lime text-brand-navy flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold"
                 style={{ fontFamily: "var(--font-oswald)" }}
               >
                 +{points}
@@ -139,7 +139,7 @@ export default function PredictionsPage() {
         </div>
         <Link
           href="/fan-zone"
-          className="bg-brand-yellow text-brand-navy inline-flex shrink-0 items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition-colors hover:bg-yellow-400"
+          className="bg-brand-lime text-brand-navy hover:bg-brand-lime/80 inline-flex shrink-0 items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition-colors"
           style={{ fontFamily: "var(--font-poppins)" }}
         >
           Fan Zone <ArrowRight size={14} />

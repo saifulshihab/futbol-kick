@@ -21,7 +21,7 @@ export default function GroupsPage() {
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       {/* Page header */}
       <div className="mb-8">
-        <p className="text-brand-yellow mb-1 text-xs tracking-widest uppercase">
+        <p className="text-brand-lime mb-1 text-xs tracking-widest uppercase">
           FIFA World Cup 2026
         </p>
         <h1
@@ -62,13 +62,13 @@ export default function GroupsPage() {
           return (
             <div
               key={group.id}
-              className="border-brand-accent bg-brand-blue hover:border-brand-yellow group overflow-hidden rounded-xl border transition-colors"
+              className="border-brand-accent bg-brand-blue hover:border-brand-lime group overflow-hidden rounded-xl border transition-colors"
             >
               {/* Card header */}
               <div className="bg-brand-mid border-brand-accent flex items-center justify-between border-b px-4 py-3">
                 <div className="flex items-center gap-2">
                   <span
-                    className="text-brand-yellow text-xl font-bold"
+                    className="text-brand-lime text-xl font-bold"
                     style={{ fontFamily: "var(--font-oswald)" }}
                   >
                     Group {group.id}
@@ -82,7 +82,7 @@ export default function GroupsPage() {
                 </div>
                 <Link
                   href={`/groups/${group.id}`}
-                  className="text-brand-yellow flex items-center gap-1 text-xs hover:underline"
+                  className="text-brand-lime flex items-center gap-1 text-xs hover:underline"
                 >
                   Full table <ArrowRight size={11} />
                 </Link>
@@ -150,7 +150,7 @@ export default function GroupsPage() {
                       <Link
                         key={id}
                         href={`/teams/${id}`}
-                        className="text-brand-muted hover:text-brand-yellow flex items-center gap-1 text-xs transition-colors"
+                        className="text-brand-muted hover:text-brand-lime flex items-center gap-1 text-xs transition-colors"
                       >
                         <FlagImg code={t.flag} size="xs" />
                         <span>{t.shortName}</span>

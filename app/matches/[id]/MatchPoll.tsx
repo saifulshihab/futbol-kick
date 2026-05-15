@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { CheckCircle } from "lucide-react";
+import { useState } from "react";
 
 interface Option {
   label: string;
@@ -9,19 +9,19 @@ interface Option {
 }
 
 const INITIAL: Option[] = [
-  { label: "Home Win",  votes: 142 },
-  { label: "Draw",      votes:  88 },
-  { label: "Away Win",  votes: 106 },
+  { label: "Home Win", votes: 142 },
+  { label: "Draw", votes: 88 },
+  { label: "Away Win", votes: 106 }
 ];
 
 export default function MatchPoll({
   homeTeam,
-  awayTeam,
+  awayTeam
 }: {
   homeTeam: string;
   awayTeam: string;
 }) {
-  const [options,  setOptions]  = useState<Option[]>(INITIAL);
+  const [options, setOptions] = useState<Option[]>(INITIAL);
   const [selected, setSelected] = useState<number | null>(null);
 
   const total = options.reduce((s, o) => s + o.votes, 0);
@@ -30,35 +30,29 @@ export default function MatchPoll({
     if (selected !== null) return;
     setSelected(idx);
     setOptions((prev) =>
-      prev.map((o, i) => (i === idx ? { ...o, votes: o.votes + 1 } : o)),
+      prev.map((o, i) => (i === idx ? { ...o, votes: o.votes + 1 } : o))
     );
   }
 
-  const labels = [
-    `${homeTeam} Win`,
-    "Draw",
-    `${awayTeam} Win`,
-  ];
+  const labels = [`${homeTeam} Win`, "Draw", `${awayTeam} Win`];
 
-  const barColors = [
-    "bg-blue-500",
-    "bg-brand-yellow",
-    "bg-brand-red",
-  ];
+  const barColors = ["bg-blue-500", "bg-brand-lime", "bg-brand-red"];
 
   return (
-    <div className="rounded-xl border border-brand-yellow/30 bg-brand-blue p-5">
-      <p className="text-xs font-bold text-brand-yellow uppercase tracking-widest mb-1"
-        style={{ fontFamily: "var(--font-oswald)" }}>
+    <div className="border-brand-lime/30 bg-brand-blue rounded-xl border p-5">
+      <p
+        className="text-brand-lime mb-1 text-xs font-bold tracking-widest uppercase"
+        style={{ fontFamily: "var(--font-oswald)" }}
+      >
         Fan Poll
       </p>
-      <p className="text-base font-semibold text-brand-white mb-5">
+      <p className="text-brand-white mb-5 text-base font-semibold">
         How will this match end?
       </p>
 
       <div className="space-y-3">
         {options.map((opt, idx) => {
-          const pct     = total > 0 ? Math.round((opt.votes / total) * 100) : 0;
+          const pct = total > 0 ? Math.round((opt.votes / total) * 100) : 0;
           const isVoted = selected === idx;
           const hasVoted = selected !== null;
 
@@ -67,12 +61,12 @@ export default function MatchPoll({
               key={idx}
               onClick={() => vote(idx)}
               disabled={hasVoted}
-              className={`w-full text-left rounded-lg border transition-all overflow-hidden group ${
+              className={`group w-full overflow-hidden rounded-lg border text-left transition-all ${
                 isVoted
-                  ? "border-brand-yellow"
+                  ? "border-brand-lime"
                   : hasVoted
-                  ? "border-brand-accent opacity-70"
-                  : "border-brand-accent hover:border-brand-yellow cursor-pointer"
+                    ? "border-brand-accent opacity-70"
+                    : "border-brand-accent hover:border-brand-lime cursor-pointer"
               }`}
             >
               <div className="relative px-4 py-3">
@@ -84,13 +78,20 @@ export default function MatchPoll({
                   />
                 )}
                 <div className="relative flex items-center justify-between gap-2">
-                  <span className="flex items-center gap-2 text-sm font-medium text-brand-white">
-                    {isVoted && <CheckCircle size={14} className="text-brand-yellow shrink-0" />}
+                  <span className="text-brand-white flex items-center gap-2 text-sm font-medium">
+                    {isVoted && (
+                      <CheckCircle
+                        size={14}
+                        className="text-brand-lime shrink-0"
+                      />
+                    )}
                     {labels[idx]}
                   </span>
                   {hasVoted && (
-                    <span className={`text-sm font-bold ${isVoted ? "text-brand-yellow" : "text-brand-muted"}`}
-                      style={{ fontFamily: "var(--font-oswald)" }}>
+                    <span
+                      className={`text-sm font-bold ${isVoted ? "text-brand-lime" : "text-brand-muted"}`}
+                      style={{ fontFamily: "var(--font-oswald)" }}
+                    >
                       {pct}%
                     </span>
                   )}
@@ -101,7 +102,7 @@ export default function MatchPoll({
         })}
       </div>
 
-      <p className="text-[11px] text-brand-muted mt-4 text-center">
+      <p className="text-brand-muted mt-4 text-center text-[11px]">
         {total.toLocaleString()} votes · Click to cast yours
       </p>
     </div>

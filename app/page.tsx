@@ -35,20 +35,20 @@ function QuickLink({
   return (
     <Link
       href={href}
-      className="border-brand-accent bg-brand-blue hover:border-brand-yellow hover:bg-brand-accent group flex items-center gap-3 rounded-lg border p-3 transition-colors"
+      className="border-brand-accent bg-brand-blue hover:border-brand-lime hover:bg-brand-accent group flex items-center gap-3 rounded-lg border p-3 transition-colors"
     >
-      <div className="bg-brand-accent group-hover:bg-brand-yellow/20 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors">
-        <Icon size={18} className="text-brand-yellow" />
+      <div className="bg-brand-accent group-hover:bg-brand-lime/20 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors">
+        <Icon size={18} className="text-brand-lime" />
       </div>
       <div className="min-w-0">
-        <p className="text-brand-white group-hover:text-brand-yellow text-sm font-semibold transition-colors">
+        <p className="text-brand-white group-hover:text-brand-lime text-sm font-semibold transition-colors">
           {label}
         </p>
         <p className="text-brand-muted truncate text-[11px]">{sub}</p>
       </div>
       <ChevronRight
         size={14}
-        className="text-brand-muted group-hover:text-brand-yellow ml-auto shrink-0 transition-colors"
+        className="text-brand-muted group-hover:text-brand-lime ml-auto shrink-0 transition-colors"
       />
     </Link>
   );
@@ -75,7 +75,7 @@ function SectionHeading({
       {href && (
         <Link
           href={href}
-          className="text-brand-yellow flex items-center gap-1 text-xs font-medium hover:underline"
+          className="text-brand-lime flex items-center gap-1 text-xs font-medium hover:underline"
         >
           {linkLabel} <ArrowRight size={12} />
         </Link>
@@ -107,12 +107,12 @@ export default function HomePage() {
         }}
       >
         {/* Decorative circles */}
-        <div className="bg-brand-yellow/5 pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full" />
+        <div className="bg-brand-lime/5 pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full" />
         <div className="bg-brand-red/5 pointer-events-none absolute -bottom-20 -left-20 h-72 w-72 rounded-full" />
 
         <div className="relative mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 md:py-28">
           {/* Badge */}
-          <span className="text-brand-yellow border-brand-yellow/40 mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-bold tracking-widest uppercase">
+          <span className="text-brand-lime border-brand-lime/40 mb-6 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-bold tracking-widest uppercase">
             <Zap size={12} />
             FIFA World Cup 2026 · USA · Canada · Mexico
           </span>
@@ -122,7 +122,7 @@ export default function HomePage() {
             style={{ fontFamily: "var(--font-oswald)" }}
           >
             The World&apos;s Greatest{" "}
-            <span className="text-brand-yellow">Stage</span>
+            <span className="text-brand-lime">Stage</span>
           </h1>
           <p
             className="text-brand-muted mx-auto mb-10 max-w-2xl text-base sm:text-lg"
@@ -147,14 +147,14 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/fixtures"
-              className="bg-brand-yellow text-brand-navy inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-colors hover:bg-yellow-400"
+              className="bg-brand-lime text-brand-navy hover:bg-brand-lime/80 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-colors"
               style={{ fontFamily: "var(--font-poppins)" }}
             >
               View Fixtures <ArrowRight size={16} />
             </Link>
             <Link
               href="/predictions"
-              className="border-brand-white/30 text-brand-white hover:border-brand-yellow hover:text-brand-yellow inline-flex items-center gap-2 rounded-full border px-6 py-3 text-sm font-medium transition-colors"
+              className="border-brand-white/30 text-brand-white hover:border-brand-lime hover:text-brand-lime inline-flex items-center gap-2 rounded-full border px-6 py-3 text-sm font-medium transition-colors"
               style={{ fontFamily: "var(--font-poppins)" }}
             >
               Predict the Winner
@@ -277,7 +277,7 @@ export default function HomePage() {
                       </span>
                       <FlagImg code={team.flag} size="sm" />
                       <div className="min-w-0 flex-1">
-                        <p className="text-brand-white group-hover:text-brand-yellow truncate text-sm font-medium transition-colors">
+                        <p className="text-brand-white group-hover:text-brand-lime truncate text-sm font-medium transition-colors">
                           {team.name}
                         </p>
                         <p className="text-brand-muted text-[11px]">
@@ -291,9 +291,9 @@ export default function HomePage() {
             </div>
 
             {/* Fan Poll */}
-            <div className="border-brand-yellow/30 bg-brand-blue rounded-xl border p-4">
+            <div className="border-brand-lime/30 bg-brand-blue rounded-xl border p-4">
               <div className="mb-4 flex items-center gap-2">
-                <Star size={16} className="text-brand-yellow" />
+                <Star size={16} className="text-brand-lime" />
                 <h3
                   className="text-brand-white text-base font-bold uppercase"
                   style={{ fontFamily: "var(--font-oswald)" }}
@@ -319,7 +319,7 @@ export default function HomePage() {
                     </div>
                     <div className="bg-brand-accent h-2 overflow-hidden rounded-full">
                       <div
-                        className="bg-brand-yellow h-full rounded-full"
+                        className="bg-brand-lime h-full rounded-full"
                         style={{ width: `${pct}%` }}
                       />
                     </div>
@@ -328,7 +328,7 @@ export default function HomePage() {
               </div>
               <Link
                 href="/fan-zone"
-                className="text-brand-yellow mt-4 flex w-full items-center justify-center gap-1 text-xs font-semibold hover:underline"
+                className="text-brand-lime mt-4 flex w-full items-center justify-center gap-1 text-xs font-semibold hover:underline"
               >
                 Vote in Fan Zone <ArrowRight size={12} />
               </Link>
@@ -342,7 +342,7 @@ export default function HomePage() {
                   <Link
                     key={g.id}
                     href={`/groups/${g.id}`}
-                    className="border-brand-accent text-brand-muted hover:border-brand-yellow hover:text-brand-yellow rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors"
+                    className="border-brand-accent text-brand-muted hover:border-brand-lime hover:text-brand-lime rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors"
                   >
                     Group {g.id}
                   </Link>
@@ -364,7 +364,7 @@ export default function HomePage() {
         }}
       >
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
-          <span className="text-brand-yellow mb-4 inline-block text-xs font-bold tracking-widest uppercase">
+          <span className="text-brand-lime mb-4 inline-block text-xs font-bold tracking-widest uppercase">
             Stay in the game
           </span>
           <h2
@@ -380,14 +380,14 @@ export default function HomePage() {
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/fan-zone"
-              className="bg-brand-yellow text-brand-navy inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-colors hover:bg-yellow-400"
+              className="bg-brand-lime text-brand-navy hover:bg-brand-lime/80 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-colors"
               style={{ fontFamily: "var(--font-poppins)" }}
             >
               Join the Fan Zone <ArrowRight size={16} />
             </Link>
             <Link
               href="/predictions"
-              className="border-brand-white/30 text-brand-white hover:border-brand-yellow hover:text-brand-yellow inline-flex items-center gap-2 rounded-full border px-6 py-3 text-sm font-medium transition-colors"
+              className="border-brand-white/30 text-brand-white hover:border-brand-lime hover:text-brand-lime inline-flex items-center gap-2 rounded-full border px-6 py-3 text-sm font-medium transition-colors"
               style={{ fontFamily: "var(--font-poppins)" }}
             >
               Prediction League

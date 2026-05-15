@@ -1,7 +1,10 @@
 // Renders plain-text article content with paragraph breaks and **bold** support.
 // No markdown library needed — keeps the bundle small.
 
-interface Segment { text: string; bold: boolean }
+interface Segment {
+  text: string;
+  bold: boolean;
+}
 
 function parseLine(line: string): Segment[] {
   const segments: Segment[] = [];
@@ -16,7 +19,7 @@ export default function ArticleContent({ content }: { content: string }) {
   const blocks = content.split(/\n\n+/);
 
   return (
-    <div className="space-y-5 text-brand-muted leading-relaxed text-[15px]">
+    <div className="text-brand-muted space-y-5 text-[15px] leading-relaxed">
       {blocks.map((block, bi) => {
         const trimmed = block.trim();
         if (!trimmed) return null;
@@ -26,7 +29,7 @@ export default function ArticleContent({ content }: { content: string }) {
           return (
             <h3
               key={bi}
-              className="text-base font-bold text-brand-white mt-6"
+              className="text-brand-white mt-6 text-base font-bold"
               style={{ fontFamily: "var(--font-poppins)" }}
             >
               {trimmed.replace(/\*\*/g, "")}
@@ -41,14 +44,19 @@ export default function ArticleContent({ content }: { content: string }) {
             <ul key={bi} className="space-y-2 pl-4">
               {items.map((item, ii) => (
                 <li key={ii} className="flex gap-2">
-                  <span className="text-brand-yellow mt-1 shrink-0">▸</span>
+                  <span className="text-brand-lime mt-1 shrink-0">▸</span>
                   <span>
                     {parseLine(item.slice(2)).map((seg, si) =>
                       seg.bold ? (
-                        <strong key={si} className="text-brand-white font-semibold">{seg.text}</strong>
+                        <strong
+                          key={si}
+                          className="text-brand-white font-semibold"
+                        >
+                          {seg.text}
+                        </strong>
                       ) : (
                         <span key={si}>{seg.text}</span>
-                      ),
+                      )
                     )}
                   </span>
                 </li>
@@ -62,10 +70,12 @@ export default function ArticleContent({ content }: { content: string }) {
           <p key={bi}>
             {parseLine(trimmed).map((seg, si) =>
               seg.bold ? (
-                <strong key={si} className="text-brand-white font-semibold">{seg.text}</strong>
+                <strong key={si} className="text-brand-white font-semibold">
+                  {seg.text}
+                </strong>
               ) : (
                 <span key={si}>{seg.text}</span>
-              ),
+              )
             )}
           </p>
         );

@@ -86,7 +86,7 @@ export default async function GroupDetailPage({
       <nav className="text-brand-muted mb-6 flex items-center gap-1 text-xs">
         <Link
           href="/groups"
-          className="hover:text-brand-yellow transition-colors"
+          className="hover:text-brand-lime transition-colors"
         >
           Groups
         </Link>
@@ -96,7 +96,7 @@ export default async function GroupDetailPage({
 
       {/* Page header */}
       <div className="mb-8">
-        <p className="text-brand-yellow mb-1 text-xs tracking-widest uppercase">
+        <p className="text-brand-lime mb-1 text-xs tracking-widest uppercase">
           Group Stage · Group {group.id}
         </p>
         <h1
@@ -112,7 +112,7 @@ export default async function GroupDetailPage({
               <Link
                 key={id}
                 href={`/teams/${id}`}
-                className="text-brand-muted hover:text-brand-yellow flex items-center gap-1.5 text-sm transition-colors"
+                className="text-brand-muted hover:text-brand-lime flex items-center gap-1.5 text-sm transition-colors"
               >
                 <FlagImg code={t.flag} size="xs" />
                 <span>{t.name}</span>
@@ -232,12 +232,12 @@ export default async function GroupDetailPage({
                   <Link
                     key={id}
                     href={`/teams/${id}`}
-                    className="border-brand-accent bg-brand-blue hover:border-brand-yellow group flex items-center gap-4 rounded-xl border p-4 transition-colors"
+                    className="border-brand-accent bg-brand-blue hover:border-brand-lime group flex items-center gap-4 rounded-xl border p-4 transition-colors"
                   >
                     <FlagImg code={team.flag} size="md" className="shrink-0" />
                     <div className="min-w-0 flex-1">
                       <p
-                        className="text-brand-white group-hover:text-brand-yellow text-base font-bold transition-colors"
+                        className="text-brand-white group-hover:text-brand-lime text-base font-bold transition-colors"
                         style={{ fontFamily: "var(--font-poppins)" }}
                       >
                         {team.name}
@@ -293,7 +293,7 @@ export default async function GroupDetailPage({
           {/* 4. Mini-analysis */}
           <section>
             <div className="mb-4 flex items-center gap-2">
-              <Info size={18} className="text-brand-yellow" />
+              <Info size={18} className="text-brand-lime" />
               <h2
                 className="text-brand-white text-xl font-bold uppercase"
                 style={{ fontFamily: "var(--font-oswald)" }}
@@ -339,7 +339,7 @@ export default async function GroupDetailPage({
           {/* Other groups */}
           <div className="border-brand-accent bg-brand-blue rounded-xl border p-4">
             <h3
-              className="text-brand-yellow mb-4 text-sm font-bold tracking-widest uppercase"
+              className="text-brand-lime mb-4 text-sm font-bold tracking-widest uppercase"
               style={{ fontFamily: "var(--font-oswald)" }}
             >
               Other Groups
@@ -356,14 +356,14 @@ export default async function GroupDetailPage({
                       href={`/groups/${g.id}`}
                       className="hover:bg-brand-accent group flex items-center justify-between rounded-lg p-2 transition-colors"
                     >
-                      <span className="text-brand-white group-hover:text-brand-yellow text-sm font-semibold transition-colors">
+                      <span className="text-brand-white group-hover:text-brand-lime text-sm font-semibold transition-colors">
                         Group {g.id}
                       </span>
                       {leaderTeam && (
                         <span className="text-brand-muted flex items-center gap-1 text-xs">
                           <FlagImg code={leaderTeam.flag} size="xs" />
                           <span>{leaderTeam.code}</span>
-                          <span className="text-brand-yellow ml-1 font-bold">
+                          <span className="text-brand-lime ml-1 font-bold">
                             {leader.points}pts
                           </span>
                         </span>
@@ -377,7 +377,7 @@ export default async function GroupDetailPage({
           {/* Group team flags */}
           <div className="border-brand-accent bg-brand-blue rounded-xl border p-4">
             <h3
-              className="text-brand-yellow mb-4 text-sm font-bold tracking-widest uppercase"
+              className="text-brand-lime mb-4 text-sm font-bold tracking-widest uppercase"
               style={{ fontFamily: "var(--font-oswald)" }}
             >
               Team Profiles
@@ -394,7 +394,7 @@ export default async function GroupDetailPage({
                   >
                     <FlagImg code={t.flag} size="sm" />
                     <div>
-                      <p className="text-brand-white group-hover:text-brand-yellow text-sm font-medium transition-colors">
+                      <p className="text-brand-white group-hover:text-brand-lime text-sm font-medium transition-colors">
                         {t.name}
                       </p>
                       <p className="text-brand-muted text-[11px]">

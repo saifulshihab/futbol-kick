@@ -1,40 +1,45 @@
-import Link from "next/link";
-import { MapPin, Clock } from "lucide-react";
-import { Fixture, getTeamById } from "@/lib/data";
 import FlagImg from "@/components/FlagImg";
+import { Fixture, getTeamById } from "@/lib/data";
+import { Clock, MapPin } from "lucide-react";
+import Link from "next/link";
 
 interface MatchCardProps {
   fixture: Fixture;
   compact?: boolean;
 }
 
-export default function MatchCard({ fixture, compact = false }: MatchCardProps) {
+export default function MatchCard({
+  fixture,
+  compact = false
+}: MatchCardProps) {
   const home = getTeamById(fixture.homeTeamId);
   const away = getTeamById(fixture.awayTeamId);
   if (!home || !away) return null;
 
-  const isLive      = fixture.status === "live";
+  const isLive = fixture.status === "live";
   const isCompleted = fixture.status === "completed";
 
   const dateLabel = new Date(fixture.date).toLocaleDateString("en-GB", {
     weekday: "short",
-    day:     "numeric",
-    month:   "short",
+    day: "numeric",
+    month: "short"
   });
 
   return (
     <Link
       href={`/matches/${fixture.id}`}
-      className={`block rounded-xl border border-brand-accent bg-brand-blue hover:border-brand-yellow transition-colors group ${compact ? "p-3" : "p-4"}`}
+      className={`border-brand-accent bg-brand-blue hover:border-brand-lime group block rounded-xl border transition-colors ${compact ? "p-3" : "p-4"}`}
     >
       {/* Stage / Group badge + live indicator */}
-      <div className="flex items-center justify-between mb-3">
-        <span className="text-[10px] font-semibold text-brand-muted uppercase tracking-widest">
-          {fixture.group ? `Group ${fixture.group} · MD${fixture.matchday}` : fixture.stage.replace(/-/g, " ")}
+      <div className="mb-3 flex items-center justify-between">
+        <span className="text-brand-muted text-[10px] font-semibold tracking-widest uppercase">
+          {fixture.group
+            ? `Group ${fixture.group} · MD${fixture.matchday}`
+            : fixture.stage.replace(/-/g, " ")}
         </span>
         {isLive && (
-          <span className="flex items-center gap-1 text-[10px] font-bold text-brand-navy bg-brand-red px-2 py-0.5 rounded-full animate-pulse">
-            <span className="w-1 h-1 rounded-full bg-white" />
+          <span className="text-brand-navy bg-brand-red flex animate-pulse items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold">
+            <span className="h-1 w-1 rounded-full bg-white" />
             LIVE {fixture.liveMinute}&apos;
           </span>
         )}
@@ -43,18 +48,20 @@ export default function MatchCard({ fixture, compact = false }: MatchCardProps) 
       {/* Teams row */}
       <div className="flex items-center justify-between gap-2">
         {/* Home */}
-        <div className="flex-1 flex flex-col items-center gap-1">
+        <div className="flex flex-1 flex-col items-center gap-1">
           <FlagImg code={home.flag} size="sm" />
-          <span className={`text-center font-semibold text-brand-white group-hover:text-brand-yellow transition-colors ${compact ? "text-xs" : "text-sm"}`}>
+          <span
+            className={`text-brand-white group-hover:text-brand-lime text-center font-semibold transition-colors ${compact ? "text-xs" : "text-sm"}`}
+          >
             {home.shortName}
           </span>
         </div>
 
         {/* Score / VS */}
-        <div className="flex flex-col items-center min-w-[64px]">
+        <div className="flex min-w-[64px] flex-col items-center">
           {isCompleted || isLive ? (
             <span
-              className="text-xl sm:text-2xl font-bold text-brand-white"
+              className="text-brand-white text-xl font-bold sm:text-2xl"
               style={{ fontFamily: "var(--font-oswald)" }}
             >
               {fixture.homeScore} – {fixture.awayScore}
@@ -62,20 +69,24 @@ export default function MatchCard({ fixture, compact = false }: MatchCardProps) 
           ) : (
             <>
               <span
-                className="text-base font-bold text-brand-yellow"
+                className="text-brand-lime text-base font-bold"
                 style={{ fontFamily: "var(--font-oswald)" }}
               >
                 VS
               </span>
-              <span className="text-xs text-brand-muted mt-0.5">{fixture.time}</span>
+              <span className="text-brand-muted mt-0.5 text-xs">
+                {fixture.time}
+              </span>
             </>
           )}
         </div>
 
         {/* Away */}
-        <div className="flex-1 flex flex-col items-center gap-1">
+        <div className="flex flex-1 flex-col items-center gap-1">
           <FlagImg code={away.flag} size="sm" />
-          <span className={`text-center font-semibold text-brand-white group-hover:text-brand-yellow transition-colors ${compact ? "text-xs" : "text-sm"}`}>
+          <span
+            className={`text-brand-white group-hover:text-brand-lime text-center font-semibold transition-colors ${compact ? "text-xs" : "text-sm"}`}
+          >
             {away.shortName}
           </span>
         </div>
@@ -83,7 +94,7 @@ export default function MatchCard({ fixture, compact = false }: MatchCardProps) 
 
       {/* Meta */}
       {!compact && (
-        <div className="flex items-center justify-center gap-3 mt-3 text-[11px] text-brand-muted">
+        <div className="text-brand-muted mt-3 flex items-center justify-center gap-3 text-[11px]">
           <span className="flex items-center gap-1">
             <Clock size={11} />
             {dateLabel}

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const categoryColors: Record<NewsPost["category"], string> = {
   News: "bg-blue-600",
   Analysis: "bg-purple-600",
-  Player: "bg-brand-yellow text-brand-navy",
+  Player: "bg-brand-lime text-brand-navy",
   Tactics: "bg-green-700",
   Fan: "bg-brand-red"
 };
@@ -38,7 +38,7 @@ function FeaturedCard({ post }: { post: NewsPost }) {
   return (
     <Link
       href={`/news/${post.slug}`}
-      className="group border-brand-accent hover:border-brand-yellow relative block overflow-hidden rounded-2xl border transition-colors"
+      className="group border-brand-accent hover:border-brand-lime relative block overflow-hidden rounded-2xl border transition-colors"
     >
       {/* Image area */}
       <div className="from-brand-mid to-brand-accent relative flex h-56 items-center justify-center bg-gradient-to-br sm:h-72">
@@ -49,7 +49,7 @@ function FeaturedCard({ post }: { post: NewsPost }) {
         >
           {post.category}
         </span>
-        <span className="text-brand-yellow border-brand-yellow/40 absolute top-4 right-4 rounded-full border px-2 py-0.5 text-[10px] font-semibold">
+        <span className="text-brand-lime border-brand-lime/40 absolute top-4 right-4 rounded-full border px-2 py-0.5 text-[10px] font-semibold">
           FEATURED
         </span>
       </div>
@@ -57,7 +57,7 @@ function FeaturedCard({ post }: { post: NewsPost }) {
       {/* Body */}
       <div className="p-5">
         <h2
-          className="text-brand-white group-hover:text-brand-yellow mb-2 text-xl leading-snug font-bold transition-colors sm:text-2xl"
+          className="text-brand-white group-hover:text-brand-lime mb-2 text-xl leading-snug font-bold transition-colors sm:text-2xl"
           style={{ fontFamily: "var(--font-poppins)" }}
         >
           {post.title}
@@ -77,7 +77,7 @@ function FeaturedCard({ post }: { post: NewsPost }) {
             </span>
             <span>{post.readTime} min read</span>
           </div>
-          <span className="text-brand-yellow flex items-center gap-1 text-xs font-semibold group-hover:underline">
+          <span className="text-brand-lime flex items-center gap-1 text-xs font-semibold group-hover:underline">
             Read more <ArrowRight size={12} />
           </span>
         </div>
@@ -91,7 +91,7 @@ function ListCard({ post }: { post: NewsPost }) {
   return (
     <Link
       href={`/news/${post.slug}`}
-      className="border-brand-accent bg-brand-blue hover:border-brand-yellow group flex gap-4 rounded-xl border p-4 transition-colors"
+      className="border-brand-accent bg-brand-blue hover:border-brand-lime group flex gap-4 rounded-xl border p-4 transition-colors"
     >
       {/* Thumbnail placeholder */}
       <div className="from-brand-mid to-brand-accent flex h-20 w-20 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br sm:h-24 sm:w-24">
@@ -104,7 +104,7 @@ function ListCard({ post }: { post: NewsPost }) {
           {post.category}
         </span>
         <h3
-          className="text-brand-white group-hover:text-brand-yellow mb-1 line-clamp-2 text-sm leading-snug font-semibold transition-colors"
+          className="text-brand-white group-hover:text-brand-lime mb-1 line-clamp-2 text-sm leading-snug font-semibold transition-colors"
           style={{ fontFamily: "var(--font-poppins)" }}
         >
           {post.title}
@@ -129,7 +129,7 @@ export default function NewsPage() {
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       {/* Page header */}
       <div className="mb-8">
-        <p className="text-brand-yellow mb-1 text-xs tracking-widest uppercase">
+        <p className="text-brand-lime mb-1 text-xs tracking-widest uppercase">
           FIFA World Cup 2026
         </p>
         <h1
@@ -153,7 +153,7 @@ export default function NewsPage() {
           {featured.length > 0 && (
             <section>
               <div className="mb-4 flex items-center gap-2">
-                <TrendingUp size={16} className="text-brand-yellow" />
+                <TrendingUp size={16} className="text-brand-lime" />
                 <h2
                   className="text-brand-white text-lg font-bold tracking-wide uppercase"
                   style={{ fontFamily: "var(--font-oswald)" }}
@@ -174,7 +174,7 @@ export default function NewsPage() {
           {/* All articles */}
           <section>
             <div className="mb-4 flex items-center gap-2">
-              <Filter size={15} className="text-brand-yellow" />
+              <Filter size={15} className="text-brand-lime" />
               <h2
                 className="text-brand-white text-lg font-bold tracking-wide uppercase"
                 style={{ fontFamily: "var(--font-oswald)" }}
@@ -199,9 +199,9 @@ export default function NewsPage() {
           {/* Trending */}
           <div className="border-brand-accent bg-brand-blue rounded-xl border p-4">
             <div className="mb-4 flex items-center gap-2">
-              <TrendingUp size={14} className="text-brand-yellow" />
+              <TrendingUp size={14} className="text-brand-lime" />
               <h3
-                className="text-brand-yellow text-sm font-bold tracking-widest uppercase"
+                className="text-brand-lime text-sm font-bold tracking-widest uppercase"
                 style={{ fontFamily: "var(--font-oswald)" }}
               >
                 Trending Today
@@ -220,7 +220,7 @@ export default function NewsPage() {
                   >
                     {i + 1}
                   </span>
-                  <p className="text-brand-white group-hover:text-brand-yellow text-xs leading-snug font-medium transition-colors">
+                  <p className="text-brand-white group-hover:text-brand-lime text-xs leading-snug font-medium transition-colors">
                     {post.title}
                   </p>
                 </Link>
@@ -231,7 +231,7 @@ export default function NewsPage() {
           {/* Categories */}
           <div className="border-brand-accent bg-brand-blue rounded-xl border p-4">
             <h3
-              className="text-brand-yellow mb-4 text-sm font-bold tracking-widest uppercase"
+              className="text-brand-lime mb-4 text-sm font-bold tracking-widest uppercase"
               style={{ fontFamily: "var(--font-oswald)" }}
             >
               Categories
@@ -262,7 +262,7 @@ export default function NewsPage() {
           {/* Most read */}
           <div className="border-brand-accent bg-brand-blue rounded-xl border p-4">
             <h3
-              className="text-brand-yellow mb-4 text-sm font-bold tracking-widest uppercase"
+              className="text-brand-lime mb-4 text-sm font-bold tracking-widest uppercase"
               style={{ fontFamily: "var(--font-oswald)" }}
             >
               Most Read
@@ -281,7 +281,7 @@ export default function NewsPage() {
                       <span className="text-lg opacity-50">⚽</span>
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="text-brand-white group-hover:text-brand-yellow line-clamp-2 text-xs leading-snug font-medium transition-colors">
+                      <p className="text-brand-white group-hover:text-brand-lime line-clamp-2 text-xs leading-snug font-medium transition-colors">
                         {post.title}
                       </p>
                       <p className="text-brand-muted mt-0.5 text-[11px]">

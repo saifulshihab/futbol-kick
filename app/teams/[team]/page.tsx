@@ -36,9 +36,9 @@ const positionColors: Record<
   { bg: string; text: string; border: string; label: string }
 > = {
   GK: {
-    bg: "bg-yellow-600/20",
-    text: "text-yellow-400",
-    border: "border-yellow-600/40",
+    bg: "bg-brand-lime/20",
+    text: "text-brand-lime",
+    border: "border-brand-lime/40",
     label: "Goalkeeper"
   },
   DEF: {
@@ -110,14 +110,14 @@ export default async function TeamDetailPage({
         <nav className="text-brand-muted mb-6 flex items-center gap-1 text-xs">
           <Link
             href="/teams"
-            className="hover:text-brand-yellow transition-colors"
+            className="hover:text-brand-lime transition-colors"
           >
             Teams
           </Link>
           <ChevronRight size={12} />
           <Link
             href={`/groups/${team.group}`}
-            className="hover:text-brand-yellow transition-colors"
+            className="hover:text-brand-lime transition-colors"
           >
             Group {team.group}
           </Link>
@@ -133,11 +133,11 @@ export default async function TeamDetailPage({
               "linear-gradient(135deg, #0d2137 0%, #1a3a5c 60%, #0d2137 100%)"
           }}
         >
-          <div className="bg-brand-yellow/5 pointer-events-none absolute -top-16 -right-16 h-64 w-64 rounded-full" />
+          <div className="bg-brand-lime/5 pointer-events-none absolute -top-16 -right-16 h-64 w-64 rounded-full" />
           <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
             <FlagImg code={team.flag} size="2xl" className="shrink-0" />
             <div className="flex-1">
-              <p className="text-brand-yellow mb-1 text-xs tracking-widest uppercase">
+              <p className="text-brand-lime mb-1 text-xs tracking-widest uppercase">
                 FIFA World Cup 2026 · Group {team.group}
               </p>
               <h1
@@ -149,9 +149,7 @@ export default async function TeamDetailPage({
               <div className="text-brand-muted flex flex-wrap gap-3 text-sm">
                 <span>
                   FIFA Rank{" "}
-                  <strong className="text-brand-yellow">
-                    #{team.fifaRank}
-                  </strong>
+                  <strong className="text-brand-lime">#{team.fifaRank}</strong>
                 </span>
                 <span>·</span>
                 <span>
@@ -204,7 +202,7 @@ export default async function TeamDetailPage({
             {/* 1. Squad */}
             <section>
               <div className="mb-5 flex items-center gap-2">
-                <Shield size={18} className="text-brand-yellow" />
+                <Shield size={18} className="text-brand-lime" />
                 <h2
                   className="text-brand-white text-xl font-bold uppercase"
                   style={{ fontFamily: "var(--font-oswald)" }}
@@ -244,7 +242,7 @@ export default async function TeamDetailPage({
                               <p className="text-brand-white flex items-center gap-1 truncate text-sm font-semibold">
                                 {player.name}
                                 {player.isCaptain && (
-                                  <span className="text-brand-yellow text-[10px] font-bold">
+                                  <span className="text-brand-lime text-[10px] font-bold">
                                     (C)
                                   </span>
                                 )}
@@ -272,7 +270,7 @@ export default async function TeamDetailPage({
             {/* 2. Tactics & Style */}
             <section>
               <div className="mb-5 flex items-center gap-2">
-                <Star size={18} className="text-brand-yellow" />
+                <Star size={18} className="text-brand-lime" />
                 <h2
                   className="text-brand-white text-xl font-bold uppercase"
                   style={{ fontFamily: "var(--font-oswald)" }}
@@ -284,7 +282,7 @@ export default async function TeamDetailPage({
                 <div className="flex items-center gap-4">
                   <div className="bg-brand-mid border-brand-accent flex flex-col items-center gap-1 rounded-lg border px-4 py-3">
                     <span
-                      className="text-brand-yellow text-2xl font-bold"
+                      className="text-brand-lime text-2xl font-bold"
                       style={{ fontFamily: "var(--font-oswald)" }}
                     >
                       {team.formation}
@@ -308,7 +306,7 @@ export default async function TeamDetailPage({
             {/* 3. WC History */}
             <section>
               <div className="mb-5 flex items-center gap-2">
-                <Clock size={18} className="text-brand-yellow" />
+                <Clock size={18} className="text-brand-lime" />
                 <h2
                   className="text-brand-white text-xl font-bold uppercase"
                   style={{ fontFamily: "var(--font-oswald)" }}
@@ -322,7 +320,7 @@ export default async function TeamDetailPage({
                     key={i}
                     className="border-brand-accent bg-brand-blue flex items-start gap-3 rounded-lg border p-3"
                   >
-                    <span className="text-brand-yellow mt-0.5 shrink-0">▸</span>
+                    <span className="text-brand-lime mt-0.5 shrink-0">▸</span>
                     <span className="text-brand-muted text-sm leading-relaxed">
                       {item}
                     </span>
@@ -353,9 +351,9 @@ export default async function TeamDetailPage({
           <aside className="space-y-6">
             {/* Next match CTA */}
             {nextMatch && (
-              <div className="border-brand-yellow/40 bg-brand-blue rounded-xl border p-4">
+              <div className="border-brand-lime/40 bg-brand-blue rounded-xl border p-4">
                 <p
-                  className="text-brand-yellow mb-3 text-xs font-bold tracking-widest uppercase"
+                  className="text-brand-lime mb-3 text-xs font-bold tracking-widest uppercase"
                   style={{ fontFamily: "var(--font-oswald)" }}
                 >
                   Next Match
@@ -363,7 +361,7 @@ export default async function TeamDetailPage({
                 <MatchCard fixture={nextMatch} />
                 <Link
                   href={`/matches/${nextMatch.id}`}
-                  className="bg-brand-yellow text-brand-navy mt-3 flex w-full items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-bold transition-colors hover:bg-yellow-400"
+                  className="bg-brand-lime text-brand-navy hover:bg-brand-lime/80 mt-3 flex w-full items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-bold transition-colors"
                   style={{ fontFamily: "var(--font-poppins)" }}
                 >
                   Match Preview <ArrowRight size={14} />
@@ -378,14 +376,14 @@ export default async function TeamDetailPage({
               <div className="border-brand-accent bg-brand-blue rounded-xl border p-4">
                 <div className="mb-4 flex items-center justify-between">
                   <h3
-                    className="text-brand-yellow text-sm font-bold tracking-widest uppercase"
+                    className="text-brand-lime text-sm font-bold tracking-widest uppercase"
                     style={{ fontFamily: "var(--font-oswald)" }}
                   >
                     Group {team.group} Table
                   </h3>
                   <Link
                     href={`/groups/${team.group}`}
-                    className="text-brand-muted hover:text-brand-yellow text-xs transition-colors"
+                    className="text-brand-muted hover:text-brand-lime text-xs transition-colors"
                   >
                     Full table →
                   </Link>
@@ -405,13 +403,13 @@ export default async function TeamDetailPage({
                       <Link
                         key={s.teamId}
                         href={`/teams/${t.id}`}
-                        className={`grid grid-cols-[6px_1fr_20px_28px] items-center gap-2 rounded-lg px-2 py-1.5 transition-colors ${isThis ? "bg-brand-accent ring-brand-yellow/40 ring-1" : "hover:bg-brand-accent"}`}
+                        className={`grid grid-cols-[6px_1fr_20px_28px] items-center gap-2 rounded-lg px-2 py-1.5 transition-colors ${isThis ? "bg-brand-accent ring-brand-lime/40 ring-1" : "hover:bg-brand-accent"}`}
                       >
                         <span className={`h-4 w-1 rounded-sm ${qualColor}`} />
                         <span className="flex min-w-0 items-center gap-1.5">
                           <FlagImg code={t.flag} size="xs" />
                           <span
-                            className={`truncate text-xs font-medium ${isThis ? "text-brand-yellow" : "text-brand-white"}`}
+                            className={`truncate text-xs font-medium ${isThis ? "text-brand-lime" : "text-brand-white"}`}
                           >
                             {t.code}
                           </span>
@@ -420,7 +418,7 @@ export default async function TeamDetailPage({
                           {s.played}
                         </span>
                         <span
-                          className={`text-center text-xs font-bold ${isThis ? "text-brand-yellow" : "text-brand-white"}`}
+                          className={`text-center text-xs font-bold ${isThis ? "text-brand-lime" : "text-brand-white"}`}
                           style={{ fontFamily: "var(--font-oswald)" }}
                         >
                           {s.points}

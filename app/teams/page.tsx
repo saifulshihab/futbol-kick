@@ -17,7 +17,7 @@ export default function TeamsPage() {
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       {/* Page header */}
       <div className="mb-8">
-        <p className="text-brand-yellow mb-1 text-xs tracking-widest uppercase">
+        <p className="text-brand-lime mb-1 text-xs tracking-widest uppercase">
           FIFA World Cup 2026
         </p>
         <h1
@@ -36,7 +36,7 @@ export default function TeamsPage() {
       {/* Top favourites strip */}
       <div className="mb-8">
         <p
-          className="text-brand-yellow mb-3 text-xs font-bold tracking-widest uppercase"
+          className="text-brand-lime mb-3 text-xs font-bold tracking-widest uppercase"
           style={{ fontFamily: "var(--font-oswald)" }}
         >
           Top Favourites
@@ -46,13 +46,13 @@ export default function TeamsPage() {
             <a
               key={t.id}
               href={`/teams/${t.id}`}
-              className="border-brand-accent bg-brand-blue hover:border-brand-yellow group flex min-w-[90px] shrink-0 flex-col items-center gap-2 rounded-xl border p-3 transition-colors"
+              className="border-brand-accent bg-brand-blue hover:border-brand-lime group flex min-w-[90px] shrink-0 flex-col items-center gap-2 rounded-xl border p-3 transition-colors"
             >
               <FlagImg code={t.flag} size="md" />
               <span className="text-brand-muted text-[10px] font-bold uppercase">
                 {t.code}
               </span>
-              <span className="text-brand-yellow text-[9px] font-bold">
+              <span className="text-brand-lime text-[9px] font-bold">
                 #{t.fifaRank}
               </span>
             </a>

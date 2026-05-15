@@ -1,21 +1,20 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import { Search, Filter, X, Calendar, CheckCircle, Radio } from "lucide-react";
-import Link from "next/link";
-import { Fixture, Team, getTeamById } from "@/lib/data";
 import MatchCard from "@/components/MatchCard";
+import { Fixture, Team, getTeamById } from "@/lib/data";
+import { Calendar, CheckCircle, Filter, Radio, Search, X } from "lucide-react";
+import { useMemo, useState } from "react";
 
 type Tab = "upcoming" | "completed";
 
-const GROUPS  = ["A", "B", "C", "D", "E", "F"];
-const STAGES  = [
-  { value: "group",         label: "Group Stage" },
-  { value: "round-of-32",   label: "Round of 32" },
-  { value: "round-of-16",   label: "Round of 16" },
+const GROUPS = ["A", "B", "C", "D", "E", "F"];
+const STAGES = [
+  { value: "group", label: "Group Stage" },
+  { value: "round-of-32", label: "Round of 32" },
+  { value: "round-of-16", label: "Round of 16" },
   { value: "quarter-final", label: "Quarter-Final" },
-  { value: "semi-final",    label: "Semi-Final" },
-  { value: "final",         label: "Final" },
+  { value: "semi-final", label: "Semi-Final" },
+  { value: "final", label: "Final" }
 ];
 
 interface Props {
@@ -24,9 +23,9 @@ interface Props {
 }
 
 export default function FixturesClient({ fixtures, teams }: Props) {
-  const [tab,    setTab]    = useState<Tab>("upcoming");
-  const [group,  setGroup]  = useState("");
-  const [stage,  setStage]  = useState("");
+  const [tab, setTab] = useState<Tab>("upcoming");
+  const [group, setGroup] = useState("");
+  const [stage, setStage] = useState("");
   const [search, setSearch] = useState("");
 
   const hasFilters = group || stage || search;
@@ -36,7 +35,7 @@ export default function FixturesClient({ fixtures, teams }: Props) {
       .filter((f) =>
         tab === "upcoming"
           ? f.status === "upcoming" || f.status === "live"
-          : f.status === "completed",
+          : f.status === "completed"
       )
       .filter((f) => (group ? f.group === group : true))
       .filter((f) => (stage ? f.stage === stage : true))
@@ -71,7 +70,7 @@ export default function FixturesClient({ fixtures, teams }: Props) {
   }, [filtered]);
 
   const sortedDates = Object.keys(byDate).sort((a, b) =>
-    tab === "completed" ? b.localeCompare(a) : a.localeCompare(b),
+    tab === "completed" ? b.localeCompare(a) : a.localeCompare(b)
   );
 
   function clearFilters() {
@@ -83,11 +82,11 @@ export default function FixturesClient({ fixtures, teams }: Props) {
   return (
     <div className="space-y-6">
       {/* ── Filter bar ────────────────────────────────────────────────── */}
-      <div className="rounded-xl border border-brand-accent bg-brand-blue p-4 space-y-4">
-        <div className="flex items-center gap-2 mb-2">
-          <Filter size={15} className="text-brand-yellow" />
+      <div className="border-brand-accent bg-brand-blue space-y-4 rounded-xl border p-4">
+        <div className="mb-2 flex items-center gap-2">
+          <Filter size={15} className="text-brand-lime" />
           <span
-            className="text-sm font-bold text-brand-white uppercase tracking-wide"
+            className="text-brand-white text-sm font-bold tracking-wide uppercase"
             style={{ fontFamily: "var(--font-oswald)" }}
           >
             Filter Matches
@@ -95,23 +94,26 @@ export default function FixturesClient({ fixtures, teams }: Props) {
           {hasFilters && (
             <button
               onClick={clearFilters}
-              className="ml-auto flex items-center gap-1 text-xs text-brand-red hover:text-red-400 transition-colors"
+              className="text-brand-red ml-auto flex items-center gap-1 text-xs transition-colors hover:text-red-400"
             >
               <X size={12} /> Clear all
             </button>
           )}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
           {/* Search */}
           <div className="relative sm:col-span-1">
-            <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-brand-muted pointer-events-none" />
+            <Search
+              size={14}
+              className="text-brand-muted pointer-events-none absolute top-1/2 left-3 -translate-y-1/2"
+            />
             <input
               type="text"
               placeholder="Team, city, venue…"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-9 pr-3 py-2 rounded-lg bg-brand-navy border border-brand-accent text-sm text-brand-white placeholder-brand-muted focus:outline-none focus:border-brand-yellow transition-colors"
+              className="bg-brand-navy border-brand-accent text-brand-white placeholder-brand-muted focus:border-brand-lime w-full rounded-lg border py-2 pr-3 pl-9 text-sm transition-colors focus:outline-none"
             />
           </div>
 
@@ -119,11 +121,13 @@ export default function FixturesClient({ fixtures, teams }: Props) {
           <select
             value={group}
             onChange={(e) => setGroup(e.target.value)}
-            className="px-3 py-2 rounded-lg bg-brand-navy border border-brand-accent text-sm text-brand-white focus:outline-none focus:border-brand-yellow transition-colors"
+            className="bg-brand-navy border-brand-accent text-brand-white focus:border-brand-lime rounded-lg border px-3 py-2 text-sm transition-colors focus:outline-none"
           >
             <option value="">All Groups</option>
             {GROUPS.map((g) => (
-              <option key={g} value={g}>Group {g}</option>
+              <option key={g} value={g}>
+                Group {g}
+              </option>
             ))}
           </select>
 
@@ -131,11 +135,13 @@ export default function FixturesClient({ fixtures, teams }: Props) {
           <select
             value={stage}
             onChange={(e) => setStage(e.target.value)}
-            className="px-3 py-2 rounded-lg bg-brand-navy border border-brand-accent text-sm text-brand-white focus:outline-none focus:border-brand-yellow transition-colors"
+            className="bg-brand-navy border-brand-accent text-brand-white focus:border-brand-lime rounded-lg border px-3 py-2 text-sm transition-colors focus:outline-none"
           >
             <option value="">All Stages</option>
             {STAGES.map((s) => (
-              <option key={s.value} value={s.value}>{s.label}</option>
+              <option key={s.value} value={s.value}>
+                {s.label}
+              </option>
             ))}
           </select>
         </div>
@@ -144,21 +150,27 @@ export default function FixturesClient({ fixtures, teams }: Props) {
         {hasFilters && (
           <div className="flex flex-wrap gap-2">
             {group && (
-              <span className="flex items-center gap-1 text-xs font-medium bg-brand-accent text-brand-yellow px-2.5 py-1 rounded-full">
+              <span className="bg-brand-accent text-brand-lime flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium">
                 Group {group}
-                <button onClick={() => setGroup("")}><X size={10} /></button>
+                <button onClick={() => setGroup("")}>
+                  <X size={10} />
+                </button>
               </span>
             )}
             {stage && (
-              <span className="flex items-center gap-1 text-xs font-medium bg-brand-accent text-brand-yellow px-2.5 py-1 rounded-full">
+              <span className="bg-brand-accent text-brand-lime flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium">
                 {STAGES.find((s) => s.value === stage)?.label}
-                <button onClick={() => setStage("")}><X size={10} /></button>
+                <button onClick={() => setStage("")}>
+                  <X size={10} />
+                </button>
               </span>
             )}
             {search && (
-              <span className="flex items-center gap-1 text-xs font-medium bg-brand-accent text-brand-yellow px-2.5 py-1 rounded-full">
+              <span className="bg-brand-accent text-brand-lime flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium">
                 &ldquo;{search}&rdquo;
-                <button onClick={() => setSearch("")}><X size={10} /></button>
+                <button onClick={() => setSearch("")}>
+                  <X size={10} />
+                </button>
               </span>
             )}
           </div>
@@ -166,22 +178,26 @@ export default function FixturesClient({ fixtures, teams }: Props) {
       </div>
 
       {/* ── Tabs ──────────────────────────────────────────────────────── */}
-      <div className="flex rounded-xl border border-brand-accent bg-brand-blue p-1 gap-1">
+      <div className="border-brand-accent bg-brand-blue flex gap-1 rounded-xl border p-1">
         {(["upcoming", "completed"] as Tab[]).map((t) => (
           <button
             key={t}
             onClick={() => setTab(t)}
-            className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-semibold transition-colors ${
+            className={`flex flex-1 items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-semibold transition-colors ${
               tab === t
-                ? "bg-brand-yellow text-brand-navy"
+                ? "bg-brand-lime text-brand-navy"
                 : "text-brand-muted hover:text-brand-white"
             }`}
             style={{ fontFamily: "var(--font-poppins)" }}
           >
             {t === "upcoming" ? (
-              <><Radio size={14} /> Upcoming</>
+              <>
+                <Radio size={14} /> Upcoming
+              </>
             ) : (
-              <><CheckCircle size={14} /> Results</>
+              <>
+                <CheckCircle size={14} /> Results
+              </>
             )}
           </button>
         ))}
@@ -189,8 +205,8 @@ export default function FixturesClient({ fixtures, teams }: Props) {
 
       {/* ── Results ───────────────────────────────────────────────────── */}
       {filtered.length === 0 ? (
-        <div className="text-center py-16 text-brand-muted">
-          <p className="text-4xl mb-3">⚽</p>
+        <div className="text-brand-muted py-16 text-center">
+          <p className="mb-3 text-4xl">⚽</p>
           <p className="text-sm">No matches found for the selected filters.</p>
         </div>
       ) : (
@@ -198,28 +214,29 @@ export default function FixturesClient({ fixtures, teams }: Props) {
           {sortedDates.map((date) => {
             const label = new Date(date).toLocaleDateString("en-GB", {
               weekday: "long",
-              day:     "numeric",
-              month:   "long",
-              year:    "numeric",
+              day: "numeric",
+              month: "long",
+              year: "numeric"
             });
             return (
               <div key={date}>
                 {/* Date group header */}
-                <div className="flex items-center gap-3 mb-3">
-                  <Calendar size={14} className="text-brand-yellow shrink-0" />
+                <div className="mb-3 flex items-center gap-3">
+                  <Calendar size={14} className="text-brand-lime shrink-0" />
                   <span
-                    className="text-sm font-bold text-brand-yellow uppercase tracking-wide"
+                    className="text-brand-lime text-sm font-bold tracking-wide uppercase"
                     style={{ fontFamily: "var(--font-oswald)" }}
                   >
                     {label}
                   </span>
-                  <div className="flex-1 h-px bg-brand-accent" />
-                  <span className="text-xs text-brand-muted">
-                    {byDate[date].length} match{byDate[date].length > 1 ? "es" : ""}
+                  <div className="bg-brand-accent h-px flex-1" />
+                  <span className="text-brand-muted text-xs">
+                    {byDate[date].length} match
+                    {byDate[date].length > 1 ? "es" : ""}
                   </span>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
                   {byDate[date].map((f) => (
                     <MatchCard key={f.id} fixture={f} />
                   ))}
@@ -231,7 +248,7 @@ export default function FixturesClient({ fixtures, teams }: Props) {
       )}
 
       {/* Result count */}
-      <p className="text-xs text-brand-muted text-center pb-4">
+      <p className="text-brand-muted pb-4 text-center text-xs">
         Showing {filtered.length} match{filtered.length !== 1 ? "es" : ""}
         {hasFilters ? " (filtered)" : ""}
       </p>
