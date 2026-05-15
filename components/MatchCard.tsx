@@ -1,4 +1,5 @@
 import FlagImg from "@/components/FlagImg";
+import LocalTime from "@/components/LocalTime";
 import { Fixture, getTeamById } from "@/lib/data";
 import { Clock, MapPin, Shield } from "lucide-react";
 import Link from "next/link";
@@ -60,7 +61,11 @@ export default function MatchCard({
       <div className="flex items-center justify-between gap-2">
         {/* Home */}
         <div className="flex flex-1 flex-col items-center gap-1">
-          {home ? <FlagImg code={home.flag} size="sm" /> : <TbdFlag size="sm" />}
+          {home ? (
+            <FlagImg code={home.flag} size="sm" />
+          ) : (
+            <TbdFlag size="sm" />
+          )}
           <span
             className={`text-brand-white group-hover:text-brand-lime text-center font-semibold transition-colors ${compact ? "text-xs" : "text-sm"}`}
           >
@@ -85,16 +90,22 @@ export default function MatchCard({
               >
                 VS
               </span>
-              <span className="text-brand-muted mt-0.5 text-xs">
-                {fixture.time}
-              </span>
+              <LocalTime
+                date={fixture.date}
+                time={fixture.time}
+                className="text-brand-muted mt-0.5 text-xs"
+              />
             </>
           )}
         </div>
 
         {/* Away */}
         <div className="flex flex-1 flex-col items-center gap-1">
-          {away ? <FlagImg code={away.flag} size="sm" /> : <TbdFlag size="sm" />}
+          {away ? (
+            <FlagImg code={away.flag} size="sm" />
+          ) : (
+            <TbdFlag size="sm" />
+          )}
           <span
             className={`text-brand-white group-hover:text-brand-lime text-center font-semibold transition-colors ${compact ? "text-xs" : "text-sm"}`}
           >
