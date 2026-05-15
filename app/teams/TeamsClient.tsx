@@ -1,14 +1,13 @@
 "use client";
 
 import FlagImg from "@/components/FlagImg";
+import CustomSelect from "@/components/ui/native-select";
 import { Team } from "@/lib/data";
-import { ArrowUpDown, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
 type SortKey = "rank" | "name" | "group";
-
-const GROUPS = ["A", "B", "C", "D", "E", "F"];
 
 interface Props {
   teams: Team[];
@@ -66,37 +65,40 @@ export default function TeamsClient({ teams }: Props) {
           />
         </div>
 
-        <select
+        <CustomSelect
           value={group}
-          onChange={(e) => setGroup(e.target.value)}
-          className="bg-brand-navy border-brand-accent text-brand-white focus:border-brand-lime rounded-lg border px-3 py-2 text-sm transition-colors focus:outline-none"
-        >
-          <option value="">All Groups</option>
-          {GROUPS.map((g) => (
-            <option key={g} value={g}>
-              Group {g}
-            </option>
-          ))}
-        </select>
+          onChange={setGroup}
+          placeholder="All Groups"
+          options={[...new Set(teams.map((t) => t.group))].sort().map((g) => ({ value: g, label: `Group ${g}` }))}
+        />
 
-        <div className="bg-brand-navy border-brand-accent flex items-center gap-2 rounded-lg border px-3 py-2">
-          <ArrowUpDown size={13} className="text-brand-muted shrink-0" />
-          <select
-            value={sortKey}
-            onChange={(e) => setSortKey(e.target.value as SortKey)}
-            className="text-brand-white bg-transparent text-sm focus:outline-none"
-          >
-            <option value="rank">By FIFA Rank</option>
-            <option value="name">By Name</option>
-            <option value="group">By Group</option>
-          </select>
-        </div>
+        <CustomSelect
+          value={sortKey}
+          onChange={(v) => setSortKey(v as SortKey)}
+          placeholder="Sort by"
+          options={[
+            { value: "rank", label: "By FIFA Rank" },
+            { value: "name", label: "By Name" },
+            { value: "group", label: "By Group" }
+          ]}
+        />
+
       </div>
 
       {/* Result count */}
-      <p className="text-brand-muted text-xs">
-        Showing {filtered.length} of {teams.length} teams
-      </p>
+      <div className="flex items-center justify-between">
+        <p className="text-brand-muted text-xs">
+          Showing {filtered.length} of {teams.length} teams
+        </p>
+        {(search || group || sortKey !== "rank") && (
+          <button
+            onClick={() => { setSearch(""); setGroup(""); setSortKey("rank"); }}
+            className="text-brand-muted hover:text-brand-lime text-xs transition-colors"
+          >
+            Clear filters
+          </button>
+        )}
+      </div>
 
       {/* Team cards grid */}
       {filtered.length === 0 ? (
