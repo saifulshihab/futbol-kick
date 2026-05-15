@@ -1,10 +1,7 @@
-import FlagImg from "@/components/FlagImg";
 import {
   ArrowRight,
   Globe,
-  Heart,
   MapPin,
-  MessageSquare,
   Star,
   Trophy,
   Tv,
@@ -21,59 +18,6 @@ export const metadata: Metadata = {
 };
 
 // ─── Dummy data ───────────────────────────────────────────────────────────────
-
-const fanStories = [
-  {
-    id: 1,
-    name: "Rafiq H.",
-    location: "Dhaka, Bangladesh",
-    flag: "bd",
-    team: "🇧🇷 Brazil",
-    story:
-      "I stayed up until 4am to watch Brazil vs Argentina in 2022. My whole neighbourhood was on the roof screaming. That's the magic of the World Cup — it doesn't matter if your country is playing. The game belongs to everyone.",
-    likes: 142
-  },
-  {
-    id: 2,
-    name: "Tanvir A.",
-    location: "Chittagong, Bangladesh",
-    flag: "bd",
-    team: "🇦🇷 Argentina",
-    story:
-      "When Messi lifted the trophy in Qatar I cried. I've been following him since 2006 and to finally see him win it — after all those near misses — was the most emotional moment of my life as a football fan.",
-    likes: 218
-  },
-  {
-    id: 3,
-    name: "Karim O.",
-    location: "Casablanca, Morocco",
-    flag: "ma",
-    team: "🇲🇦 Morocco",
-    story:
-      "2022 was a miracle. A semi-final! My grandfather was 80 and watching with us. He kept saying, 'I never thought I would live to see this.' In 2026 we go even further. We believe.",
-    likes: 334
-  },
-  {
-    id: 4,
-    name: "Priya S.",
-    location: "Toronto, Canada",
-    flag: "ca",
-    team: "🇨🇦 Canada",
-    story:
-      "Having the World Cup in Canada means everything to us. I'm taking my daughter to the Toronto matches — she's 7 and she'll grow up telling her own kids she was there for Canada's best ever World Cup. I just know it.",
-    likes: 89
-  },
-  {
-    id: 5,
-    name: "José M.",
-    location: "Mexico City, Mexico",
-    flag: "mx",
-    team: "🇲🇽 Mexico",
-    story:
-      "Every four years we go through the same heartbreak at the quinto partido. But this time it's different. It's at home. El Azteca will be electric. This is our year — I genuinely believe it for the first time in a long time.",
-    likes: 176
-  }
-];
 
 const leaderboard = [
   { rank: 1, name: "FutbolGuru99", country: "bd", points: 148, correct: 12 },
@@ -199,7 +143,8 @@ export default function FanZonePage() {
       {/* <AdBanner size="leaderboard" /> */}
 
       {/* ── 2. Fan Stories ───────────────────────────────────────────── */}
-      <section>
+
+      {/* <section>
         <SectionHeading
           icon={MessageSquare}
           title="Fan Stories"
@@ -211,7 +156,6 @@ export default function FanZonePage() {
               key={s.id}
               className="border-brand-accent bg-brand-blue flex flex-col gap-4 rounded-xl border p-5"
             >
-              {/* Header */}
               <div className="flex items-center gap-3">
                 <div className="bg-brand-mid border-brand-accent flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border">
                   <FlagImg code={s.flag} size="sm" />
@@ -228,13 +172,9 @@ export default function FanZonePage() {
                   {s.team}
                 </span>
               </div>
-
-              {/* Story */}
               <blockquote className="text-brand-muted border-brand-lime/40 flex-1 border-l-2 pl-3 text-sm leading-relaxed italic">
                 &ldquo;{s.story}&rdquo;
               </blockquote>
-
-              {/* Likes */}
               <div className="text-brand-muted flex items-center gap-1.5 text-xs">
                 <Heart size={13} className="text-brand-red" />
                 <span>{s.likes} fans loved this</span>
@@ -242,7 +182,7 @@ export default function FanZonePage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* ── 3. Prediction Leaderboard ────────────────────────────────── */}
       <section>
@@ -371,7 +311,7 @@ export default function FanZonePage() {
         </div>
 
         {/* Dhaka hotspots */}
-        <div className="border-brand-lime/30 bg-brand-blue mt-6 rounded-xl border p-5">
+        {/* <div className="border-brand-lime/30 bg-brand-blue mt-6 rounded-xl border p-5">
           <h3
             className="text-brand-white mb-4 flex items-center gap-2 text-base font-bold"
             style={{ fontFamily: "var(--font-poppins)" }}
@@ -407,7 +347,7 @@ export default function FanZonePage() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* ── Bottom CTA ───────────────────────────────────────────────── */}
