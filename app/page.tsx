@@ -2,6 +2,7 @@ import CountdownTimer from "@/components/CountdownTimer";
 import FlagImg from "@/components/FlagImg";
 import MatchCard from "@/components/MatchCard";
 import PostCard from "@/components/PostCard";
+import TeamMarquee from "@/components/TeamMarquee";
 import {
   getTeamById,
   getUpcomingFixtures,
@@ -119,8 +120,7 @@ export default function HomePage() {
             className="text-brand-white mb-4 text-4xl leading-tight font-bold sm:text-5xl md:text-7xl"
             style={{ fontFamily: "var(--font-oswald)" }}
           >
-            The World&apos;s Greatest{" "}
-            <span className="text-brand-lime">Stage</span>
+            The Greatest Show <span className="text-brand-lime">on Earth</span>
           </h1>
           <p
             className="text-brand-muted mx-auto mb-10 max-w-2xl text-base sm:text-lg"
@@ -160,6 +160,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <TeamMarquee />
 
       {/* ── Main 3-column grid ─────────────────────────────────────────────── */}
       <section className="mx-auto max-w-7xl px-4 pt-6 pb-16 sm:px-6 sm:pt-16">
