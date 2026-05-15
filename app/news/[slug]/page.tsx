@@ -104,11 +104,11 @@ export default async function ArticlePage({
     publisher: {
       "@type": "Organization",
       name: "FutbolKick",
-      url: "https://futbolkick.vercel.app"
+      url: WEBSITE_BASE_URL
     },
     keywords: post.tags.join(", "),
     articleSection: post.category,
-    url: `https://futbolkick.vercel.app/news/${post.slug}`
+    url: `${WEBSITE_BASE_URL}/news/${post.slug}`
   };
 
   return (
@@ -171,9 +171,6 @@ export default async function ArticlePage({
             {/* First half of content */}
             <ArticleContent content={firstHalf} />
 
-            {/* Mid-article ad */}
-            {/* <AdBanner size="leaderboard" className="my-8" /> */}
-
             {/* Second half of content */}
             <ArticleContent content={secondHalf} />
 
@@ -189,9 +186,6 @@ export default async function ArticlePage({
                 </span>
               ))}
             </div>
-
-            {/* Ad after article */}
-            {/* <AdBanner size="leaderboard" className="mt-8" /> */}
 
             {/* Prev / Next navigation */}
             <div className="mt-8 grid grid-cols-2 gap-4">
@@ -243,7 +237,6 @@ export default async function ArticlePage({
 
           {/* ── Sidebar ─────────────────────────────────────────────────── */}
           <aside className="space-y-6">
-            {/* <AdBanner size="rectangle" /> */}
 
             {/* Related articles */}
             {related.length > 0 && (
@@ -318,7 +311,6 @@ export default async function ArticlePage({
               </div>
             </div>
 
-            {/* <AdBanner size="rectangle" /> */}
           </aside>
         </div>
       </div>

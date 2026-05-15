@@ -121,7 +121,7 @@ export default async function TeamDetailPage({
     memberOf: { "@type": "SportsOrganization", name: "FIFA World Cup 2026" },
     coach: { "@type": "Person", name: team.coach },
     athlete: team.players.map((p) => ({ "@type": "Person", name: p.name })),
-    url: `https://futbolkick.vercel.app/teams/${team.id}`
+    url: `${WEBSITE_BASE_URL}/teams/${team.id}`
   };
 
   return (
@@ -287,7 +287,6 @@ export default async function TeamDetailPage({
               </div>
             </section>
 
-            {/* <AdBanner size="leaderboard" /> */}
 
             {/* 2. Tactics & Style */}
             <section>
@@ -323,7 +322,6 @@ export default async function TeamDetailPage({
               </div>
             </section>
 
-            {/* <AdBanner size="leaderboard" /> */}
 
             {/* 3. WC History */}
             <section>
@@ -391,7 +389,6 @@ export default async function TeamDetailPage({
               </div>
             )}
 
-            {/* <AdBanner size="rectangle" /> */}
 
             {/* Group standings */}
             {group && standings.length > 0 && (
@@ -452,7 +449,6 @@ export default async function TeamDetailPage({
               </div>
             )}
 
-            {/* <AdBanner size="rectangle" /> */}
           </aside>
         </div>
       </div>

@@ -93,7 +93,6 @@ export default function PredictionsPage() {
         </p>
       </div>
 
-      {/* <AdBanner size="leaderboard" className="mb-8" /> */}
 
       {/* How it works */}
       <div className="mb-10">
@@ -150,7 +149,6 @@ export default function PredictionsPage() {
       {/* Interactive prediction form */}
       <PredictionsClient />
 
-      {/* <AdBanner size="leaderboard" className="mt-10" /> */}
 
       {/* Leaderboard CTA */}
       <div className="border-brand-accent bg-brand-blue mt-8 flex flex-col items-center justify-between gap-4 rounded-xl border p-5 sm:flex-row">

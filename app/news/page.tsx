@@ -147,8 +147,6 @@ function ListCard({ post }: { post: NewsPost }) {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function NewsPage() {
   const featured = newsPosts.filter((p) => p.featured);
-  const rest = newsPosts.filter((p) => !p.featured);
-  const trending = [...newsPosts].sort(() => 0.5 - Math.random()).slice(0, 5);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
@@ -169,7 +167,6 @@ export default function NewsPage() {
         </p>
       </div>
 
-      {/* <AdBanner size="leaderboard" className="mb-8" /> */}
 
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_300px]">
         {/* ── Main column ─────────────────────────────────────────────── */}
@@ -194,7 +191,6 @@ export default function NewsPage() {
             </section>
           )}
 
-          {/* <AdBanner size="inline" /> */}
 
           {/* All articles */}
           <section>
@@ -214,12 +210,10 @@ export default function NewsPage() {
             </div>
           </section>
 
-          {/* <AdBanner size="leaderboard" /> */}
         </div>
 
         {/* ── Sidebar ─────────────────────────────────────────────────── */}
         <aside className="space-y-6">
-          {/* <AdBanner size="rectangle" /> */}
 
           {/* Trending */}
           <div className="border-brand-accent bg-brand-blue rounded-xl border p-4">
@@ -318,7 +312,6 @@ export default function NewsPage() {
             </div>
           </div>
 
-          {/* <AdBanner size="rectangle" /> */}
         </aside>
       </div>
     </div>

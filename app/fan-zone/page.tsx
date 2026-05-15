@@ -152,8 +152,6 @@ export default function FanZonePage() {
         </p>
       </div>
 
-      {/* <AdBanner size="leaderboard" /> */}
-
       {/* ── 1. Fan Polls ─────────────────────────────────────────────── */}
       <section>
         <SectionHeading
@@ -164,51 +162,7 @@ export default function FanZonePage() {
         <FanPolls />
       </section>
 
-      {/* <AdBanner size="leaderboard" /> */}
-
-      {/* ── 2. Fan Stories ───────────────────────────────────────────── */}
-
-      {/* <section>
-        <SectionHeading
-          icon={MessageSquare}
-          title="Fan Stories"
-          subtitle="Real fans, real moments — from around the world"
-        />
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {fanStories.map((s) => (
-            <div
-              key={s.id}
-              className="border-brand-accent bg-brand-blue flex flex-col gap-4 rounded-xl border p-5"
-            >
-              <div className="flex items-center gap-3">
-                <div className="bg-brand-mid border-brand-accent flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border">
-                  <FlagImg code={s.flag} size="sm" />
-                </div>
-                <div>
-                  <p className="text-brand-white text-sm font-semibold">
-                    {s.name}
-                  </p>
-                  <p className="text-brand-muted flex items-center gap-1 text-[11px]">
-                    <MapPin size={10} /> {s.location}
-                  </p>
-                </div>
-                <span className="ml-auto text-base" title="Supports">
-                  {s.team}
-                </span>
-              </div>
-              <blockquote className="text-brand-muted border-brand-lime/40 flex-1 border-l-2 pl-3 text-sm leading-relaxed italic">
-                &ldquo;{s.story}&rdquo;
-              </blockquote>
-              <div className="text-brand-muted flex items-center gap-1.5 text-xs">
-                <Heart size={13} className="text-brand-red" />
-                <span>{s.likes} fans loved this</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section> */}
-
-      {/* ── 3. Prediction Leaderboard ────────────────────────────────── */}
+      {/* ── 2. Prediction Leaderboard ────────────────────────────────── */}
       <section>
         <div className="mb-6 flex items-start justify-between gap-4">
           <SectionHeading
@@ -300,8 +254,6 @@ export default function FanZonePage() {
         </div>
       </section>
 
-      {/* <AdBanner size="leaderboard" /> */}
-
       {/* ── 4. Local Watch Guide ─────────────────────────────────────── */}
       <section>
         <SectionHeading
@@ -334,44 +286,6 @@ export default function FanZonePage() {
           ))}
         </div>
 
-        {/* Dhaka hotspots */}
-        {/* <div className="border-brand-lime/30 bg-brand-blue mt-6 rounded-xl border p-5">
-          <h3
-            className="text-brand-white mb-4 flex items-center gap-2 text-base font-bold"
-            style={{ fontFamily: "var(--font-poppins)" }}
-          >
-            <MapPin size={16} className="text-brand-lime" />
-            Popular Watch-Party Areas in Dhaka
-          </h3>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-            {[
-              {
-                area: "Dhanmondi",
-                desc: "Lake side screenings and café viewings around Rabindra Sarobar"
-              },
-              {
-                area: "Gulshan / Banani",
-                desc: "Rooftop bars and community club gatherings with big-screen setups"
-              },
-              {
-                area: "Kafrul / Mirpur",
-                desc: "Outdoor community screenings, lively street atmosphere for big matches"
-              }
-            ].map((spot) => (
-              <div
-                key={spot.area}
-                className="bg-brand-mid border-brand-accent rounded-lg border p-3"
-              >
-                <p className="text-brand-lime mb-1 text-sm font-semibold">
-                  {spot.area}
-                </p>
-                <p className="text-brand-muted text-xs leading-relaxed">
-                  {spot.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div> */}
       </section>
 
       {/* ── Bottom CTA ───────────────────────────────────────────────── */}
@@ -410,7 +324,6 @@ export default function FanZonePage() {
         </div>
       </section>
 
-      {/* <AdBanner size="leaderboard" /> */}
     </div>
   );
 }

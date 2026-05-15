@@ -133,9 +133,6 @@ export default function FixturesPage() {
           </p>
         </div>
 
-        {/* Ad – leaderboard */}
-        {/* <AdBanner size="leaderboard" className="mb-8" /> */}
-
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_280px]">
           {/* ── Main: interactive fixtures list ── */}
           <FixturesClient fixtures={fixtures} />
@@ -206,9 +203,6 @@ export default function FixturesPage() {
                 ))}
               </div>
             </div>
-
-            {/* Ad rectangle */}
-            {/* <AdBanner size="rectangle" /> */}
 
             {/* Most watched */}
             <div className="border-brand-accent bg-brand-blue rounded-xl border p-4">

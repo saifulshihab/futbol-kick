@@ -3,7 +3,6 @@ import FlagImg from "@/components/FlagImg";
 import MatchCard from "@/components/MatchCard";
 import PostCard from "@/components/PostCard";
 import {
-  getLiveFixtures,
   getTeamById,
   getUpcomingFixtures,
   groups,
@@ -86,7 +85,6 @@ function SectionHeading({
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function HomePage() {
-  const liveFixtures = getLiveFixtures();
   const upcomingFixtures = getUpcomingFixtures(5);
   const featuredPosts = newsPosts.slice(0, 6);
   const sidebarPosts = newsPosts.slice(0, 5);
@@ -163,36 +161,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Live / Upcoming Match Strip ────────────────────────────────────── */}
-      {/* <section className="bg-brand-mid border-y border-brand-accent">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="flex items-center gap-1.5 text-xs font-bold text-brand-navy bg-brand-red px-2.5 py-1 rounded-full animate-pulse">
-              <span className="w-1.5 h-1.5 rounded-full bg-white" />
-              LIVE NOW
-            </span>
-            <span className="text-xs text-brand-muted">
-              {liveFixtures.length > 0
-                ? `${liveFixtures.length} match${liveFixtures.length > 1 ? "es" : ""} in progress`
-                : "Next upcoming matches"}
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {liveFixtures.length > 0
-              ? liveFixtures.map((f) => <MatchCard key={f.id} fixture={f} compact />)
-              : upcomingFixtures
-                  .slice(0, 3)
-                  .map((f) => <MatchCard key={f.id} fixture={f} compact />)}
-          </div>
-        </div>
-      </section> */}
-
-      {/* ── AdSense leaderboard ────────────────────────────────────────────── */}
-      <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6">
-        {/* <AdBanner size="leaderboard" /> */}
-      </div>
-
       {/* ── Main 3-column grid ─────────────────────────────────────────────── */}
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
@@ -233,7 +201,6 @@ export default function HomePage() {
               />
             </div>
 
-            {/* <AdBanner size="rectangle" /> */}
           </div>
 
           {/* ── Col 2: Latest Posts ────────────────────────────────────────── */}
@@ -244,13 +211,10 @@ export default function HomePage() {
                 <PostCard key={post.id} post={post} />
               ))}
             </div>
-            {/* <AdBanner size="inline" /> */}
           </div>
 
           {/* ── Col 3: Sidebar ─────────────────────────────────────────────── */}
           <div className="space-y-6">
-            {/* <AdBanner size="rectangle" /> */}
-
             {/* Top Stories */}
             <div className="border-brand-accent bg-brand-blue rounded-xl border p-4">
               <SectionHeading title="Top Stories" />
@@ -349,8 +313,6 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-
-            {/* <AdBanner size="rectangle" /> */}
           </div>
         </div>
       </section>

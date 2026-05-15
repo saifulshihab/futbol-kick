@@ -59,7 +59,6 @@ export default function GroupsPage() {
         </p>
       </div>
 
-      {/* <AdBanner size="leaderboard" className="mb-8" /> */}
 
       {/* Qualification key */}
       <div className="text-brand-muted mb-6 flex flex-wrap items-center gap-4 text-xs">
@@ -188,7 +187,6 @@ export default function GroupsPage() {
         })}
       </div>
 
-      {/* <AdBanner size="leaderboard" className="mt-10" /> */}
     </div>
   );
 }

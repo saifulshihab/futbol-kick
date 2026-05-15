@@ -59,7 +59,7 @@ export async function generateMetadata({
 
 // Generate qualification analysis for each team
 function analysisForTeam(
-  teamId: string,
+  _teamId: string,
   idx: number,
   points: number,
   played: number
@@ -238,7 +238,6 @@ export default async function GroupDetailPage({
             </div>
           </section>
 
-          {/* <AdBanner size="leaderboard" /> */}
 
           {/* 2. Team cards */}
           <section>
@@ -312,7 +311,6 @@ export default async function GroupDetailPage({
             </section>
           )}
 
-          {/* <AdBanner size="leaderboard" /> */}
 
           {/* 4. Mini-analysis */}
           <section>
@@ -358,7 +356,6 @@ export default async function GroupDetailPage({
 
         {/* ── Sidebar ─────────────────────────────────────────────────── */}
         <aside className="space-y-6">
-          {/* <AdBanner size="rectangle" /> */}
 
           {/* Other groups */}
           <div className="border-brand-accent bg-brand-blue rounded-xl border p-4">
@@ -431,7 +428,6 @@ export default async function GroupDetailPage({
             </div>
           </div>
 
-          {/* <AdBanner size="rectangle" /> */}
         </aside>
       </div>
     </div>

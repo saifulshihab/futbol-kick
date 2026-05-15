@@ -56,8 +56,6 @@ export default function TeamsPage() {
         </p>
       </div>
 
-      {/* <AdBanner size="leaderboard" className="mb-8" /> */}
-
       {/* Top favourites strip */}
       <div className="mb-8">
         <p
@@ -67,11 +65,11 @@ export default function TeamsPage() {
           Top Favourites
         </p>
         <div className="scrollbar-hide flex gap-3 overflow-x-auto pb-2">
-          {top5.map((t, i) => (
+          {top5.map((t) => (
             <a
               key={t.id}
               href={`/teams/${t.id}`}
-              className="border-brand-accent bg-brand-blue hover:border-brand-lime group flex min-w-[90px] shrink-0 flex-col items-center gap-2 rounded-xl border p-3 transition-colors"
+              className="border-brand-accent bg-brand-blue hover:border-brand-lime group flex min-w-22.5 shrink-0 flex-col items-center gap-2 rounded-xl border p-3 transition-colors"
             >
               <FlagImg code={t.flag} size="md" />
               <span className="text-brand-muted text-[10px] font-bold uppercase">
