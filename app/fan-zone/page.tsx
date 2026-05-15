@@ -1,3 +1,4 @@
+import { WEBSITE_BASE_URL } from "@/lib/config";
 import {
   ArrowRight,
   Globe,
@@ -12,9 +13,32 @@ import Link from "next/link";
 import FanPolls from "./FanPolls";
 
 export const metadata: Metadata = {
-  title: "Fan Zone",
+  title: "Fan Zone – FIFA World Cup 2026 Polls & Community",
   description:
-    "Join the FIFA World Cup 2026 fan community — polls, fan stories, prediction leaderboards, and local watch guides for Bangladesh."
+    "Join the FIFA World Cup 2026 fan community — polls, fan stories, prediction leaderboards, and local watch guides for Bangladesh.",
+  keywords: [
+    "FIFA World Cup 2026 fan zone",
+    "World Cup 2026 fan polls",
+    "World Cup 2026 predictions game",
+    "World Cup watch party Bangladesh",
+    "football fan community 2026",
+    "World Cup 2026 leaderboard"
+  ],
+  alternates: { canonical: `${WEBSITE_BASE_URL}/fan-zone` },
+  openGraph: {
+    title: "Fan Zone – FIFA World Cup 2026 Polls & Community",
+    description:
+      "Polls, predictions, fan stories, and watch party guides — join the World Cup 2026 fan community on FutbolKick.",
+    url: `${WEBSITE_BASE_URL}/fan-zone`,
+    type: "website",
+    siteName: "FutbolKick"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fan Zone – FIFA World Cup 2026 Polls & Community",
+    description:
+      "Polls, predictions, fan stories, and watch guides — join the World Cup 2026 fan community."
+  }
 };
 
 // ─── Dummy data ───────────────────────────────────────────────────────────────

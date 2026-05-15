@@ -1,13 +1,37 @@
 import FlagImg from "@/components/FlagImg";
+import { WEBSITE_BASE_URL } from "@/lib/config";
 import { getStandingsSorted, getTeamById, groups } from "@/lib/data";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Groups",
+  title: "FIFA World Cup 2026 Group Standings",
   description:
-    "All FIFA World Cup 2026 groups A–F — standings, teams, and fixtures for every group in the tournament."
+    "All FIFA World Cup 2026 groups A–L — standings, teams, and fixtures for every group in the tournament.",
+  keywords: [
+    "FIFA World Cup 2026 groups",
+    "World Cup 2026 group standings",
+    "World Cup group stage 2026",
+    "World Cup 2026 points table",
+    "FIFA 2026 qualification standings",
+    "World Cup 2026 group results"
+  ],
+  alternates: { canonical: `${WEBSITE_BASE_URL}/groups` },
+  openGraph: {
+    title: "FIFA World Cup 2026 Group Standings",
+    description:
+      "Live group standings for all FIFA World Cup 2026 groups — teams, points, and qualification status.",
+    url: `${WEBSITE_BASE_URL}/groups`,
+    type: "website",
+    siteName: "FutbolKick"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FIFA World Cup 2026 Group Standings",
+    description:
+      "Live group standings for all FIFA World Cup 2026 groups — teams, points, and qualification status."
+  }
 };
 
 function qualificationLabel(idx: number) {
@@ -31,7 +55,7 @@ export default function GroupsPage() {
           Group Stage
         </h1>
         <p className="text-brand-muted mt-2 text-sm">
-          6 groups · 24 teams · Top 2 from each group advance
+          12 groups · 48 teams · Top 2 from each group advance
         </p>
       </div>
 

@@ -1,5 +1,6 @@
 import ArticleContent from "@/components/ArticleContent";
 import JsonLd from "@/components/JsonLd";
+import { WEBSITE_BASE_URL } from "@/lib/config";
 import { getPostBySlug, newsPosts, type NewsPost } from "@/lib/data";
 import { ArrowLeft, ArrowRight, ChevronRight, Clock, Tag } from "lucide-react";
 import type { Metadata } from "next";
@@ -21,10 +22,23 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.excerpt,
+    keywords: [
+      ...post.tags,
+      `World Cup 2026 ${post.category.toLowerCase()}`,
+      "FIFA World Cup 2026"
+    ],
+    alternates: { canonical: `${WEBSITE_BASE_URL}/news/${slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      type: "article"
+      url: `${WEBSITE_BASE_URL}/news/${slug}`,
+      type: "article",
+      siteName: "FutbolKick"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt
     }
   };
 }
@@ -90,11 +104,11 @@ export default async function ArticlePage({
     publisher: {
       "@type": "Organization",
       name: "FutbolKick",
-      url: "https://futbolkick.com"
+      url: "https://futbolkick.vercel.app"
     },
     keywords: post.tags.join(", "),
     articleSection: post.category,
-    url: `https://futbolkick.com/news/${post.slug}`
+    url: `https://futbolkick.vercel.app/news/${post.slug}`
   };
 
   return (

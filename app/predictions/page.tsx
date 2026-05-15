@@ -1,12 +1,37 @@
+import { WEBSITE_BASE_URL } from "@/lib/config";
 import { ArrowRight, Target, Trophy, Users, Zap } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import PredictionsClient from "./PredictionsClient";
 
 export const metadata: Metadata = {
-  title: "Predictions",
+  title: "FIFA World Cup 2026 Predictions & Pick 'Em Game",
   description:
-    "Make your FIFA World Cup 2026 predictions — pick the winner, Golden Boot scorer, group winners, and exact match scores. Climb the leaderboard!"
+    "Make your FIFA World Cup 2026 predictions — pick the winner, Golden Boot scorer, group winners, and exact match scores. Climb the leaderboard!",
+  keywords: [
+    "FIFA World Cup 2026 predictions",
+    "World Cup 2026 winner prediction",
+    "World Cup Golden Boot prediction",
+    "football prediction game 2026",
+    "World Cup 2026 pick em",
+    "FIFA 2026 score predictor",
+    "World Cup 2026 leaderboard"
+  ],
+  alternates: { canonical: `${WEBSITE_BASE_URL}/predictions` },
+  openGraph: {
+    title: "FIFA World Cup 2026 Predictions & Pick 'Em Game",
+    description:
+      "Pick the World Cup winner, Golden Boot scorer, and exact match scores — compete on the FutbolKick leaderboard.",
+    url: `${WEBSITE_BASE_URL}/predictions`,
+    type: "website",
+    siteName: "FutbolKick"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FIFA World Cup 2026 Predictions & Pick 'Em Game",
+    description:
+      "Pick the winner, Golden Boot, and scores for FIFA World Cup 2026. Climb the leaderboard!"
+  }
 };
 
 const HOW_IT_WORKS = [

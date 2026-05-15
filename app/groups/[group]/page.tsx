@@ -1,5 +1,6 @@
 import FlagImg from "@/components/FlagImg";
 import MatchCard from "@/components/MatchCard";
+import { WEBSITE_BASE_URL } from "@/lib/config";
 import {
   getFixturesByGroup,
   getGroupById,
@@ -28,8 +29,31 @@ export async function generateMetadata({
     .map((id) => getTeamById(id)?.name ?? "")
     .join(", ");
   return {
-    title: `Group ${g.id} – Standings & Fixtures`,
-    description: `FIFA World Cup 2026 Group ${g.id}: standings, fixtures, and team profiles for ${teamNames}.`
+    title: `Group ${g.id} – FIFA World Cup 2026 Standings & Fixtures`,
+    description: `FIFA World Cup 2026 Group ${g.id}: standings, fixtures, and team profiles for ${teamNames}.`,
+    keywords: [
+      `World Cup 2026 Group ${g.id}`,
+      `FIFA 2026 Group ${g.id} standings`,
+      `Group ${g.id} fixtures 2026`,
+      `World Cup Group ${g.id} teams`,
+      ...g.teamIds
+        .map((id) => getTeamById(id)?.name)
+        .filter(Boolean)
+        .map((n) => `${n} World Cup 2026`)
+    ],
+    alternates: { canonical: `${WEBSITE_BASE_URL}/groups/${group}` },
+    openGraph: {
+      title: `Group ${g.id} – FIFA World Cup 2026 Standings`,
+      description: `Standings and fixtures for FIFA World Cup 2026 Group ${g.id}: ${teamNames}.`,
+      url: `${WEBSITE_BASE_URL}/groups/${group}`,
+      type: "website",
+      siteName: "FutbolKick"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Group ${g.id} – FIFA World Cup 2026`,
+      description: `Group ${g.id} standings and fixtures: ${teamNames}.`
+    }
   };
 }
 

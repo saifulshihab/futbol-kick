@@ -1,5 +1,6 @@
 import FlagImg from "@/components/FlagImg";
 import JsonLd from "@/components/JsonLd";
+import { WEBSITE_BASE_URL } from "@/lib/config";
 import {
   fixtures,
   getFixtureById,
@@ -34,9 +35,32 @@ export async function generateMetadata({
   if (!fixture) return {};
   const home = getTeamById(fixture.homeTeamId);
   const away = getTeamById(fixture.awayTeamId);
+  const stageLabel = fixture.group ? `Group ${fixture.group}` : fixture.stage;
   return {
-    title: `${home?.name} vs ${away?.name} – Match Preview`,
-    description: `FIFA World Cup 2026 match preview: ${home?.name} vs ${away?.name}. Stats, key battles, predicted score, and fan poll.`
+    title: `${home?.name} vs ${away?.name} – FIFA World Cup 2026`,
+    description: `FIFA World Cup 2026 match preview: ${home?.name} vs ${away?.name}. Stats, key battles, predicted score, and fan poll.`,
+    keywords: [
+      `${home?.name} vs ${away?.name} 2026`,
+      `${home?.code} vs ${away?.code} World Cup`,
+      `World Cup 2026 ${stageLabel}`,
+      "FIFA 2026 match preview",
+      `${home?.name} World Cup 2026`,
+      `${away?.name} World Cup 2026`,
+      `World Cup 2026 ${fixture.venue}`
+    ],
+    alternates: { canonical: `${WEBSITE_BASE_URL}/matches/${id}` },
+    openGraph: {
+      title: `${home?.name} vs ${away?.name} – FIFA World Cup 2026`,
+      description: `Match preview, stats, and fan poll: ${home?.name} vs ${away?.name} at FIFA World Cup 2026.`,
+      url: `${WEBSITE_BASE_URL}/matches/${id}`,
+      type: "website",
+      siteName: "FutbolKick"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${home?.name} vs ${away?.name} – World Cup 2026`,
+      description: `Match preview, stats, and fan poll: ${home?.name} vs ${away?.name} at FIFA World Cup 2026.`
+    }
   };
 }
 

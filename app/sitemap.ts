@@ -1,47 +1,81 @@
+import { WEBSITE_BASE_URL } from "@/lib/config";
+import { fixtures, groups, newsPosts, teams } from "@/lib/data";
 import type { MetadataRoute } from "next";
-import { fixtures, teams, groups, newsPosts } from "@/lib/data";
-
-const BASE = "https://futbolkick.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: BASE,                    lastModified: now, changeFrequency: "daily",   priority: 1.0 },
-    { url: `${BASE}/fixtures`,      lastModified: now, changeFrequency: "hourly",  priority: 0.9 },
-    { url: `${BASE}/groups`,        lastModified: now, changeFrequency: "daily",   priority: 0.8 },
-    { url: `${BASE}/teams`,         lastModified: now, changeFrequency: "weekly",  priority: 0.7 },
-    { url: `${BASE}/news`,          lastModified: now, changeFrequency: "daily",   priority: 0.8 },
-    { url: `${BASE}/predictions`,   lastModified: now, changeFrequency: "daily",   priority: 0.6 },
-    { url: `${BASE}/fan-zone`,      lastModified: now, changeFrequency: "daily",   priority: 0.7 },
+    {
+      url: WEBSITE_BASE_URL,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 1.0
+    },
+    {
+      url: `${WEBSITE_BASE_URL}/fixtures`,
+      lastModified: now,
+      changeFrequency: "hourly",
+      priority: 0.9
+    },
+    {
+      url: `${WEBSITE_BASE_URL}/groups`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.8
+    },
+    {
+      url: `${WEBSITE_BASE_URL}/teams`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.7
+    },
+    {
+      url: `${WEBSITE_BASE_URL}/news`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.8
+    },
+    {
+      url: `${WEBSITE_BASE_URL}/predictions`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.6
+    },
+    {
+      url: `${WEBSITE_BASE_URL}/fan-zone`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.7
+    }
   ];
 
   const groupRoutes: MetadataRoute.Sitemap = groups.map((g) => ({
-    url:             `${BASE}/groups/${g.id}`,
-    lastModified:    now,
+    url: `${WEBSITE_BASE_URL}/groups/${g.id}`,
+    lastModified: now,
     changeFrequency: "daily",
-    priority:        0.8,
+    priority: 0.8
   }));
 
   const teamRoutes: MetadataRoute.Sitemap = teams.map((t) => ({
-    url:             `${BASE}/teams/${t.id}`,
-    lastModified:    now,
+    url: `${WEBSITE_BASE_URL}/teams/${t.id}`,
+    lastModified: now,
     changeFrequency: "weekly",
-    priority:        0.7,
+    priority: 0.7
   }));
 
   const matchRoutes: MetadataRoute.Sitemap = fixtures.map((f) => ({
-    url:             `${BASE}/matches/${f.id}`,
-    lastModified:    now,
+    url: `${WEBSITE_BASE_URL}/matches/${f.id}`,
+    lastModified: now,
     changeFrequency: f.status === "upcoming" ? "daily" : "weekly",
-    priority:        f.status === "live" ? 1.0 : 0.7,
+    priority: f.status === "live" ? 1.0 : 0.7
   }));
 
   const newsRoutes: MetadataRoute.Sitemap = newsPosts.map((p) => ({
-    url:             `${BASE}/news/${p.slug}`,
-    lastModified:    new Date(p.date),
+    url: `${WEBSITE_BASE_URL}/news/${p.slug}`,
+    lastModified: new Date(p.date),
     changeFrequency: "monthly",
-    priority:        p.featured ? 0.8 : 0.6,
+    priority: p.featured ? 0.8 : 0.6
   }));
 
   return [
@@ -49,6 +83,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...groupRoutes,
     ...teamRoutes,
     ...matchRoutes,
-    ...newsRoutes,
+    ...newsRoutes
   ];
 }

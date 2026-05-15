@@ -5,9 +5,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
-      },
+        allow: "/"
+      }
     ],
-    sitemap: "https://futbolkick.com/sitemap.xml",
+    sitemap: "https://futbolkick.vercel.app/sitemap.xml"
   };
 }

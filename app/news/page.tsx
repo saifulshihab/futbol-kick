@@ -1,12 +1,37 @@
+import { WEBSITE_BASE_URL } from "@/lib/config";
 import { newsPosts, type NewsPost } from "@/lib/data";
 import { ArrowRight, Clock, Filter, Tag, TrendingUp } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "News & Analysis",
+  title: "FIFA World Cup 2026 News & Match Analysis",
   description:
-    "Latest FIFA World Cup 2026 news, match analysis, player profiles, tactics breakdowns, and fan guides."
+    "Latest FIFA World Cup 2026 news, match analysis, player profiles, tactics breakdowns, and fan guides.",
+  keywords: [
+    "FIFA World Cup 2026 news",
+    "World Cup 2026 match analysis",
+    "World Cup 2026 player profiles",
+    "football tactics 2026",
+    "World Cup 2026 fan guide",
+    "latest football news 2026",
+    "FIFA 2026 match preview"
+  ],
+  alternates: { canonical: `${WEBSITE_BASE_URL}/news` },
+  openGraph: {
+    title: "FIFA World Cup 2026 News & Match Analysis",
+    description:
+      "Breaking news, deep-dive analysis, player spotlights, and tactical breakdowns for FIFA World Cup 2026.",
+    url: `${WEBSITE_BASE_URL}/news`,
+    type: "website",
+    siteName: "FutbolKick"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FIFA World Cup 2026 News & Match Analysis",
+    description:
+      "Breaking news, analysis, and tactical breakdowns for FIFA World Cup 2026."
+  }
 };
 
 const categoryColors: Record<NewsPost["category"], string> = {

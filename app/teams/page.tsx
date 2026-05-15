@@ -1,12 +1,37 @@
 import FlagImg from "@/components/FlagImg";
+import { WEBSITE_BASE_URL } from "@/lib/config";
 import { teams } from "@/lib/data";
 import type { Metadata } from "next";
 import TeamsClient from "./TeamsClient";
 
 export const metadata: Metadata = {
-  title: "Teams",
+  title: "FIFA World Cup 2026 Teams & Squad Profiles",
   description:
-    "All 24 FIFA World Cup 2026 teams — squad lists, coaches, formations, FIFA rankings, and World Cup history for every nation."
+    "All 24 FIFA World Cup 2026 teams — squad lists, coaches, formations, FIFA rankings, and World Cup history for every nation.",
+  keywords: [
+    "FIFA World Cup 2026 teams",
+    "World Cup 2026 squads",
+    "World Cup 2026 national teams",
+    "FIFA rankings 2026",
+    "World Cup player list 2026",
+    "national team formations 2026",
+    "World Cup 2026 coaches"
+  ],
+  alternates: { canonical: `${WEBSITE_BASE_URL}/teams` },
+  openGraph: {
+    title: "FIFA World Cup 2026 Teams & Squad Profiles",
+    description:
+      "Explore all 24 national teams at FIFA World Cup 2026 — full squads, tactical formations, FIFA rankings, and tournament history.",
+    url: `${WEBSITE_BASE_URL}/teams`,
+    type: "website",
+    siteName: "FutbolKick"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FIFA World Cup 2026 Teams & Squad Profiles",
+    description:
+      "Explore all 24 national teams at FIFA World Cup 2026 — squads, formations, rankings, and history."
+  }
 };
 
 export default function TeamsPage() {

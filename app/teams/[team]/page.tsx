@@ -1,6 +1,7 @@
 import FlagImg from "@/components/FlagImg";
 import JsonLd from "@/components/JsonLd";
 import MatchCard from "@/components/MatchCard";
+import { WEBSITE_BASE_URL } from "@/lib/config";
 import {
   getFixturesByTeam,
   getGroupById,
@@ -26,8 +27,29 @@ export async function generateMetadata({
   const team = getTeamById(teamId);
   if (!team) return {};
   return {
-    title: `${team.name} – World Cup 2026 Profile`,
-    description: `${team.name} FIFA World Cup 2026 squad, formation, tactics, World Cup history, and upcoming fixtures. Coach: ${team.coach}.`
+    title: `${team.name} – FIFA World Cup 2026 Squad & Profile`,
+    description: `${team.name} FIFA World Cup 2026 squad, formation, tactics, World Cup history, and upcoming fixtures. Coach: ${team.coach}.`,
+    keywords: [
+      `${team.name} FIFA World Cup 2026`,
+      `${team.name} squad 2026`,
+      `${team.name} World Cup roster`,
+      `${team.name} formation tactics`,
+      `${team.code} World Cup 2026`,
+      `${team.name} coach ${team.coach}`
+    ],
+    alternates: { canonical: `${WEBSITE_BASE_URL}/teams/${teamId}` },
+    openGraph: {
+      title: `${team.name} – FIFA World Cup 2026 Squad & Profile`,
+      description: `${team.name} squad, formation, and fixtures for FIFA World Cup 2026. Coach: ${team.coach}. FIFA Rank: #${team.fifaRank}.`,
+      url: `${WEBSITE_BASE_URL}/teams/${teamId}`,
+      type: "website",
+      siteName: "FutbolKick"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${team.name} – FIFA World Cup 2026`,
+      description: `${team.name} squad, formation, and fixtures for FIFA World Cup 2026. Coach: ${team.coach}.`
+    }
   };
 }
 
@@ -99,7 +121,7 @@ export default async function TeamDetailPage({
     memberOf: { "@type": "SportsOrganization", name: "FIFA World Cup 2026" },
     coach: { "@type": "Person", name: team.coach },
     athlete: team.players.map((p) => ({ "@type": "Person", name: p.name })),
-    url: `https://futbolkick.com/teams/${team.id}`
+    url: `https://futbolkick.vercel.app/teams/${team.id}`
   };
 
   return (
