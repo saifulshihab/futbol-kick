@@ -162,7 +162,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Main 3-column grid ─────────────────────────────────────────────── */}
-      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6">
+      <section className="mx-auto max-w-7xl px-4 pt-6 pb-16 sm:px-6 sm:pt-16">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* ── Col 1: Fixtures & Groups ───────────────────────────────────── */}
           <div className="space-y-6">
@@ -200,7 +200,6 @@ export default function HomePage() {
                 sub="Group stage to Final"
               />
             </div>
-
           </div>
 
           {/* ── Col 2: Latest Posts ────────────────────────────────────────── */}
