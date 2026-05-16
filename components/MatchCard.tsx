@@ -1,5 +1,4 @@
 import FlagImg from "@/components/FlagImg";
-import LocalTime from "@/components/LocalTime";
 import { Fixture, getTeamById } from "@/lib/data";
 import { Clock, MapPin, Shield } from "lucide-react";
 import Link from "next/link";
@@ -31,7 +30,8 @@ export default function MatchCard({
   const isLive = fixture.status === "live";
   const isCompleted = fixture.status === "completed";
 
-  const dateLabel = new Date(fixture.date).toLocaleDateString("en-GB", {
+  const [y, mo, d] = fixture.date.split("-").map(Number);
+  const dateLabel = new Date(y, mo - 1, d).toLocaleDateString("en-GB", {
     weekday: "short",
     day: "numeric",
     month: "short"
@@ -90,11 +90,7 @@ export default function MatchCard({
               >
                 VS
               </span>
-              <LocalTime
-                date={fixture.date}
-                time={fixture.time}
-                className="text-brand-muted mt-0.5 text-xs"
-              />
+              <span className="text-brand-muted mt-0.5 text-xs">{fixture.time}</span>
             </>
           )}
         </div>

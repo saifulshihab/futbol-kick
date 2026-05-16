@@ -3,8 +3,14 @@
 import MatchCard from "@/components/MatchCard";
 import CustomSelect from "@/components/ui/native-select";
 import { Fixture, getTeamById } from "@/lib/data";
+import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 import { Calendar, CheckCircle, Filter, Radio, Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 type Tab = "upcoming" | "completed";
 
@@ -31,8 +37,17 @@ export default function FixturesClient({ fixtures }: Props) {
 
   const hasFilters = group || stage || search;
 
+  // Convert all ET date/time to the user's local date/time upfront
+  const localFixtures = useMemo(() =>
+    fixtures.map((f) => {
+      const local = dayjs.tz(`${f.date}T${f.time}`, "America/New_York").local();
+      return { ...f, date: local.format("YYYY-MM-DD"), time: local.format("HH:mm") };
+    }),
+    [fixtures]
+  );
+
   const filtered = useMemo(() => {
-    return fixtures
+    return localFixtures
       .filter((f) =>
         tab === "upcoming"
           ? f.status === "upcoming" || f.status === "live"
@@ -54,13 +69,14 @@ export default function FixturesClient({ fixtures }: Props) {
           f.venue.toLowerCase().includes(q)
         );
       })
-      .sort((a, b) => {
-        if (tab === "completed") return b.date.localeCompare(a.date);
-        return a.date.localeCompare(b.date);
-      });
-  }, [fixtures, tab, group, stage, search]);
+      .sort((a, b) =>
+        tab === "completed"
+          ? b.date.localeCompare(a.date)
+          : a.date.localeCompare(b.date)
+      );
+  }, [localFixtures, tab, group, stage, search]);
 
-  // Group completed fixtures by date for visual grouping
+  // Group fixtures by local date
   const byDate = useMemo(() => {
     const map: Record<string, Fixture[]> = {};
     filtered.forEach((f) => {
@@ -201,7 +217,8 @@ export default function FixturesClient({ fixtures }: Props) {
       ) : (
         <div className="space-y-6">
           {sortedDates.map((date) => {
-            const label = new Date(date).toLocaleDateString("en-GB", {
+            const [y, mo, d] = date.split("-").map(Number);
+            const label = new Date(y, mo - 1, d).toLocaleDateString("en-GB", {
               weekday: "long",
               day: "numeric",
               month: "long",
