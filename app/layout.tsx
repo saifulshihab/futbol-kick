@@ -41,6 +41,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(WEBSITE_BASE_URL),
   title: {
     default: "FutbolKick – FIFA World Cup 2026",
     template: "%s | FutbolKick"

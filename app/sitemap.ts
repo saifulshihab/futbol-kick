@@ -2,6 +2,8 @@ import { WEBSITE_BASE_URL } from "@/lib/config";
 import { fixtures, groups, newsPosts, teams } from "@/lib/data";
 import type { MetadataRoute } from "next";
 
+const SITE_LAUNCH_DATE = new Date("2026-05-16");
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
@@ -26,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${WEBSITE_BASE_URL}/teams`,
-      lastModified: now,
+      lastModified: SITE_LAUNCH_DATE,
       changeFrequency: "weekly",
       priority: 0.7
     },
@@ -38,13 +40,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${WEBSITE_BASE_URL}/predictions`,
-      lastModified: now,
+      lastModified: SITE_LAUNCH_DATE,
       changeFrequency: "daily",
       priority: 0.6
     },
     {
       url: `${WEBSITE_BASE_URL}/fan-zone`,
-      lastModified: now,
+      lastModified: SITE_LAUNCH_DATE,
       changeFrequency: "daily",
       priority: 0.7
     }
@@ -59,7 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const teamRoutes: MetadataRoute.Sitemap = teams.map((t) => ({
     url: `${WEBSITE_BASE_URL}/teams/${t.id}`,
-    lastModified: now,
+    lastModified: SITE_LAUNCH_DATE,
     changeFrequency: "weekly",
     priority: 0.7
   }));
