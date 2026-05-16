@@ -3,14 +3,9 @@
 import MatchCard from "@/components/MatchCard";
 import CustomSelect from "@/components/ui/native-select";
 import { Fixture, getTeamById } from "@/lib/data";
-import dayjs from "dayjs";
-import timezone from "dayjs/plugin/timezone";
-import utc from "dayjs/plugin/utc";
+import { toLocalFixtures } from "@/lib/localFixture";
 import { Calendar, CheckCircle, Filter, Radio, Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
-
-dayjs.extend(utc);
-dayjs.extend(timezone);
 
 type Tab = "upcoming" | "completed";
 
@@ -38,13 +33,7 @@ export default function FixturesClient({ fixtures }: Props) {
   const hasFilters = group || stage || search;
 
   // Convert all ET date/time to the user's local date/time upfront
-  const localFixtures = useMemo(() =>
-    fixtures.map((f) => {
-      const local = dayjs.tz(`${f.date}T${f.time}`, "America/New_York").local();
-      return { ...f, date: local.format("YYYY-MM-DD"), time: local.format("HH:mm") };
-    }),
-    [fixtures]
-  );
+  const localFixtures = useMemo(() => toLocalFixtures(fixtures), [fixtures]);
 
   const filtered = useMemo(() => {
     return localFixtures

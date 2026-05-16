@@ -1,6 +1,6 @@
 import CountdownTimer from "@/components/CountdownTimer";
 import FlagImg from "@/components/FlagImg";
-import MatchCard from "@/components/MatchCard";
+import UpcomingMatchCards from "@/components/UpcomingMatchCards";
 import PostCard from "@/components/PostCard";
 import TeamMarquee from "@/components/TeamMarquee";
 import {
@@ -169,11 +169,7 @@ export default function HomePage() {
           {/* ── Col 1: Fixtures & Groups ───────────────────────────────────── */}
           <div className="space-y-6">
             <SectionHeading title="Upcoming Matches" href="/fixtures" />
-            <div className="space-y-3">
-              {upcomingFixtures.map((f) => (
-                <MatchCard key={f.id} fixture={f} />
-              ))}
-            </div>
+            <UpcomingMatchCards fixtures={upcomingFixtures} />
 
             <div className="space-y-2 pt-2">
               <SectionHeading title="Quick Links" />

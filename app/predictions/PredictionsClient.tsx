@@ -8,6 +8,7 @@ import {
   teams,
   type Team
 } from "@/lib/data";
+import { toLocalFixtures } from "@/lib/localFixture";
 import {
   ArrowRight,
   CheckCircle,
@@ -262,7 +263,7 @@ export default function PredictionsClient() {
   const [picks, setPicks] = useState<Predictions>(EMPTY);
   const [submitted, setSubmitted] = useState(false);
 
-  const upcomingFixtures = getUpcomingFixtures(5);
+  const upcomingFixtures = toLocalFixtures(getUpcomingFixtures(5));
 
   function setWinner(id: string) {
     setPicks((p) => ({ ...p, winner: id }));
@@ -547,10 +548,13 @@ export default function PredictionsClient() {
                 {/* Date label */}
                 <div className="text-brand-muted shrink-0 text-center text-[11px] sm:ml-2 sm:text-right">
                   <p>
-                    {new Date(f.date).toLocaleDateString("en-GB", {
-                      day: "numeric",
-                      month: "short"
-                    })}
+                    {(() => {
+                      const [y, mo, d] = f.date.split("-").map(Number);
+                      return new Date(y, mo - 1, d).toLocaleDateString("en-GB", {
+                        day: "numeric",
+                        month: "short"
+                      });
+                    })()}
                   </p>
                   <p>{f.city}</p>
                 </div>

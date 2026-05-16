@@ -1,5 +1,6 @@
 import FlagImg from "@/components/FlagImg";
 import JsonLd from "@/components/JsonLd";
+import LocalTime from "@/components/LocalTime";
 import { WEBSITE_BASE_URL } from "@/lib/config";
 import {
   fixtures,
@@ -189,13 +190,6 @@ export default async function MatchPreviewPage({
   const battles = buildBattles(home, away);
   const prediction = predictedContext(home, away, isCompleted);
 
-  const dateLabel = new Date(fixture.date).toLocaleDateString("en-GB", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric"
-  });
-
   const stageLabel = fixture.group
     ? `Group ${fixture.group} · Matchday ${fixture.matchday}`
     : fixture.stage.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
@@ -307,9 +301,7 @@ export default async function MatchPreviewPage({
                   >
                     VS
                   </span>
-                  <span className="text-brand-muted mt-1 text-xs">
-                    {fixture.time} local
-                  </span>
+                  <LocalTime date={fixture.date} time={fixture.time} className="text-brand-muted mt-1 text-xs" />
                 </>
               )}
             </div>
@@ -332,7 +324,7 @@ export default async function MatchPreviewPage({
           <div className="text-brand-muted flex flex-wrap items-center justify-center gap-4 text-xs">
             <span className="flex items-center gap-1">
               <Clock size={12} />
-              {dateLabel} · {fixture.time}
+              <LocalTime date={fixture.date} time={fixture.time} format="datetime" />
             </span>
             <span className="flex items-center gap-1">
               <MapPin size={12} />
@@ -550,19 +542,23 @@ export default async function MatchPreviewPage({
                 Match Info
               </h3>
               {[
-                { label: "Date", value: dateLabel },
-                { label: "Time", value: fixture.time + " local" },
                 { label: "Venue", value: fixture.venue },
                 { label: "City", value: `${fixture.city}, ${fixture.country}` },
                 { label: "Stage", value: stageLabel }
               ].map(({ label, value }) => (
                 <div key={label} className="flex gap-2 text-sm">
-                  <span className="text-brand-muted w-14 shrink-0">
-                    {label}
-                  </span>
+                  <span className="text-brand-muted w-14 shrink-0">{label}</span>
                   <span className="text-brand-white">{value}</span>
                 </div>
               ))}
+              <div className="flex gap-2 text-sm">
+                <span className="text-brand-muted w-14 shrink-0">Date</span>
+                <LocalTime date={fixture.date} time={fixture.time} format="date-long" className="text-brand-white" />
+              </div>
+              <div className="flex gap-2 text-sm">
+                <span className="text-brand-muted w-14 shrink-0">Time</span>
+                <LocalTime date={fixture.date} time={fixture.time} className="text-brand-white" />
+              </div>
             </div>
 
             {/* Team links */}
