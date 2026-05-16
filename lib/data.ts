@@ -205,7 +205,7 @@ export const teams: Team[] = [
     ]
   },
   {
-    id: "uefaplayoffd",
+    id: "czechia",
     name: "Czechia",
     shortName: "Czechia",
     code: "CZE",
@@ -294,7 +294,7 @@ export const teams: Team[] = [
     ]
   },
   {
-    id: "uefaplayoffa",
+    id: "bosnia",
     name: "Bosnia and Herzegovina",
     shortName: "Bosnia & Herz.",
     code: "BIH",
@@ -719,7 +719,7 @@ export const teams: Team[] = [
     ]
   },
   {
-    id: "uefaplayoffc",
+    id: "turkey",
     name: "Türkiye",
     shortName: "Türkiye",
     code: "TUR",
@@ -1026,7 +1026,7 @@ export const teams: Team[] = [
     ]
   },
   {
-    id: "uefaplayoffb",
+    id: "sweden",
     name: "Sweden",
     shortName: "Sweden",
     code: "SWE",
@@ -2151,7 +2151,7 @@ export const groups: Group[] = [
   {
     id: "A",
     label: "Group A",
-    teamIds: ["mexico", "southafrica", "southkorea", "uefaplayoffd"],
+    teamIds: ["mexico", "southafrica", "southkorea", "czechia"],
     standings: [
       {
         teamId: "mexico",
@@ -2184,7 +2184,7 @@ export const groups: Group[] = [
         points: 0
       },
       {
-        teamId: "uefaplayoffd",
+        teamId: "czechia",
         played: 0,
         won: 0,
         drawn: 0,
@@ -2198,7 +2198,7 @@ export const groups: Group[] = [
   {
     id: "B",
     label: "Group B",
-    teamIds: ["canada", "uefaplayoffa", "qatar", "switzerland"],
+    teamIds: ["canada", "bosnia", "qatar", "switzerland"],
     standings: [
       {
         teamId: "canada",
@@ -2211,7 +2211,7 @@ export const groups: Group[] = [
         points: 0
       },
       {
-        teamId: "uefaplayoffa",
+        teamId: "bosnia",
         played: 0,
         won: 0,
         drawn: 0,
@@ -2292,7 +2292,7 @@ export const groups: Group[] = [
   {
     id: "D",
     label: "Group D",
-    teamIds: ["usa", "paraguay", "australia", "uefaplayoffc"],
+    teamIds: ["usa", "paraguay", "australia", "turkey"],
     standings: [
       {
         teamId: "usa",
@@ -2325,7 +2325,7 @@ export const groups: Group[] = [
         points: 0
       },
       {
-        teamId: "uefaplayoffc",
+        teamId: "turkey",
         played: 0,
         won: 0,
         drawn: 0,
@@ -2386,7 +2386,7 @@ export const groups: Group[] = [
   {
     id: "F",
     label: "Group F",
-    teamIds: ["netherlands", "japan", "uefaplayoffb", "tunisia"],
+    teamIds: ["netherlands", "japan", "sweden", "tunisia"],
     standings: [
       {
         teamId: "netherlands",
@@ -2409,7 +2409,7 @@ export const groups: Group[] = [
         points: 0
       },
       {
-        teamId: "uefaplayoffb",
+        teamId: "sweden",
         played: 0,
         won: 0,
         drawn: 0,
@@ -2735,7 +2735,7 @@ export const fixtures: Fixture[] = [
   {
     id: "m02",
     homeTeamId: "southkorea",
-    awayTeamId: "uefaplayoffd",
+    awayTeamId: "czechia",
     date: "2026-06-12",
     time: "22:00",
     venue: "TBD",
@@ -2748,7 +2748,7 @@ export const fixtures: Fixture[] = [
   },
   {
     id: "m03",
-    homeTeamId: "uefaplayoffd",
+    homeTeamId: "czechia",
     awayTeamId: "southafrica",
     date: "2026-06-25",
     time: "12:00",
@@ -2790,7 +2790,7 @@ export const fixtures: Fixture[] = [
   },
   {
     id: "m06",
-    homeTeamId: "uefaplayoffd",
+    homeTeamId: "czechia",
     awayTeamId: "mexico",
     date: "2026-06-25",
     time: "21:00",
@@ -2806,7 +2806,7 @@ export const fixtures: Fixture[] = [
   {
     id: "m07",
     homeTeamId: "canada",
-    awayTeamId: "uefaplayoffa",
+    awayTeamId: "bosnia",
     date: "2026-06-12",
     time: "15:00",
     venue: "TBD",
@@ -2834,7 +2834,7 @@ export const fixtures: Fixture[] = [
   {
     id: "m09",
     homeTeamId: "switzerland",
-    awayTeamId: "uefaplayoffa",
+    awayTeamId: "bosnia",
     date: "2026-06-19",
     time: "15:00",
     venue: "TBD",
@@ -2875,7 +2875,7 @@ export const fixtures: Fixture[] = [
   },
   {
     id: "m12",
-    homeTeamId: "uefaplayoffa",
+    homeTeamId: "bosnia",
     awayTeamId: "qatar",
     date: "2026-06-25",
     time: "15:00",
@@ -2990,7 +2990,7 @@ export const fixtures: Fixture[] = [
   {
     id: "m20",
     homeTeamId: "australia",
-    awayTeamId: "uefaplayoffc",
+    awayTeamId: "turkey",
     date: "2026-06-14",
     time: "00:00",
     venue: "TBD",
@@ -3017,7 +3017,7 @@ export const fixtures: Fixture[] = [
   },
   {
     id: "m22",
-    homeTeamId: "uefaplayoffc",
+    homeTeamId: "turkey",
     awayTeamId: "paraguay",
     date: "2026-06-20",
     time: "23:00",
@@ -3031,7 +3031,7 @@ export const fixtures: Fixture[] = [
   },
   {
     id: "m23",
-    homeTeamId: "uefaplayoffc",
+    homeTeamId: "turkey",
     awayTeamId: "usa",
     date: "2026-06-25",
     time: "22:00",
@@ -3159,7 +3159,7 @@ export const fixtures: Fixture[] = [
   },
   {
     id: "m32",
-    homeTeamId: "uefaplayoffb",
+    homeTeamId: "sweden",
     awayTeamId: "tunisia",
     date: "2026-06-14",
     time: "22:00",
@@ -3174,7 +3174,7 @@ export const fixtures: Fixture[] = [
   {
     id: "m33",
     homeTeamId: "netherlands",
-    awayTeamId: "uefaplayoffb",
+    awayTeamId: "sweden",
     date: "2026-06-20",
     time: "00:00",
     venue: "TBD",
@@ -3216,7 +3216,7 @@ export const fixtures: Fixture[] = [
   {
     id: "m36",
     homeTeamId: "japan",
-    awayTeamId: "uefaplayoffb",
+    awayTeamId: "sweden",
     date: "2026-06-26",
     time: "19:00",
     venue: "TBD",
