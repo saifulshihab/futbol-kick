@@ -4311,15 +4311,6 @@ export function getUpcomingFixtures(count?: number): Fixture[] {
   return count ? upcoming.slice(0, count) : upcoming;
 }
 
-export function getLiveFixtures(): Fixture[] {
-  return fixtures.filter((f) => f.status === "live");
-}
-
-export function getCompletedFixtures(): Fixture[] {
-  return fixtures
-    .filter((f) => f.status === "completed")
-    .sort((a, b) => b.date.localeCompare(a.date));
-}
 
 export function getStandingsSorted(group: Group): Standing[] {
   return [...group.standings].sort((a, b) => {
@@ -4331,10 +4322,3 @@ export function getStandingsSorted(group: Group): Standing[] {
   });
 }
 
-export function getFeaturedPosts(): NewsPost[] {
-  return newsPosts.filter((p) => p.featured);
-}
-
-export function getPostsByCategory(category: NewsPost["category"]): NewsPost[] {
-  return newsPosts.filter((p) => p.category === category);
-}
