@@ -47,7 +47,7 @@ export async function generateMetadata({
       "FIFA 2026 match preview",
       `${home?.name} World Cup 2026`,
       `${away?.name} World Cup 2026`,
-      `World Cup 2026 ${fixture.venue}`
+      `World Cup 2026 ${fixture.city}`
     ],
     alternates: { canonical: `${WEBSITE_BASE_URL}/matches/${id}` },
     openGraph: {
@@ -190,9 +190,18 @@ export default async function MatchPreviewPage({
   const battles = buildBattles(home, away);
   const prediction = predictedContext(home, away, isCompleted);
 
+  const STAGE_LABELS: Record<string, string> = {
+    group: "Group Stage",
+    r32: "Round of 32",
+    r16: "Round of 16",
+    qf: "Quarter-Final",
+    sf: "Semi-Final",
+    bronze: "Third-Place Play-off",
+    final: "Final"
+  };
   const stageLabel = fixture.group
     ? `Group ${fixture.group} · Matchday ${fixture.matchday}`
-    : fixture.stage.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+    : (STAGE_LABELS[fixture.stage] ?? fixture.stage);
 
   const matchLd = {
     "@context": "https://schema.org",
@@ -201,7 +210,7 @@ export default async function MatchPreviewPage({
     startDate: `${fixture.date}T${fixture.time}:00`,
     location: {
       "@type": "Place",
-      name: fixture.venue,
+      name: fixture.city,
       address: {
         "@type": "PostalAddress",
         addressLocality: fixture.city,
@@ -328,7 +337,7 @@ export default async function MatchPreviewPage({
             </span>
             <span className="flex items-center gap-1">
               <MapPin size={12} />
-              {fixture.venue}, {fixture.city}
+              {fixture.city}, {fixture.country}
             </span>
           </div>
         </div>
@@ -542,7 +551,6 @@ export default async function MatchPreviewPage({
                 Match Info
               </h3>
               {[
-                { label: "Venue", value: fixture.venue },
                 { label: "City", value: `${fixture.city}, ${fixture.country}` },
                 { label: "Stage", value: stageLabel }
               ].map(({ label, value }) => (

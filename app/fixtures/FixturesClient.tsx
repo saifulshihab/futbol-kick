@@ -12,11 +12,11 @@ type Tab = "upcoming" | "completed";
 const GROUPS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"];
 const STAGES = [
   { value: "group", label: "Group Stage" },
-  { value: "round-of-32", label: "Round of 32" },
-  { value: "round-of-16", label: "Round of 16" },
-  { value: "quarter-final", label: "Quarter-Final" },
-  { value: "semi-final", label: "Semi-Final" },
-  { value: "third-place", label: "Third-Place Play-off" },
+  { value: "r32", label: "Round of 32" },
+  { value: "r16", label: "Round of 16" },
+  { value: "qf", label: "Quarter-Final" },
+  { value: "sf", label: "Semi-Final" },
+  { value: "bronze", label: "Third-Place Play-off" },
   { value: "final", label: "Final" }
 ];
 
@@ -54,8 +54,7 @@ export default function FixturesClient({ fixtures }: Props) {
           home?.shortName.toLowerCase().includes(q) ||
           away?.name.toLowerCase().includes(q) ||
           away?.shortName.toLowerCase().includes(q) ||
-          f.city.toLowerCase().includes(q) ||
-          f.venue.toLowerCase().includes(q)
+          f.city.toLowerCase().includes(q)
         );
       })
       .sort((a, b) =>
@@ -116,7 +115,7 @@ export default function FixturesClient({ fixtures }: Props) {
             />
             <input
               type="text"
-              placeholder="Team, city, venue…"
+              placeholder="Team or city…"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="bg-brand-navy border-brand-accent text-brand-white placeholder-brand-muted focus:border-brand-lime w-full rounded-lg border py-2 pr-3 pl-9 text-sm transition-colors focus:outline-none"

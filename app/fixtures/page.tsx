@@ -74,7 +74,7 @@ const fixturesLd = {
         startDate: `${f.date}T${f.time}`,
         location: {
           "@type": "Place",
-          name: f.venue,
+          name: f.city,
           address: {
             "@type": "PostalAddress",
             addressLocality: f.city,
