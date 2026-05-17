@@ -1,4 +1,4 @@
-﻿// ─── Types ────────────────────────────────────────────────────────────────────
+// ─── Types ────────────────────────────────────────────────────────────────────
 
 export type Position = "GK" | "DEF" | "MID" | "FWD";
 
@@ -66,6 +66,7 @@ export interface Fixture {
   group: string | null;
   stage: MatchStage;
   status: MatchStatus;
+  timezone: "ET" | "ET-1" | "ET-2" | "ET-3";
   homeScore?: number;
   awayScore?: number;
   liveMinute?: number;
@@ -2727,7 +2728,8 @@ export const fixtures: Fixture[] = [
     country: "Mexico",
     group: "A",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-2"
   },
   {
     id: "m002",
@@ -2740,7 +2742,8 @@ export const fixtures: Fixture[] = [
     country: "Mexico",
     group: "A",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-2"
   },
   {
     id: "m003",
@@ -2753,7 +2756,8 @@ export const fixtures: Fixture[] = [
     country: "Canada",
     group: "B",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m004",
@@ -2766,7 +2770,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "D",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m005",
@@ -2779,7 +2784,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "C",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m006",
@@ -2792,7 +2798,8 @@ export const fixtures: Fixture[] = [
     country: "Canada",
     group: "D",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m007",
@@ -2805,7 +2812,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "C",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m008",
@@ -2818,7 +2826,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "B",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m009",
@@ -2831,7 +2840,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "E",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m010",
@@ -2844,7 +2854,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "E",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m011",
@@ -2857,7 +2868,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "F",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m012",
@@ -2870,7 +2882,8 @@ export const fixtures: Fixture[] = [
     country: "Mexico",
     group: "F",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-2"
   },
   {
     id: "m013",
@@ -2883,7 +2896,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "H",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m014",
@@ -2896,7 +2910,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "H",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m015",
@@ -2909,7 +2924,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "G",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m016",
@@ -2922,7 +2938,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "G",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m017",
@@ -2935,7 +2952,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "I",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m018",
@@ -2948,7 +2966,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "I",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m019",
@@ -2961,7 +2980,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "J",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m020",
@@ -2974,7 +2994,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "J",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m021",
@@ -2987,7 +3008,8 @@ export const fixtures: Fixture[] = [
     country: "Canada",
     group: "L",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m022",
@@ -3000,7 +3022,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "L",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m023",
@@ -3009,11 +3032,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "drcongo",
     date: "2026-06-17",
     time: "13:00",
-    city: "Guadalajara",
-    country: "Mexico",
+    city: "Houston",
+    country: "USA",
     group: "K",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m024",
@@ -3026,7 +3050,8 @@ export const fixtures: Fixture[] = [
     country: "Mexico",
     group: "K",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-2"
   },
   {
     id: "m025",
@@ -3035,11 +3060,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "southafrica",
     date: "2026-06-18",
     time: "12:00",
-    city: "Philadelphia",
+    city: "Atlanta",
     country: "USA",
     group: "A",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m026",
@@ -3048,11 +3074,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "bosniaherzegovina",
     date: "2026-06-18",
     time: "15:00",
-    city: "Seattle",
+    city: "Los Angeles",
     country: "USA",
     group: "B",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m027",
@@ -3065,7 +3092,8 @@ export const fixtures: Fixture[] = [
     country: "Canada",
     group: "B",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m028",
@@ -3074,11 +3102,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "southkorea",
     date: "2026-06-18",
     time: "21:00",
-    city: "Atlanta",
-    country: "USA",
+    city: "Guadalajara",
+    country: "Mexico",
     group: "A",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-2"
   },
   {
     id: "m029",
@@ -3087,11 +3116,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "haiti",
     date: "2026-06-19",
     time: "20:30",
-    city: "Miami",
+    city: "Philadelphia",
     country: "USA",
     group: "C",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m030",
@@ -3104,7 +3134,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "C",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m031",
@@ -3117,7 +3148,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "D",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m032",
@@ -3130,7 +3162,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "D",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m033",
@@ -3139,11 +3172,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "ivorycoast",
     date: "2026-06-20",
     time: "16:00",
-    city: "Philadelphia",
-    country: "USA",
+    city: "Toronto",
+    country: "Canada",
     group: "E",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m034",
@@ -3156,7 +3190,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "E",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m035",
@@ -3169,7 +3204,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "F",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m036",
@@ -3182,7 +3218,8 @@ export const fixtures: Fixture[] = [
     country: "Mexico",
     group: "F",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-2"
   },
   {
     id: "m037",
@@ -3195,7 +3232,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "H",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m038",
@@ -3208,7 +3246,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "H",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m039",
@@ -3217,11 +3256,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "iran",
     date: "2026-06-21",
     time: "15:00",
-    city: "Seattle",
+    city: "Los Angeles",
     country: "USA",
     group: "G",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m040",
@@ -3230,11 +3270,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "egypt",
     date: "2026-06-21",
     time: "21:00",
-    city: "Los Angeles",
-    country: "USA",
+    city: "Vancouver",
+    country: "Canada",
     group: "G",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m041",
@@ -3243,11 +3284,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "senegal",
     date: "2026-06-22",
     time: "20:00",
-    city: "Boston",
+    city: "New York / New Jersey",
     country: "USA",
     group: "I",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m042",
@@ -3256,11 +3298,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "iraq",
     date: "2026-06-22",
     time: "17:00",
-    city: "Philadelphia",
+    city: "Dallas",
     country: "USA",
     group: "I",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m043",
@@ -3273,7 +3316,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "J",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m044",
@@ -3286,7 +3330,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "J",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m045",
@@ -3295,11 +3340,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "ghana",
     date: "2026-06-23",
     time: "16:00",
-    city: "Toronto",
-    country: "Canada",
+    city: "Boston",
+    country: "USA",
     group: "L",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m046",
@@ -3308,11 +3354,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "croatia",
     date: "2026-06-23",
     time: "19:00",
-    city: "Dallas",
-    country: "USA",
+    city: "Toronto",
+    country: "Canada",
     group: "L",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m047",
@@ -3321,11 +3368,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "uzbekistan",
     date: "2026-06-23",
     time: "13:00",
-    city: "Guadalajara",
-    country: "Mexico",
+    city: "Houston",
+    country: "USA",
     group: "K",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m048",
@@ -3334,11 +3382,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "drcongo",
     date: "2026-06-23",
     time: "22:00",
-    city: "Mexico City",
+    city: "Guadalajara",
     country: "Mexico",
     group: "K",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-2"
   },
   {
     id: "m049",
@@ -3347,11 +3396,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "brazil",
     date: "2026-06-24",
     time: "18:00",
-    city: "New York / New Jersey",
+    city: "Miami",
     country: "USA",
     group: "C",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m050",
@@ -3360,11 +3410,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "haiti",
     date: "2026-06-24",
     time: "18:00",
-    city: "Philadelphia",
+    city: "Atlanta",
     country: "USA",
     group: "C",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m051",
@@ -3377,7 +3428,8 @@ export const fixtures: Fixture[] = [
     country: "Canada",
     group: "B",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m052",
@@ -3386,11 +3438,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "qatar",
     date: "2026-06-24",
     time: "15:00",
-    city: "Toronto",
-    country: "Canada",
+    city: "Seattle",
+    country: "USA",
     group: "B",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m053",
@@ -3399,11 +3452,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "mexico",
     date: "2026-06-24",
     time: "21:00",
-    city: "Guadalajara",
+    city: "Mexico City",
     country: "Mexico",
     group: "A",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-2"
   },
   {
     id: "m054",
@@ -3412,11 +3466,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "southkorea",
     date: "2026-06-24",
     time: "21:00",
-    city: "Seattle",
-    country: "USA",
+    city: "Monterrey",
+    country: "Mexico",
     group: "A",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-2"
   },
   {
     id: "m055",
@@ -3425,11 +3480,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "ivorycoast",
     date: "2026-06-25",
     time: "16:00",
-    city: "Houston",
+    city: "Philadelphia",
     country: "USA",
     group: "E",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m056",
@@ -3438,11 +3494,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "germany",
     date: "2026-06-25",
     time: "16:00",
-    city: "Philadelphia",
+    city: "New York / New Jersey",
     country: "USA",
     group: "E",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m057",
@@ -3451,11 +3508,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "sweden",
     date: "2026-06-25",
     time: "19:00",
-    city: "Monterrey",
-    country: "Mexico",
+    city: "Dallas",
+    country: "USA",
     group: "F",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m058",
@@ -3464,11 +3522,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "netherlands",
     date: "2026-06-25",
     time: "19:00",
-    city: "Dallas",
+    city: "Kansas City",
     country: "USA",
     group: "F",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m059",
@@ -3481,7 +3540,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "D",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m060",
@@ -3494,7 +3554,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "D",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m061",
@@ -3507,7 +3568,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "I",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m062",
@@ -3516,11 +3578,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "iraq",
     date: "2026-06-26",
     time: "15:00",
-    city: "New York / New Jersey",
-    country: "USA",
+    city: "Toronto",
+    country: "Canada",
     group: "I",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m063",
@@ -3529,11 +3592,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "iran",
     date: "2026-06-26",
     time: "23:00",
-    city: "Vancouver",
-    country: "Canada",
+    city: "Seattle",
+    country: "USA",
     group: "G",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m064",
@@ -3542,11 +3606,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "belgium",
     date: "2026-06-26",
     time: "23:00",
-    city: "Seattle",
-    country: "USA",
+    city: "Vancouver",
+    country: "Canada",
     group: "G",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m065",
@@ -3559,7 +3624,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "H",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m066",
@@ -3568,11 +3634,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "spain",
     date: "2026-06-26",
     time: "20:00",
-    city: "Dallas",
-    country: "USA",
+    city: "Guadalajara",
+    country: "Mexico",
     group: "H",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-2"
   },
   {
     id: "m067",
@@ -3581,11 +3648,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "england",
     date: "2026-06-27",
     time: "17:00",
-    city: "Toronto",
-    country: "Canada",
+    city: "New York / New Jersey",
+    country: "USA",
     group: "L",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m068",
@@ -3594,11 +3662,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "ghana",
     date: "2026-06-27",
     time: "17:00",
-    city: "Boston",
+    city: "Philadelphia",
     country: "USA",
     group: "L",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m069",
@@ -3611,7 +3680,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "J",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m070",
@@ -3624,7 +3694,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: "J",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m071",
@@ -3633,11 +3704,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "portugal",
     date: "2026-06-27",
     time: "19:30",
-    city: "Atlanta",
+    city: "Miami",
     country: "USA",
     group: "K",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m072",
@@ -3646,11 +3718,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "uzbekistan",
     date: "2026-06-27",
     time: "19:30",
-    city: "Guadalajara",
-    country: "Mexico",
+    city: "Atlanta",
+    country: "USA",
     group: "K",
     stage: "group",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m073",
@@ -3659,11 +3732,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-06-28",
     time: "15:00",
-    city: "Philadelphia",
+    city: "Los Angeles",
     country: "USA",
     group: null,
     stage: "r32",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m074",
@@ -3672,11 +3746,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-06-29",
     time: "16:30",
-    city: "Atlanta",
+    city: "Boston",
     country: "USA",
     group: null,
     stage: "r32",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m075",
@@ -3689,7 +3764,8 @@ export const fixtures: Fixture[] = [
     country: "Mexico",
     group: null,
     stage: "r32",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-2"
   },
   {
     id: "m076",
@@ -3698,11 +3774,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-06-29",
     time: "13:00",
-    city: "Toronto",
-    country: "Canada",
+    city: "Houston",
+    country: "USA",
     group: null,
     stage: "r32",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m077",
@@ -3711,11 +3788,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-06-30",
     time: "17:00",
-    city: "Mexico City",
-    country: "Mexico",
+    city: "New York / New Jersey",
+    country: "USA",
     group: null,
     stage: "r32",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m078",
@@ -3724,11 +3802,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-06-30",
     time: "13:00",
-    city: "Houston",
+    city: "Dallas",
     country: "USA",
     group: null,
     stage: "r32",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m079",
@@ -3737,11 +3816,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-06-30",
     time: "21:00",
-    city: "Boston",
-    country: "USA",
+    city: "Mexico City",
+    country: "Mexico",
     group: null,
     stage: "r32",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-2"
   },
   {
     id: "m080",
@@ -3750,11 +3830,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-01",
     time: "12:00",
-    city: "Dallas",
+    city: "Atlanta",
     country: "USA",
     group: null,
     stage: "r32",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m081",
@@ -3763,11 +3844,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-01",
     time: "20:00",
-    city: "New York / New Jersey",
+    city: "San Francisco Bay Area",
     country: "USA",
     group: null,
     stage: "r32",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m082",
@@ -3780,7 +3862,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: null,
     stage: "r32",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m083",
@@ -3789,11 +3872,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-02",
     time: "19:00",
-    city: "Guadalajara",
-    country: "Mexico",
+    city: "Toronto",
+    country: "Canada",
     group: null,
     stage: "r32",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m084",
@@ -3802,11 +3886,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-02",
     time: "15:00",
-    city: "Miami",
+    city: "Los Angeles",
     country: "USA",
     group: null,
     stage: "r32",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m085",
@@ -3815,11 +3900,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-02",
     time: "23:00",
-    city: "Kansas City",
-    country: "USA",
+    city: "Vancouver",
+    country: "Canada",
     group: null,
     stage: "r32",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m086",
@@ -3828,11 +3914,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-03",
     time: "18:00",
-    city: "San Francisco Bay Area",
+    city: "Miami",
     country: "USA",
     group: null,
     stage: "r32",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m087",
@@ -3841,11 +3928,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-03",
     time: "21:30",
-    city: "Vancouver",
-    country: "Canada",
+    city: "Kansas City",
+    country: "USA",
     group: null,
     stage: "r32",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m088",
@@ -3854,11 +3942,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-03",
     time: "14:00",
-    city: "Los Angeles",
+    city: "Dallas",
     country: "USA",
     group: null,
     stage: "r32",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m089",
@@ -3871,7 +3960,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: null,
     stage: "r16",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m090",
@@ -3880,11 +3970,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-04",
     time: "13:00",
-    city: "Dallas",
+    city: "Houston",
     country: "USA",
     group: null,
     stage: "r16",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m091",
@@ -3893,11 +3984,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-05",
     time: "16:00",
-    city: "Boston",
+    city: "New York / New Jersey",
     country: "USA",
     group: null,
     stage: "r16",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m092",
@@ -3906,11 +3998,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-05",
     time: "20:00",
-    city: "Philadelphia",
-    country: "USA",
+    city: "Mexico City",
+    country: "Mexico",
     group: null,
     stage: "r16",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-2"
   },
   {
     id: "m093",
@@ -3919,11 +4012,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-06",
     time: "15:00",
-    city: "Mexico City",
-    country: "Mexico",
+    city: "Dallas",
+    country: "USA",
     group: null,
     stage: "r16",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m094",
@@ -3932,11 +4026,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-06",
     time: "20:00",
-    city: "Miami",
+    city: "Seattle",
     country: "USA",
     group: null,
     stage: "r16",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m095",
@@ -3945,11 +4040,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-07",
     time: "12:00",
-    city: "Houston",
+    city: "Atlanta",
     country: "USA",
     group: null,
     stage: "r16",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m096",
@@ -3958,11 +4054,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-07",
     time: "16:00",
-    city: "Seattle",
-    country: "USA",
+    city: "Vancouver",
+    country: "Canada",
     group: null,
     stage: "r16",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m097",
@@ -3971,11 +4068,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-09",
     time: "16:00",
-    city: "Miami",
+    city: "Boston",
     country: "USA",
     group: null,
     stage: "qf",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m098",
@@ -3984,11 +4082,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-10",
     time: "15:00",
-    city: "Boston",
+    city: "Los Angeles",
     country: "USA",
     group: null,
     stage: "qf",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-3"
   },
   {
     id: "m099",
@@ -3997,11 +4096,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-11",
     time: "17:00",
-    city: "Los Angeles",
+    city: "Miami",
     country: "USA",
     group: null,
     stage: "qf",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m100",
@@ -4010,11 +4110,12 @@ export const fixtures: Fixture[] = [
     awayTeamId: "tbd",
     date: "2026-07-11",
     time: "21:00",
-    city: "Dallas",
+    city: "Kansas City",
     country: "USA",
     group: null,
     stage: "qf",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m101",
@@ -4027,7 +4128,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: null,
     stage: "sf",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET-1"
   },
   {
     id: "m102",
@@ -4040,7 +4142,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: null,
     stage: "sf",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m103",
@@ -4053,7 +4156,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: null,
     stage: "bronze",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   },
   {
     id: "m104",
@@ -4066,7 +4170,8 @@ export const fixtures: Fixture[] = [
     country: "USA",
     group: null,
     stage: "final",
-    status: "upcoming"
+    status: "upcoming",
+    timezone: "ET"
   }
 ];
 
