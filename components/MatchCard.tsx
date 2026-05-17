@@ -8,6 +8,13 @@ interface MatchCardProps {
   compact?: boolean;
 }
 
+function to12h(time: string) {
+  const [h, m] = time.split(":").map(Number);
+  const period = h < 12 ? "AM" : "PM";
+  const hour = h % 12 || 12;
+  return `${hour}:${String(m).padStart(2, "0")} ${period}`;
+}
+
 function TbdFlag({ size }: { size: "sm" | "md" }) {
   const px = size === "sm" ? 32 : 40;
   return (
@@ -90,7 +97,9 @@ export default function MatchCard({
               >
                 VS
               </span>
-              <span className="text-brand-muted mt-0.5 text-xs">{fixture.time}</span>
+              <span className="text-brand-muted mt-0.5 text-xs">
+                {to12h(fixture.time)}
+              </span>
             </>
           )}
         </div>

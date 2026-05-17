@@ -6,7 +6,7 @@ import type { Fixture } from "./data";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-const TZ_MAP: Record<string, string> = {
+export const TZ_MAP: Record<string, string> = {
   ET: "America/New_York",
   "ET-1": "America/Chicago",
   "ET-2": "America/Denver",

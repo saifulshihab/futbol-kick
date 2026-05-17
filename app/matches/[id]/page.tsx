@@ -310,7 +310,12 @@ export default async function MatchPreviewPage({
                   >
                     VS
                   </span>
-                  <LocalTime date={fixture.date} time={fixture.time} className="text-brand-muted mt-1 text-xs" />
+                  <LocalTime
+                    date={fixture.date}
+                    time={fixture.time}
+                    timezone={fixture.timezone}
+                    className="text-brand-muted mt-1 text-xs"
+                  />
                 </>
               )}
             </div>
@@ -333,7 +338,12 @@ export default async function MatchPreviewPage({
           <div className="text-brand-muted flex flex-wrap items-center justify-center gap-4 text-xs">
             <span className="flex items-center gap-1">
               <Clock size={12} />
-              <LocalTime date={fixture.date} time={fixture.time} format="datetime" />
+              <LocalTime
+                date={fixture.date}
+                time={fixture.time}
+                timezone={fixture.timezone}
+                format="datetime"
+              />
             </span>
             <span className="flex items-center gap-1">
               <MapPin size={12} />
@@ -455,7 +465,6 @@ export default async function MatchPreviewPage({
               </div>
             </section>
 
-
             {/* 2. Key Battles */}
             <section>
               <div className="mb-5 flex items-center gap-2">
@@ -499,7 +508,6 @@ export default async function MatchPreviewPage({
               </div>
             </section>
 
-
             {/* 3. Predicted Context */}
             {prediction && (
               <section>
@@ -541,7 +549,6 @@ export default async function MatchPreviewPage({
 
           {/* ── Sidebar ─────────────────────────────────────────────── */}
           <aside className="space-y-6">
-
             {/* Match info */}
             <div className="border-brand-accent bg-brand-blue space-y-3 rounded-xl border p-4">
               <h3
@@ -555,17 +562,30 @@ export default async function MatchPreviewPage({
                 { label: "Stage", value: stageLabel }
               ].map(({ label, value }) => (
                 <div key={label} className="flex gap-2 text-sm">
-                  <span className="text-brand-muted w-14 shrink-0">{label}</span>
+                  <span className="text-brand-muted w-14 shrink-0">
+                    {label}
+                  </span>
                   <span className="text-brand-white">{value}</span>
                 </div>
               ))}
               <div className="flex gap-2 text-sm">
                 <span className="text-brand-muted w-14 shrink-0">Date</span>
-                <LocalTime date={fixture.date} time={fixture.time} format="date-long" className="text-brand-white" />
+                <LocalTime
+                  date={fixture.date}
+                  time={fixture.time}
+                  timezone={fixture.timezone}
+                  format="date-long"
+                  className="text-brand-white"
+                />
               </div>
               <div className="flex gap-2 text-sm">
                 <span className="text-brand-muted w-14 shrink-0">Time</span>
-                <LocalTime date={fixture.date} time={fixture.time} className="text-brand-white" />
+                <LocalTime
+                  date={fixture.date}
+                  time={fixture.time}
+                  timezone={fixture.timezone}
+                  className="text-brand-white"
+                />
               </div>
             </div>
 
@@ -616,7 +636,6 @@ export default async function MatchPreviewPage({
                 />
               </Link>
             )}
-
           </aside>
         </div>
       </div>
