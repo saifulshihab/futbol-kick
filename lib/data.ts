@@ -64,7 +64,6 @@ export interface Fixture {
   city: string;
   country: string;
   group: string | null;
-  matchday: number | null;
   stage: MatchStage;
   status: MatchStatus;
   homeScore?: number;
@@ -2727,7 +2726,6 @@ export const fixtures: Fixture[] = [
     city: "Mexico City",
     country: "Mexico",
     group: "A",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2741,7 +2739,6 @@ export const fixtures: Fixture[] = [
     city: "Guadalajara",
     country: "Mexico",
     group: "A",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2755,7 +2752,6 @@ export const fixtures: Fixture[] = [
     city: "Toronto",
     country: "Canada",
     group: "B",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2769,7 +2765,6 @@ export const fixtures: Fixture[] = [
     city: "Los Angeles",
     country: "USA",
     group: "D",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2783,7 +2778,6 @@ export const fixtures: Fixture[] = [
     city: "Boston",
     country: "USA",
     group: "C",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2797,7 +2791,6 @@ export const fixtures: Fixture[] = [
     city: "Vancouver",
     country: "Canada",
     group: "D",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2811,7 +2804,6 @@ export const fixtures: Fixture[] = [
     city: "New York / New Jersey",
     country: "USA",
     group: "C",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2825,7 +2817,6 @@ export const fixtures: Fixture[] = [
     city: "San Francisco Bay Area",
     country: "USA",
     group: "B",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2839,7 +2830,6 @@ export const fixtures: Fixture[] = [
     city: "Philadelphia",
     country: "USA",
     group: "E",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2853,7 +2843,6 @@ export const fixtures: Fixture[] = [
     city: "Houston",
     country: "USA",
     group: "E",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2867,7 +2856,6 @@ export const fixtures: Fixture[] = [
     city: "Dallas",
     country: "USA",
     group: "F",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2881,7 +2869,6 @@ export const fixtures: Fixture[] = [
     city: "Monterrey",
     country: "Mexico",
     group: "F",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2895,7 +2882,6 @@ export const fixtures: Fixture[] = [
     city: "Miami",
     country: "USA",
     group: "H",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2909,7 +2895,6 @@ export const fixtures: Fixture[] = [
     city: "Atlanta",
     country: "USA",
     group: "H",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2923,7 +2908,6 @@ export const fixtures: Fixture[] = [
     city: "Los Angeles",
     country: "USA",
     group: "G",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2937,7 +2921,6 @@ export const fixtures: Fixture[] = [
     city: "Seattle",
     country: "USA",
     group: "G",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2951,7 +2934,6 @@ export const fixtures: Fixture[] = [
     city: "New York / New Jersey",
     country: "USA",
     group: "I",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2965,7 +2947,6 @@ export const fixtures: Fixture[] = [
     city: "Boston",
     country: "USA",
     group: "I",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2979,7 +2960,6 @@ export const fixtures: Fixture[] = [
     city: "Kansas City",
     country: "USA",
     group: "J",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -2993,7 +2973,6 @@ export const fixtures: Fixture[] = [
     city: "San Francisco Bay Area",
     country: "USA",
     group: "J",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -3007,7 +2986,6 @@ export const fixtures: Fixture[] = [
     city: "Toronto",
     country: "Canada",
     group: "L",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -3021,7 +2999,6 @@ export const fixtures: Fixture[] = [
     city: "Dallas",
     country: "USA",
     group: "L",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -3035,7 +3012,6 @@ export const fixtures: Fixture[] = [
     city: "Guadalajara",
     country: "Mexico",
     group: "K",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -3049,7 +3025,6 @@ export const fixtures: Fixture[] = [
     city: "Mexico City",
     country: "Mexico",
     group: "K",
-    matchday: 1,
     stage: "group",
     status: "upcoming"
   },
@@ -3063,7 +3038,6 @@ export const fixtures: Fixture[] = [
     city: "Philadelphia",
     country: "USA",
     group: "A",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3077,7 +3051,6 @@ export const fixtures: Fixture[] = [
     city: "Seattle",
     country: "USA",
     group: "B",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3091,7 +3064,6 @@ export const fixtures: Fixture[] = [
     city: "Vancouver",
     country: "Canada",
     group: "B",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3105,7 +3077,6 @@ export const fixtures: Fixture[] = [
     city: "Atlanta",
     country: "USA",
     group: "A",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3119,7 +3090,6 @@ export const fixtures: Fixture[] = [
     city: "Miami",
     country: "USA",
     group: "C",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3133,7 +3103,6 @@ export const fixtures: Fixture[] = [
     city: "Boston",
     country: "USA",
     group: "C",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3147,7 +3116,6 @@ export const fixtures: Fixture[] = [
     city: "San Francisco Bay Area",
     country: "USA",
     group: "D",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3161,7 +3129,6 @@ export const fixtures: Fixture[] = [
     city: "Seattle",
     country: "USA",
     group: "D",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3175,7 +3142,6 @@ export const fixtures: Fixture[] = [
     city: "Philadelphia",
     country: "USA",
     group: "E",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3189,7 +3155,6 @@ export const fixtures: Fixture[] = [
     city: "Kansas City",
     country: "USA",
     group: "E",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3203,7 +3168,6 @@ export const fixtures: Fixture[] = [
     city: "Houston",
     country: "USA",
     group: "F",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3217,7 +3181,6 @@ export const fixtures: Fixture[] = [
     city: "Monterrey",
     country: "Mexico",
     group: "F",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3231,7 +3194,6 @@ export const fixtures: Fixture[] = [
     city: "Miami",
     country: "USA",
     group: "H",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3245,7 +3207,6 @@ export const fixtures: Fixture[] = [
     city: "Atlanta",
     country: "USA",
     group: "H",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3259,7 +3220,6 @@ export const fixtures: Fixture[] = [
     city: "Seattle",
     country: "USA",
     group: "G",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3273,7 +3233,6 @@ export const fixtures: Fixture[] = [
     city: "Los Angeles",
     country: "USA",
     group: "G",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3287,7 +3246,6 @@ export const fixtures: Fixture[] = [
     city: "Boston",
     country: "USA",
     group: "I",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3301,7 +3259,6 @@ export const fixtures: Fixture[] = [
     city: "Philadelphia",
     country: "USA",
     group: "I",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3315,7 +3272,6 @@ export const fixtures: Fixture[] = [
     city: "Kansas City",
     country: "USA",
     group: "J",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3329,7 +3285,6 @@ export const fixtures: Fixture[] = [
     city: "San Francisco Bay Area",
     country: "USA",
     group: "J",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3343,7 +3298,6 @@ export const fixtures: Fixture[] = [
     city: "Toronto",
     country: "Canada",
     group: "L",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3357,7 +3311,6 @@ export const fixtures: Fixture[] = [
     city: "Dallas",
     country: "USA",
     group: "L",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3371,7 +3324,6 @@ export const fixtures: Fixture[] = [
     city: "Guadalajara",
     country: "Mexico",
     group: "K",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3385,7 +3337,6 @@ export const fixtures: Fixture[] = [
     city: "Mexico City",
     country: "Mexico",
     group: "K",
-    matchday: 2,
     stage: "group",
     status: "upcoming"
   },
@@ -3399,7 +3350,6 @@ export const fixtures: Fixture[] = [
     city: "New York / New Jersey",
     country: "USA",
     group: "C",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3413,7 +3363,6 @@ export const fixtures: Fixture[] = [
     city: "Philadelphia",
     country: "USA",
     group: "C",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3427,7 +3376,6 @@ export const fixtures: Fixture[] = [
     city: "Vancouver",
     country: "Canada",
     group: "B",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3441,7 +3389,6 @@ export const fixtures: Fixture[] = [
     city: "Toronto",
     country: "Canada",
     group: "B",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3455,7 +3402,6 @@ export const fixtures: Fixture[] = [
     city: "Guadalajara",
     country: "Mexico",
     group: "A",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3469,7 +3415,6 @@ export const fixtures: Fixture[] = [
     city: "Seattle",
     country: "USA",
     group: "A",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3483,7 +3428,6 @@ export const fixtures: Fixture[] = [
     city: "Houston",
     country: "USA",
     group: "E",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3497,7 +3441,6 @@ export const fixtures: Fixture[] = [
     city: "Philadelphia",
     country: "USA",
     group: "E",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3511,7 +3454,6 @@ export const fixtures: Fixture[] = [
     city: "Monterrey",
     country: "Mexico",
     group: "F",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3525,7 +3467,6 @@ export const fixtures: Fixture[] = [
     city: "Dallas",
     country: "USA",
     group: "F",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3539,7 +3480,6 @@ export const fixtures: Fixture[] = [
     city: "Los Angeles",
     country: "USA",
     group: "D",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3553,7 +3493,6 @@ export const fixtures: Fixture[] = [
     city: "San Francisco Bay Area",
     country: "USA",
     group: "D",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3567,7 +3506,6 @@ export const fixtures: Fixture[] = [
     city: "Boston",
     country: "USA",
     group: "I",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3581,7 +3519,6 @@ export const fixtures: Fixture[] = [
     city: "New York / New Jersey",
     country: "USA",
     group: "I",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3595,7 +3532,6 @@ export const fixtures: Fixture[] = [
     city: "Vancouver",
     country: "Canada",
     group: "G",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3609,7 +3545,6 @@ export const fixtures: Fixture[] = [
     city: "Seattle",
     country: "USA",
     group: "G",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3623,7 +3558,6 @@ export const fixtures: Fixture[] = [
     city: "Houston",
     country: "USA",
     group: "H",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3637,7 +3571,6 @@ export const fixtures: Fixture[] = [
     city: "Dallas",
     country: "USA",
     group: "H",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3651,7 +3584,6 @@ export const fixtures: Fixture[] = [
     city: "Toronto",
     country: "Canada",
     group: "L",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3665,7 +3597,6 @@ export const fixtures: Fixture[] = [
     city: "Boston",
     country: "USA",
     group: "L",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3679,7 +3610,6 @@ export const fixtures: Fixture[] = [
     city: "Kansas City",
     country: "USA",
     group: "J",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3693,7 +3623,6 @@ export const fixtures: Fixture[] = [
     city: "Dallas",
     country: "USA",
     group: "J",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3707,7 +3636,6 @@ export const fixtures: Fixture[] = [
     city: "Atlanta",
     country: "USA",
     group: "K",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3721,7 +3649,6 @@ export const fixtures: Fixture[] = [
     city: "Guadalajara",
     country: "Mexico",
     group: "K",
-    matchday: 3,
     stage: "group",
     status: "upcoming"
   },
@@ -3735,7 +3662,6 @@ export const fixtures: Fixture[] = [
     city: "Philadelphia",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r32",
     status: "upcoming"
   },
@@ -3749,7 +3675,6 @@ export const fixtures: Fixture[] = [
     city: "Atlanta",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r32",
     status: "upcoming"
   },
@@ -3763,7 +3688,6 @@ export const fixtures: Fixture[] = [
     city: "Monterrey",
     country: "Mexico",
     group: null,
-    matchday: null,
     stage: "r32",
     status: "upcoming"
   },
@@ -3777,7 +3701,6 @@ export const fixtures: Fixture[] = [
     city: "Toronto",
     country: "Canada",
     group: null,
-    matchday: null,
     stage: "r32",
     status: "upcoming"
   },
@@ -3791,7 +3714,6 @@ export const fixtures: Fixture[] = [
     city: "Mexico City",
     country: "Mexico",
     group: null,
-    matchday: null,
     stage: "r32",
     status: "upcoming"
   },
@@ -3805,7 +3727,6 @@ export const fixtures: Fixture[] = [
     city: "Houston",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r32",
     status: "upcoming"
   },
@@ -3819,7 +3740,6 @@ export const fixtures: Fixture[] = [
     city: "Boston",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r32",
     status: "upcoming"
   },
@@ -3833,7 +3753,6 @@ export const fixtures: Fixture[] = [
     city: "Dallas",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r32",
     status: "upcoming"
   },
@@ -3847,7 +3766,6 @@ export const fixtures: Fixture[] = [
     city: "New York / New Jersey",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r32",
     status: "upcoming"
   },
@@ -3861,7 +3779,6 @@ export const fixtures: Fixture[] = [
     city: "Seattle",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r32",
     status: "upcoming"
   },
@@ -3875,7 +3792,6 @@ export const fixtures: Fixture[] = [
     city: "Guadalajara",
     country: "Mexico",
     group: null,
-    matchday: null,
     stage: "r32",
     status: "upcoming"
   },
@@ -3889,7 +3805,6 @@ export const fixtures: Fixture[] = [
     city: "Miami",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r32",
     status: "upcoming"
   },
@@ -3903,7 +3818,6 @@ export const fixtures: Fixture[] = [
     city: "Kansas City",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r32",
     status: "upcoming"
   },
@@ -3917,7 +3831,6 @@ export const fixtures: Fixture[] = [
     city: "San Francisco Bay Area",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r32",
     status: "upcoming"
   },
@@ -3931,7 +3844,6 @@ export const fixtures: Fixture[] = [
     city: "Vancouver",
     country: "Canada",
     group: null,
-    matchday: null,
     stage: "r32",
     status: "upcoming"
   },
@@ -3945,7 +3857,6 @@ export const fixtures: Fixture[] = [
     city: "Los Angeles",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r32",
     status: "upcoming"
   },
@@ -3959,7 +3870,6 @@ export const fixtures: Fixture[] = [
     city: "Atlanta",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r16",
     status: "upcoming"
   },
@@ -3973,7 +3883,6 @@ export const fixtures: Fixture[] = [
     city: "Dallas",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r16",
     status: "upcoming"
   },
@@ -3987,7 +3896,6 @@ export const fixtures: Fixture[] = [
     city: "Boston",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r16",
     status: "upcoming"
   },
@@ -4001,7 +3909,6 @@ export const fixtures: Fixture[] = [
     city: "Philadelphia",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r16",
     status: "upcoming"
   },
@@ -4015,7 +3922,6 @@ export const fixtures: Fixture[] = [
     city: "Mexico City",
     country: "Mexico",
     group: null,
-    matchday: null,
     stage: "r16",
     status: "upcoming"
   },
@@ -4029,7 +3935,6 @@ export const fixtures: Fixture[] = [
     city: "Miami",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r16",
     status: "upcoming"
   },
@@ -4043,7 +3948,6 @@ export const fixtures: Fixture[] = [
     city: "Houston",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r16",
     status: "upcoming"
   },
@@ -4057,7 +3961,6 @@ export const fixtures: Fixture[] = [
     city: "Seattle",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "r16",
     status: "upcoming"
   },
@@ -4071,7 +3974,6 @@ export const fixtures: Fixture[] = [
     city: "Miami",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "qf",
     status: "upcoming"
   },
@@ -4085,7 +3987,6 @@ export const fixtures: Fixture[] = [
     city: "Boston",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "qf",
     status: "upcoming"
   },
@@ -4099,7 +4000,6 @@ export const fixtures: Fixture[] = [
     city: "Los Angeles",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "qf",
     status: "upcoming"
   },
@@ -4113,7 +4013,6 @@ export const fixtures: Fixture[] = [
     city: "Dallas",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "qf",
     status: "upcoming"
   },
@@ -4127,7 +4026,6 @@ export const fixtures: Fixture[] = [
     city: "Dallas",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "sf",
     status: "upcoming"
   },
@@ -4141,7 +4039,6 @@ export const fixtures: Fixture[] = [
     city: "Atlanta",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "sf",
     status: "upcoming"
   },
@@ -4155,7 +4052,6 @@ export const fixtures: Fixture[] = [
     city: "Miami",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "bronze",
     status: "upcoming"
   },
@@ -4169,7 +4065,6 @@ export const fixtures: Fixture[] = [
     city: "New York / New Jersey",
     country: "USA",
     group: null,
-    matchday: null,
     stage: "final",
     status: "upcoming"
   }

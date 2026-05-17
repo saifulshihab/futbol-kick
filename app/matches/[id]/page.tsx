@@ -200,7 +200,7 @@ export default async function MatchPreviewPage({
     final: "Final"
   };
   const stageLabel = fixture.group
-    ? `Group ${fixture.group} · Matchday ${fixture.matchday}`
+    ? `Group ${fixture.group}`
     : (STAGE_LABELS[fixture.stage] ?? fixture.stage);
 
   const matchLd = {

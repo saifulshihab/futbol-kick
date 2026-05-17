@@ -46,7 +46,7 @@ export default function MatchCard({
       <div className="mb-3 flex items-center justify-between">
         <span className="text-brand-muted text-[10px] font-semibold tracking-widest uppercase">
           {fixture.group
-            ? `Group ${fixture.group} · MD${fixture.matchday}`
+            ? `Group ${fixture.group}`
             : fixture.stage.replace(/-/g, " ")}
         </span>
         {isLive && (
