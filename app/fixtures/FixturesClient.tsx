@@ -176,7 +176,7 @@ export default function FixturesClient({ fixtures }: Props) {
           <button
             key={t}
             onClick={() => setTab(t)}
-            className={`flex flex-1 items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-semibold transition-colors ${
+            className={`flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-semibold transition-colors ${
               tab === t
                 ? "bg-brand-lime text-brand-navy"
                 : "text-brand-muted hover:text-brand-white"
