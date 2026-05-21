@@ -68,6 +68,9 @@ export const metadata: Metadata = {
     title: "FutbolKick – FIFA World Cup 2026",
     description:
       "Follow every match, every team, and every moment of the 2026 FIFA World Cup."
+  },
+  other: {
+    "google-site-verification": "rCoTDvqU4l0wusI9cxu5uUYWEw_LZzaAV9Hkpwwg_-w"
   }
 };
 
