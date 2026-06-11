@@ -1,9 +1,20 @@
 "use client";
 
+import { fixtures } from "@/lib/data";
+import { TZ_MAP } from "@/lib/localFixture";
+import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 import { useEffect, useState } from "react";
 
-// Opening match: Mexico vs South Africa, June 11 2026 15:00 UTC
-const OPENING = new Date("2026-06-11T15:00:00Z");
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
+const opening = fixtures.find((f) => f.matchNumber === 1)!;
+// UTC Date used for the countdown diff — correct regardless of timezone
+const OPENING = dayjs
+  .tz(`${opening.date}T${opening.time}`, TZ_MAP[opening.timezone])
+  .toDate();
 
 interface TimeLeft {
   days: number;
@@ -42,6 +53,14 @@ function Pad({ n, label }: { n: number; label: string }) {
 export default function CountdownTimer() {
   const [time, setTime] = useState<TimeLeft>(calc());
 
+  // Computed in render so .local() resolves to the user's browser timezone,
+  // same pattern as LocalTime.tsx. suppressHydrationWarning handles the
+  // server/client timezone mismatch.
+  const localKickoff = dayjs
+    .tz(`${opening.date}T${opening.time}`, TZ_MAP[opening.timezone])
+    .local()
+    .format("ddd, MMM D, YYYY · h:mm A");
+
   useEffect(() => {
     const id = setInterval(() => setTime(calc()), 1_000);
     return () => clearInterval(id);
@@ -64,14 +83,19 @@ export default function CountdownTimer() {
   }
 
   return (
-    <div className="flex items-center gap-4 sm:gap-6">
-      <Pad n={time.days} label="Days" />
-      <span className="text-brand-lime mb-4 text-2xl font-bold">:</span>
-      <Pad n={time.hours} label="Hours" />
-      <span className="text-brand-lime mb-4 text-2xl font-bold">:</span>
-      <Pad n={time.minutes} label="Minutes" />
-      <span className="text-brand-lime mb-4 text-2xl font-bold">:</span>
-      <Pad n={time.seconds} label="Seconds" />
+    <div className="flex flex-col items-center gap-3">
+      <div className="flex items-center gap-4 sm:gap-6">
+        <Pad n={time.days} label="Days" />
+        <span className="text-brand-lime mb-4 text-2xl font-bold">:</span>
+        <Pad n={time.hours} label="Hours" />
+        <span className="text-brand-lime mb-4 text-2xl font-bold">:</span>
+        <Pad n={time.minutes} label="Minutes" />
+        <span className="text-brand-lime mb-4 text-2xl font-bold">:</span>
+        <Pad n={time.seconds} label="Seconds" />
+      </div>
+      <span className="text-brand-muted text-xs" suppressHydrationWarning>
+        Opening match · {localKickoff}
+      </span>
     </div>
   );
 }

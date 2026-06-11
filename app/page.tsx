@@ -1,8 +1,8 @@
 import CountdownTimer from "@/components/CountdownTimer";
 import FlagImg from "@/components/FlagImg";
-import UpcomingMatchCards from "@/components/UpcomingMatchCards";
 import PostCard from "@/components/PostCard";
 import TeamMarquee from "@/components/TeamMarquee";
+import UpcomingMatchCards from "@/components/UpcomingMatchCards";
 import {
   getTeamById,
   getUpcomingFixtures,
@@ -136,9 +136,6 @@ export default function HomePage() {
               Kick-off countdown
             </p>
             <CountdownTimer />
-            <p className="text-brand-muted text-xs">
-              Opening match · June 11, 2026 · Mexico City
-            </p>
           </div>
 
           {/* CTAs */}
