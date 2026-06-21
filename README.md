@@ -2,6 +2,10 @@
 
 FIFA World Cup 2026 football blog — fixtures, standings, team profiles, match previews, news, and fan content.
 
+## Screenshot
+
+![FutbolKick screenshot](app/opengraph-image.png)
+
 ## Tech Stack
 
 - **Next.js 16.2.6** (App Router, fully static)
